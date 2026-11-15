@@ -4,9 +4,7 @@
 
 NASA Space Apps Challenge 2026 · *Planet X and SPHEREx* · Team Flying Minnie (Taiwan)
 
-**[Live site](https://yu8bryan.com/)** · **[Video](VIDEO_URL)** · **[Space Apps project page](SPACE_APPS_URL)** · **[Paper](https://yu8bryan.com/paper/en.html)** · **[Validation](VALIDATION.md)** · **[Requirements met](REQUIREMENTS.md)**
-
-<!-- TODO: replace VIDEO_URL (YouTube) and SPACE_APPS_URL (Space Apps project page) once they are published. -->
+**[Live site](https://yu8bryan.com/)** · **[Video](https://youtu.be/gOalsb-wAHM)** · **[Paper](https://yu8bryan.com/paper/en.html)** · **[Validation](VALIDATION.md)** · **[Requirements met](REQUIREMENTS.md)**
 
 ![SPHEREx Sky Change: type a position, the SPHEREx images play in time order, the difference view leaves only what changed, and moving stars are found automatically](docs/images/hero.gif)
 
