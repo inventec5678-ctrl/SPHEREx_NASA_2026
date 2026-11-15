@@ -1,10 +1,84 @@
 # SPHEREx Sky Change
 
-NASA Space Apps 2026, *Planet X and SPHEREx*. A public web tool: type a sky position (RA, Dec) or an object name
-and every SPHEREx image of that patch plays in time order, like a little video, so that things that move or change
-stand out. Behind it sit four pieces of analysis, each with its own validation.
+**Type any star or sky position and watch every SPHEREx infrared image of it play in time order, then measure what moved, what changed and what it is.**
 
-Not a NASA product. An AI candidate or a vote is not a discovery; this site has not discovered a new planet.
+NASA Space Apps Challenge 2026 · *Planet X and SPHEREx* · Team Flying Minnie (Taiwan)
+
+**[Live site](https://yu8bryan.com/)** · **[Video](VIDEO_URL)** · **[Space Apps project page](SPACE_APPS_URL)** · **[Paper](https://yu8bryan.com/paper/en.html)** · **[Validation](VALIDATION.md)** · **[Requirements met](REQUIREMENTS.md)**
+
+<!-- TODO: replace VIDEO_URL (YouTube) and SPACE_APPS_URL (Space Apps project page) once they are published. -->
+
+![SPHEREx Sky Change: type a position, the SPHEREx images play in time order, the difference view leaves only what changed, and moving stars are found automatically](docs/images/hero.gif)
+
+## Why it matters
+
+Pluto, and hundreds of brown dwarfs found by Backyard Worlds volunteers, were spotted by blinking two pictures of the same sky taken at different times. SPHEREx now images the whole sky every six months in 102 near-infrared bands (0.75–5.0 µm), a new data set for this kind of search. It is also hard to blink: every pixel sees its own wavelength, so consecutive images of the same star are taken in different colours and a plain blink shows stars "changing" that are not. SPHEREx Sky Change handles this so that anyone with a browser can look for things that move, and see the measurements behind every claim.
+
+## What it does
+
+- **Quick look.** Enter an RA/Dec or a name; every overlapping SPHEREx exposure is fetched from NASA/IPAC IRSA, put on one sky grid and played in time order. First frames stream in within about a minute.
+- **Field lab.** Per-pass stacks for each of the six detectors, wavelength-matched difference images, a spectrum and light curve for any clicked pixel, Gaia DR3 and CatWISE2020 overlays moved to the date of each pass, contamination flags, and an embeddable view (`/?ra=…&dec=…&embed=1`).
+- **Four automatic searches.** Asteroids and comets (a CNN trained only on simulated movers), distant bodies such as a hypothetical Planet X (Earth-orbit parallax between passes), high-proper-motion stars, and variable stars.
+- **Review queue.** Visitors blink and vote on every automatic candidate, with a practice mode.
+- **Ask.** A chat on every page: Llama 3.2 1B fine-tuned by the team, self-hosted, answering from 76 papers and the site's own measurements, with sources.
+- **Always current.** A weekly timer checks IRSA for new SPHEREx releases and queues re-analysis without a code change.
+
+<p align="center">
+  <img src="docs/images/barnard_lab.jpg" alt="Field lab for Barnard's Star in Subtract mode: the star moved 10.07 arcseconds in 361 days" width="860">
+</p>
+<p align="center">
+  <img src="docs/images/review_queue.jpg" alt="The public review queue: each automatic candidate blinks between passes next to its catalogue motion" width="420">
+  <img src="docs/images/assistant.jpg" alt="The Ask assistant on the WISE 0855 page answering with a cited paper and the site's own measurement" width="420">
+</p>
+
+## What we found
+
+Every number below comes from the evidence files in this repository (`paper_evidence/`, `VALIDATION.md`).
+
+- **All five challenge targets measured.** Barnard's Star moved 10.07″ ± 0.20″ in 361 days (catalogue 10.30″); Epsilon Indi B 6.11″ ± 0.07″ in 497 days (6.16″); WISE 0855 9.5″ ± 2.0″ (8.1″); RW Aurigae and R Draconis have light curves measured from the wings of their saturated images.
+- **Found blind.** The automatic searches find all three fast-moving targets and both variable targets without being told where to look.
+- **A CNN that never saw a real asteroid.** Trained on 12,351 movers injected with each exposure's own PSF, it separates 556 real known-asteroid detections in 19 fields it never trained on with AUROC 0.987 (S/N alone: 0.537), keeping 90.8% at a 1.15% false-positive rate.
+- **Planet X.** 47 of 48 injected distant bodies (500–3000 AU, with orbital motion) are recovered in fields with three survey passes. From SPHEREx parallax alone, a blind search measured Makemake at 52.71 AU (JPL 52.72) and Haumea at 49.49 AU (JPL 49.82). A search of 32 fields along the predicted path of Planet Nine found nothing beyond chance. **We have not found a new planet**, and an AI score or a vote is not a discovery.
+
+<p align="center"><img src="docs/images/roc.png" alt="ROC curves: the CNN against S/N alone, for real known asteroids and injected movers" width="620"></p>
+
+## How it works
+
+![Architecture: public archives feed the science pipeline; our server on an NVIDIA L4 stores field products, measures spectra on demand and runs the assistant; visitors use everything in a browser; a weekly timer pulls in new SPHEREx releases](docs/images/architecture.png)
+
+- **Wavelength-matched differences.** Each pixel's reference is built only from exposures of the same detector whose wavelength at that pixel is within 3% and that are at least 3 hours apart, so a difference image shows real change rather than colour.
+- **Spectra on the fly.** Clicking a pixel collects one wavelength from each of hundreds of exposures; sorted by wavelength they form a spectrum, grouped by time a light curve.
+- **Parallax for distant bodies.** Survey passes six months apart see a distant body shifted by Earth's orbit; distance and orbital motion are fitted together across passes.
+- **Catalogues check, never choose.** Gaia, CatWISE and JPL label and validate results; candidates come from SPHEREx alone.
+
+Full method, validation and limitations: [docs/TECHNICAL.md](docs/TECHNICAL.md) and the [paper](https://yu8bryan.com/paper/en.html).
+
+## Data sources
+
+- **NASA:** SPHEREx DR1 and QR3 images and the DR1 all-sky cube from the [NASA/IPAC Infrared Science Archive](https://irsa.ipac.caltech.edu/); CatWISE2020 via IRSA; JPL Small-Body Identification, Horizons and SBDB; NASA Blue Marble and NASA 3D Resources for the 3D home page.
+- **Other sources:** ESA Gaia DR3; CDS SIMBAD, VizieR and Aladin Lite; AAVSO VSX; Canadian Space Agency NEOSSat via CADC; 76 papers from arXiv for the assistant.
+
+Full credits and the acknowledgements IRSA asks for: [Licence and credits](#licence-and-credits), `NOTICE`, and `#/credits` on the site.
+
+## Built with
+
+Python 3.12 (NumPy, SciPy, Astropy, reproject, scikit-learn, PyTorch, FastAPI); React 19, Vite, three.js and Aladin Lite v3; vLLM, Hugging Face Transformers and BGE-M3 for the assistant; one Google Cloud VM with an NVIDIA L4 behind Cloudflare.
+
+**AI use:** the site's assistant is Meta Llama 3.2 1B, fine-tuned by the team and self-hosted; nothing in the running site calls an external AI service. The team logo and the video's voice-over are AI-generated and labelled as such. How AI coding tools were used: [How AI tools were used](#how-ai-tools-were-used).
+
+## Team
+
+Team Flying Minnie, Taiwan.
+
+## License
+
+Apache-2.0 (`LICENSE`). SPHEREx Sky Change is not an official NASA product and is not endorsed by NASA.
+
+---
+
+# For developers
+
+## The four parts of the analysis
 
 | | What | Status | Headline numbers |
 |---|---|---|---|
