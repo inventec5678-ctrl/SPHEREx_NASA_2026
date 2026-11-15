@@ -1,0 +1,109 @@
+/* The evidence page of one moving object (object.jsx), UPGRADE_PLAN.md §9.5: the first screen is pictures.
+   Desktop: a head row (title and verdict | the three checks as meters), then the player on the left and, on the
+   right, where it went on the sky, JPL's bull's-eye and the predicted body. Tokens only (theme.css); spacing in
+   multiples of 8 px; type 15 px and up (chart ticks are the kit's 13 px). */
+
+.object.ob { padding-top: 8px; }
+.ob .crumb { min-height: 24px; }
+.ob-loading { min-height: 100vh; }
+
+/* ---- head: title and verdict | the three checks ---- */
+.ob-top { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 664px); gap: 16px 32px; align-items: center; margin-top: 8px; }
+.ob-head h1 { margin: 0; font-size: var(--fs-h3); line-height: 1.15; letter-spacing: -.02em; }
+.ob-verdict { margin: 8px 0 0; font-size: var(--fs-body); line-height: 1.5; color: var(--sx-ink-2); max-width: 70ch; }
+.ob-verdict .tag { margin-right: 8px; vertical-align: 1px; }
+.ob-simnote.note { margin: 0; padding: 16px; }
+
+.ob-checks { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; align-items: start; }
+.ob-check { display: grid; grid-template-columns: 24px minmax(0, 1fr); gap: 8px; align-items: start; }
+.ob-check > i { width: 24px; height: 24px; border-radius: 50%; display: grid; place-items: center; font-style: normal; background: rgb(var(--c-white) / .06); color: var(--sx-ink-3); }
+.ob-check > i svg { width: 14px; height: 14px; }
+.ob-check[data-ok="yes"] > i { background: rgb(var(--c-good) / .15); color: var(--sx-good); }
+.ob-check[data-ok="no"] > i { background: rgb(var(--c-bad) / .15); color: var(--sx-bad); }
+.ob-check-body { display: grid; gap: 4px; min-width: 0; }
+.ob-check .meter-row span { color: var(--sx-ink); font-weight: 600; line-height: 1.3; }
+.ob-check .meter-row strong { white-space: nowrap; }
+.ob-check .meter-bar b { background: var(--sx-ink); }
+.ob-check-plain { font-size: var(--fs-small); font-weight: 600; color: var(--sx-ink); line-height: 1.3; }
+.ob-check-scale { font-size: var(--fs-small); line-height: 1.4; color: var(--sx-ink-3); }
+
+/* ---- the stage: player | charts ---- */
+.ob-stage { display: grid; grid-template-columns: minmax(0, 680px) minmax(0, 1fr); gap: 24px; margin-top: 16px; align-items: start; }
+.ob-left, .ob-right { display: grid; gap: 16px; min-width: 0; align-content: start; }
+.ob-right { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.ob-right > .ob-wide { grid-column: 1 / -1; }
+
+.ob-player { display: grid; gap: 8px; min-width: 0; }
+.ob-frame { position: relative; }
+.ob-frame canvas { display: block; width: 100%; aspect-ratio: 1; image-rendering: pixelated; background: var(--sx-black); border-radius: var(--r-md); }
+.ob-frame canvas:focus-visible { outline: 2px solid var(--sx-accent); outline-offset: 2px; }
+.ob-frame-tag { position: absolute; left: 16px; top: 16px; margin: 0; padding: 4px 12px; border-radius: 999px; background: rgb(var(--c-black) / .66);
+  font-size: var(--fs-small); color: var(--sx-ink); pointer-events: none; font-variant-numeric: tabular-nums; }
+
+/* chart cards on this page: the kit's card, a little tighter, with an h2 when it heads the first screen */
+.ob .chart-card { padding: 16px; gap: 8px; }
+.ob .chart-card h2 { margin: 0; font: 700 var(--fs-lead)/1.25 var(--sx-font); letter-spacing: -.01em; }
+.ob .chart-take { font-size: var(--fs-small); line-height: 1.45; }
+
+/* the predicted body: a picture first, its caption under it */
+.ob-body { margin: 0; display: grid; align-content: start; background: var(--sx-surface); border-radius: var(--r-md); box-shadow: inset 0 0 0 1px var(--sx-line); overflow: hidden; min-width: 0; }
+.ob .ob-body3d { display: block; width: 100%; height: auto; aspect-ratio: 1; border-radius: 0; background: radial-gradient(circle at 50% 45%, rgb(var(--c-white) / .05), transparent 70%); }
+.ob-body figcaption { padding: 8px 16px 16px; font-size: var(--fs-small); line-height: 1.45; color: var(--sx-ink-3); }
+.ob-body figcaption .link { font-size: var(--fs-small); color: var(--sx-ink); }
+
+.ob-locator-img { display: block; width: 100%; aspect-ratio: 1; border-radius: var(--r-sm); background: var(--sx-black); }
+.ob-where .ob-locator-img { max-width: 560px; }
+.ob-panel > .ob-where { justify-self: start; width: 100%; max-width: 592px; }
+
+.ob-vote { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 16px; padding: 16px; border-radius: var(--r-md); background: var(--sx-surface); box-shadow: inset 0 0 0 1px var(--sx-line); }
+.ob-vote-q { font-size: var(--fs-ui); font-weight: 600; color: var(--sx-ink); }
+.ob-vote small { flex: 1 1 100%; min-height: 24px; color: var(--sx-ink-3); }
+
+/* marks drawn inside the charts */
+.ob-pixel { fill: rgb(var(--c-white) / .06); }
+.ob-ring5 { fill: none; stroke: var(--sx-ink-3); stroke-width: 1.5; stroke-dasharray: 4 4; }
+.ob-limit { stroke: rgb(var(--c-warn) / .85); stroke-width: 1.5; stroke-dasharray: 5 4; }
+.ob-ref { stroke: var(--sx-ink-3); stroke-width: 1.5; stroke-dasharray: 5 4; }
+.ob-thermal { fill: rgb(var(--c-bad) / .07); }
+.plot .mark-label.ob-thermal-label { fill: var(--sx-bad-soft); }
+.plot .mark-label.ob-band-label { fill: var(--sx-ink-3); }
+
+/* ---- why believe it: the deeper charts ---- */
+.ob-evidence { margin-top: 56px; }
+.ob-evidence > h2 { margin: 0; font-size: var(--fs-h3); letter-spacing: -.02em; }
+.ob-panel { margin-top: 16px; display: grid; gap: 16px; }
+.ob-panel > .chart-card { animation: rise .3s var(--sx-ease); }
+.ob-panel .matrix { margin-top: 0; }
+.ob-stack { display: grid; gap: 8px; }
+.ob-look-grid { display: grid; grid-template-columns: minmax(0, 360px) minmax(0, 1fr); gap: 24px; align-items: start; }
+.ob .ob-look3d { display: block; width: 100%; height: auto; aspect-ratio: 1; border-radius: var(--r-md); background: var(--sx-black); }
+.ob-look-grid .kv { margin: 0 0 16px; }
+.ob-tech { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px 24px; align-items: end; }
+.ob-tech .meter-row strong { white-space: nowrap; }
+.ob-dets { display: flex; flex-wrap: wrap; gap: 8px; }
+.ob-dets span { min-width: 48px; padding: 4px 8px; border-radius: var(--r-sm); text-align: center; font-size: var(--fs-small); font-weight: 700; color: var(--sx-ink-3); box-shadow: inset 0 0 0 1px var(--sx-line-2); }
+.ob-dets span.on { color: var(--sx-bg); background: var(--c); box-shadow: none; }
+.ob-panel .toolbar { display: flex; flex-wrap: wrap; gap: 8px; }
+
+/* ---- narrower screens ---- */
+@media (max-width: 1280px) {
+  .ob-top { grid-template-columns: minmax(0, 1fr); }
+  .ob-stage { grid-template-columns: minmax(0, 5fr) minmax(0, 6fr); }
+}
+@media (max-width: 900px) {
+  .ob-stage { grid-template-columns: minmax(0, 1fr); }
+  .ob-right { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .ob-checks { grid-template-columns: minmax(0, 1fr); gap: 8px; }
+  .ob-look-grid { grid-template-columns: minmax(0, 1fr); }
+}
+@media (max-width: 560px) {
+  .ob-right { grid-template-columns: minmax(0, 1fr); }
+  .ob .chart-card { padding: 16px 8px; }
+  .ob .chart-card > figcaption, .ob .chart-card > .legend, .ob .chart-card > .chart-more { padding: 0 8px; }
+  .ob-frame-tag { left: 8px; top: 8px; }
+  .ob-evidence { margin-top: 40px; }
+}
+@media (pointer: coarse) {
+  .ob .chart-more > summary { min-height: 44px; }
+  .ob-panel details > summary { padding-block: 12px; }
+}

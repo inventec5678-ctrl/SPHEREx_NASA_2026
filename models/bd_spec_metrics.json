@@ -1,0 +1,107 @@
+{
+ "synthetic_val_accuracy": 0.9685,
+ "synthetic_val_auc": 0.9920776245604984,
+ "real_positive_scores": {
+  "epsindi": 1.0,
+  "wise0855": 0.999
+ },
+ "real_negatives": {
+  "n": 420,
+  "median_score": 0.0,
+  "false_positive_rate": {
+   "0.5": 0.004761904761904762,
+   "0.8": 0.004761904761904762,
+   "0.9": 0.004761904761904762
+  },
+  "highest": [
+   {
+    "field": "barnard",
+    "g": 15.05,
+    "score": 1.0
+   },
+   {
+    "field": "cybele",
+    "g": 15.9,
+    "score": 0.993
+   },
+   {
+    "field": "cybele",
+    "g": 10.61,
+    "score": 0.128
+   },
+   {
+    "field": "q043p280+16p853s15",
+    "g": 12.26,
+    "score": 0.019
+   },
+   {
+    "field": "wise0855",
+    "g": 15.99,
+    "score": 0.018
+   }
+  ]
+ },
+ "threshold": 0.8,
+ "bins_um": [
+  0.786,
+  0.885,
+  0.997,
+  1.124,
+  1.266,
+  1.427,
+  1.608,
+  1.812,
+  2.042,
+  2.301,
+  2.593,
+  2.922,
+  3.292,
+  3.71,
+  4.18,
+  4.71
+ ],
+ "training": "60000 synthetic spectra (50% T/Y dwarfs; stars, M giants/Miras, L dwarfs, YSOs, galaxies), no real data",
+ "previous": {
+  "real_positive_scores": {
+   "epsindi": 1.0,
+   "wise0855": 0.999
+  },
+  "real_negatives": {
+   "n": 415,
+   "median_score": 0.0,
+   "false_positive_rate": {
+    "0.5": 0.004819277108433735,
+    "0.8": 0.004819277108433735,
+    "0.9": 0.004819277108433735
+   },
+   "highest": [
+    {
+     "field": "barnard",
+     "g": 15.05,
+     "score": 1.0
+    },
+    {
+     "field": "cybele",
+     "g": 15.9,
+     "score": 0.994
+    },
+    {
+     "field": "cybele",
+     "g": 10.61,
+     "score": 0.107
+    },
+    {
+     "field": "wise0855",
+     "g": 15.99,
+     "score": 0.025
+    },
+    {
+     "field": "epsindi",
+     "g": 15.99,
+     "score": 0.008
+    }
+   ]
+  }
+ },
+ "evaluated": "2026-11-13T21:23:24 (real-data numbers re-measured on the current fields; weights unchanged)"
+}

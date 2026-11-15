@@ -1,0 +1,23 @@
+{
+  "name": "spherex-sky-change-explorer",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host 127.0.0.1 --port 5174",
+    "build": "vite build && node ../../scripts/check_dist.mjs",
+    "audit:i18n": "node scripts/audit_i18n.mjs",
+    "test": "node scripts/test_sky.mjs && node scripts/test_markdown.mjs && node scripts/check_refs.mjs && node scripts/audit_i18n.mjs && node scripts/audit_css.mjs",
+    "check": "npm test && npm run build && cd ../.. && .venv/bin/python -m pytest tests -q"
+  },
+  "dependencies": {
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1",
+    "three": "^0.180.0"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.7.0",
+    "axe-core": "^4.10.2",
+    "vite": "^6.3.5"
+  }
+}

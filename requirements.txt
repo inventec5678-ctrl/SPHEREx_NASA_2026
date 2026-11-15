@@ -1,0 +1,17 @@
+# Runtime: the web server, the worker and the analysis pipeline (Python 3.12).
+# Versions are the ones this project was developed and validated with.
+numpy==2.5.4
+scipy==1.18.1
+astropy==8.0.2
+reproject==0.21.0
+requests==2.34.2
+urllib3==2.8.0
+pillow==13.0.0
+fastapi==0.153.0
+uvicorn==0.54.0
+pydantic==2.14.1
+# the in-site assistant (web/api_ask.py) streams from an OpenAI-compatible server; without it the assistant answers with a stub
+httpx==0.28.1
+# the real/bogus CNN (CPU build is enough to serve; a GPU build is used for training)
+torch==2.14.1
+scikit-learn==1.9.1

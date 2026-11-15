@@ -1,0 +1,125 @@
+/* The validation dashboard (validation.jsx, classes vd-*) and the guide page's layout (guide.jsx, classes gd-*).
+   Type: 13 px only for chart ticks (the chart kit does that); notes 15, labels and values 16, running text 17.
+   Colours only from theme.css; radii --r-sm / --r-md; gaps in multiples of 8 px. */
+
+/* ---- dashboard ---- */
+.vd { margin-top: 24px; }
+.vd .chart-card h3 { margin: 0; font: 700 var(--fs-lead)/1.25 var(--sx-font); letter-spacing: -.01em; }
+.vd .chart-take { max-width: 34em; }
+.vd .chart-more p + p { margin-top: 8px; }
+.vd .chart-more { padding: 0; }
+.vd .chart-more > summary { font-size: var(--fs-small); min-height: 40px; }
+/* tooltips stay inside a phone-wide card: they wrap instead of growing to 320 px */
+.vd .plot-tip, .vd-recovery .plot-tip { max-width: min(264px, 52vw); white-space: normal; }
+.vd .plot-tip b, .vd-recovery .plot-tip b { font-weight: 700; overflow-wrap: anywhere; }
+.vd-plot { min-width: 0; }
+.vd-band { fill: rgb(var(--c-bad) / .12); }
+.vd-zone { fill: rgb(var(--c-good) / .08); }
+.vd-ref { stroke: rgb(var(--c-ink-3) / .9); stroke-width: 1.5; stroke-dasharray: 5 5; }
+.vd-thr { stroke: var(--sx-ink-2); stroke-width: 1.5; stroke-dasharray: 5 4; }
+.vd-sel { fill: none; stroke: var(--sx-accent); stroke-width: 2.5; }
+.vd-stem { stroke: rgb(var(--c-good) / .55); stroke-width: 1; }
+.vd-err { stroke: rgb(var(--c-ink-2) / .7); stroke-width: 1.5; }
+.vd-curve { fill: none; stroke: rgb(var(--c-ink-3) / .75); stroke-width: 1.5; }
+.vd-sep { stroke: rgb(var(--c-white) / .16); stroke-width: 1; stroke-dasharray: 2 4; }
+.vd-dot-ring { fill: var(--sx-surface); stroke: rgb(var(--c-good) / .9); stroke-width: 2; }
+.vd-dot-none { fill: none; stroke: rgb(var(--c-ink-3) / .45); stroke-width: 1.5; stroke-dasharray: 2 3; }
+.vd-count { font: 700 var(--fs-small)/1 var(--sx-font); font-variant-numeric: tabular-nums; }
+.vd-count.zero { fill: var(--sx-good); }
+.vd-count.some { fill: var(--sx-bg); }
+.vd-count.none { fill: var(--sx-ink-3); font-weight: 500; }
+.vd-was { opacity: .62; }
+.vd-halo { paint-order: stroke; stroke: var(--sx-surface); stroke-width: 5px; stroke-linejoin: round; }
+.vd-pick { margin: 0; padding: 12px 16px; border-radius: var(--r-sm); background: var(--sx-surface-2); font-size: var(--fs-ui); line-height: 1.5; color: var(--sx-ink-2);
+  display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 16px; min-height: 48px; max-width: none; font-variant-numeric: tabular-nums; }
+.guide-sec .vd-pick { max-width: none; }
+.vd-pick b { color: var(--sx-ink); overflow-wrap: anywhere; }
+.vd-pick a { margin-left: auto; white-space: nowrap; font-weight: 600; min-height: 32px; display: inline-flex; align-items: center; }
+.vd-pick.idle { color: var(--sx-ink-3); font-size: var(--fs-small); }
+.vd-two { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 232px), 1fr)); gap: 16px; }
+.vd-two > div { display: grid; gap: 8px; align-content: start; min-width: 0; }
+.vd-sub { margin: 0; font: 600 var(--fs-ui)/1.3 var(--sx-font); color: var(--sx-ink); }
+.vd .meter { font-size: var(--fs-small); }
+.vd .meter-row strong { white-space: nowrap; }
+.vd-recovery { display: grid; gap: 8px; min-width: 0; }
+.vd-foot { margin-top: 24px; font-size: var(--fs-small); color: var(--sx-ink-3); }
+
+/* ---- guide page ---- */
+.guide .guide-sec { max-width: var(--sx-page); }
+.guide .guide-sec > h2 { margin-bottom: 16px; }
+.guide .guide-sec > .lead { font-size: var(--fs-lead); color: var(--sx-ink-2); max-width: 34em; }
+
+/* how to read the images: a picture beside two sentences */
+.gd-read { display: grid; gap: 16px; grid-template-columns: minmax(0, 1fr); }
+.gd-how { display: grid; grid-template-columns: 240px minmax(0, 1fr); gap: 24px; padding: 16px; border-radius: var(--r-md); background: var(--sx-surface);
+  box-shadow: inset 0 0 0 1px var(--sx-rule); align-items: start; }
+.gd-how h3 { margin: 0 0 8px; font: 700 var(--fs-lead)/1.25 var(--sx-font); letter-spacing: -.01em; color: var(--sx-sunlit); }
+.gd-how p { margin: 0; font-size: var(--fs-body); line-height: 1.6; color: var(--sx-ink-2); max-width: 32em; }
+.gd-how details { padding: 0; margin-top: 8px; }
+.gd-how details > summary { min-height: 40px; display: inline-flex; align-items: center; color: var(--sx-known); font-size: var(--fs-small); font-weight: 600; cursor: pointer; }
+.gd-how details p { font-size: var(--fs-ui); margin-top: 0; }
+.gd-try { display: inline-flex; align-items: center; min-height: 40px; margin-top: 8px; font-size: var(--fs-ui); font-weight: 600; color: var(--sx-known); text-decoration: none; }
+.gd-try:hover { color: var(--sx-white); text-decoration: underline; }
+.gd-pic { margin: 0; display: grid; gap: 8px; min-width: 0; }
+.gd-pic > img, .gd-pic > svg { display: block; width: 100%; height: auto; aspect-ratio: 8 / 5; object-fit: cover; border-radius: var(--r-sm); background: var(--sx-black); image-rendering: pixelated; }
+.gd-pic > svg { background: var(--sx-surface-2); }
+.gd-pic .legend { gap: 8px 16px; }
+.gd-pair { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.gd-pair > div { display: grid; gap: 8px; min-width: 0; justify-items: start; }
+.gd-pair p { margin: 0; font-size: var(--fs-small); line-height: 1.35; color: var(--sx-ink-2); }
+.gd-pair p b { display: flex; align-items: center; gap: 8px; color: var(--sx-ink); font-weight: 600; }
+.gd-pair p i { width: 12px; height: 12px; border-radius: 50%; flex: none; background: var(--c, var(--sx-ink)); }
+.gd-pair svg { display: block; width: 100%; height: auto; border-radius: var(--r-sm); background: var(--sx-surface-2); }
+/* a zoomed crop of one pass stack: the image is 177 px wide, the window shows its central 17 px */
+.gd-crop { position: relative; width: 100%; aspect-ratio: 1; overflow: hidden; border-radius: var(--r-sm); background: var(--sx-black); }
+.gd-crop img { position: absolute; left: 50%; top: 50%; width: 1040%; max-width: none; height: auto; transform: translate(-50%, -50%); image-rendering: pixelated; }
+.gd-crop::after { content: ''; position: absolute; left: 0; right: 0; top: 50%; border-top: 1px dashed rgb(var(--c-accent) / .8); }
+.gd-dia .ax { stroke: rgb(var(--c-white) / .3); stroke-width: 1.5; fill: none; }
+.gd-dia .px { stroke: rgb(var(--c-white) / .14); stroke-width: 1; fill: none; }
+.gd-dia .trail { stroke: rgb(var(--c-accent) / .5); stroke-width: 1.5; stroke-dasharray: 3 4; fill: none; }
+@media (min-width: 901px) {
+  .gd-read { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .gd-read > :last-child:nth-child(odd) { grid-column: 1 / -1; grid-template-columns: 424px minmax(0, 1fr); }
+}
+@media (max-width: 560px) {
+  .gd-how { grid-template-columns: minmax(0, 1fr); gap: 16px; }
+}
+
+/* what it cannot see: a list, at reading size, at most 70 characters (35 Chinese ones) a line */
+.gd-limits { margin: 0; padding: 0; list-style: none; display: grid; gap: 16px 48px; grid-template-columns: minmax(0, 1fr); }
+.guide .gd-limits li { position: relative; padding-left: 24px; font-size: var(--fs-body); line-height: 1.65; color: var(--sx-ink-2); max-width: 56ch; }
+.guide .gd-limits:lang(zh-Hant) li { max-width: 35em; }
+.gd-limits li::before { content: ''; position: absolute; left: 0; top: .62em; width: 8px; height: 8px; border-radius: 50%; background: var(--sx-bad); }
+.gd-limits b { color: var(--sx-ink); }
+@media (min-width: 901px) { .gd-limits { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+
+/* challenge requirements: a grid of tiles */
+.gd-score { margin: 0 0 8px; display: flex; flex-wrap: wrap; align-items: baseline; gap: 8px 16px; font-size: var(--fs-body); color: var(--sx-ink-2); }
+.guide .gd-score { max-width: none; }
+.gd-score strong { font: 800 var(--fs-h3)/1 var(--sx-font); color: var(--sx-good); font-variant-numeric: tabular-nums; }
+.gd-req { margin-top: 24px; }
+.guide .guide-sec h3.gd-group { margin: 32px 0 16px; font: 700 var(--fs-lead)/1.25 var(--sx-font); letter-spacing: -.01em; }
+.gd-req { margin: 0; padding: 0; list-style: none; display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 296px), 1fr)); gap: 16px; }
+.guide .gd-req > li { max-width: none; }
+.gd-tile { display: grid; gap: 8px; align-content: start; padding: 16px; border-radius: var(--r-md); background: var(--sx-surface); box-shadow: inset 0 0 0 1px var(--sx-rule); min-width: 0; }
+.gd-tile-h { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
+.gd-code { font: 700 var(--fs-ui)/1 var(--sx-font); color: var(--sx-sunlit); padding: 8px 12px; border-radius: var(--r-sm); background: rgb(var(--c-accent) / .12); font-variant-numeric: tabular-nums; }
+.gd-kind { margin-right: auto; font-size: var(--fs-small); color: var(--sx-ink-3); }
+.gd-ok { display: inline-flex; align-items: center; gap: 8px; font-size: var(--fs-small); font-weight: 600; color: var(--sx-good); }
+.gd-ok svg { width: 20px; height: 20px; }
+.guide .guide-sec .gd-tile h3 { margin: 0; font: 700 var(--fs-body)/1.35 var(--sx-font); letter-spacing: -.01em; color: var(--sx-ink); }
+.gd-links { display: flex; flex-wrap: wrap; gap: 8px; }
+.gd-go { display: inline-flex; align-items: center; gap: 8px; min-height: 40px; padding: 8px 16px; border-radius: var(--r-sm); background: var(--sx-control); color: var(--sx-ink);
+  font-size: var(--fs-ui); font-weight: 600; line-height: 1.3; text-decoration: none; overflow-wrap: anywhere; min-width: 0; }
+.gd-go:hover { background: var(--sx-control-hover); }
+.gd-go.first { background: rgb(var(--c-known) / .16); color: var(--sx-white); box-shadow: inset 0 0 0 1px rgb(var(--c-known) / .5); }
+.gd-go.first:hover { background: rgb(var(--c-known) / .3); }
+.gd-go::after { content: '→'; color: var(--sx-known); flex: none; }
+.gd-tile details { padding: 0; }
+.gd-tile details > summary { min-height: 40px; display: inline-flex; align-items: center; color: var(--sx-known); font-size: var(--fs-small); font-weight: 600; cursor: pointer; }
+.guide .gd-tile details p { margin: 0 0 8px; font-size: var(--fs-small); line-height: 1.55; color: var(--sx-ink-2); max-width: none; }
+.gd-note { margin: 0; font-size: var(--fs-small); line-height: 1.55; color: var(--sx-ink-2); }
+.gd-dev { margin: 0; font-size: var(--fs-body); line-height: 1.9; color: var(--sx-ink-2); }
+.guide .guide-sec .gd-dev { max-width: 52em; }
+.gd-dev code { white-space: nowrap; }
+@media (max-width: 560px) { .gd-dev code { white-space: normal; overflow-wrap: anywhere; } }

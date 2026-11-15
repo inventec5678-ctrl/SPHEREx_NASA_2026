@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en" class="no-js"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Probing the Outer Solar System with SPHEREx — paper</title>
+<meta name="description" content="Parallax-guided moving-object discovery and limits on distant bodies in all-sky spectral imaging.">
+<meta name="theme-color" content="#05070c">
+<link rel="icon" href="/media/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Michroma&family=Manrope:wght@300..700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="paper.css"></head>
+<body>
+<a class="skip" href="#s1">Skip to content</a>
+<header class="topbar">
+  <a class="brand" href="/" aria-label="SPHEREx home"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="5.2" fill="currentColor"/><ellipse cx="12" cy="12" rx="10.5" ry="4" fill="none" stroke="currentColor" stroke-width="1.1" transform="rotate(-18 12 12)"/></svg><span>SPHEREX</span></a>
+  <nav class="topnav" aria-label="Site">
+    <a href="/">Home</a><a href="/#/field/cybele">Sky viewer</a><a href="/#/universe/cybele">Reconstruction</a><a href="/#/features">Features</a><a href="/#/discovery">Discovery</a><a href="paper.html" aria-current="page">Paper</a>
+    <span class="langs"><a href="paper.html" lang="en" aria-current="true">EN</a><a href="paper-zh.html" lang="zh-Hant">繁中</a></span>
+    <a class="cta" href="static/pdfs/spherex_movers_manuscript.pdf">PDF</a>
+  </nav>
+</header>
+
+<section class="masthead" aria-label="Paper title">
+  <p class="eyebrow">Paper · AJ-format manuscript (anonymised review version)</p>
+  <h1 class="display">Probing the Outer Solar System with SPHEREx: Parallax-Guided Moving-Object Discovery and Limits on Distant Bodies in All-Sky Spectral Imaging</h1>
+  <p class="byline label muted">Anonymous author(s) · 2026</p>
+  <div class="actions"><a class="cta" href="static/pdfs/spherex_movers_manuscript.pdf">Download PDF</a><a class="cta ghost" href="/">Open the explorer</a><a class="cta ghost" href="research/evidence.json">Evidence JSON</a></div>
+  <div class="stats">
+    <div class="stat brackets"><span class="v">{{v.mm_d}} au</span><span class="k">Makemake (JPL {{v.mm_jpl}})</span></div>
+    <div class="stat brackets"><span class="v">{{v.hm_d}} au</span><span class="k">Haumea (JPL {{v.hm_jpl}})</span></div>
+    <div class="stat brackets"><span class="v">{{v.d_crit}} au</span><span class="k">Inner limit of the linear-drift model</span></div>
+    <div class="stat brackets"><span class="v">{{v.sv_area}} deg²</span><span class="k">Searched along the Planet Nine path</span></div>
+  </div>
+</section>
+
+<div class="layout">
+  <nav class="rail" aria-label="Sections">
+    <div class="bar"><i></i></div>
+    <ol>
+      <li><a href="#s1">Abstract</a></li><li><a href="#s2">Introduction</a></li><li><a href="#s3">Data</a></li><li><a href="#s4">Method</a></li>
+      <li><a href="#s5">Main belt</a></li><li><a href="#s6">Distances</a></li><li><a href="#s7">Outer fringe</a></li><li><a href="#s8">Discussion</a></li>
+      <li><a href="#s9">Conclusions</a></li><li><a href="#s10">References</a></li>
+    </ol>
+  </nav>
+  <main>
+    <section id="s1" class="abstract brackets" data-reveal>
+      <p class="eyebrow">Abstract</p>
+      <p>SPHEREx observes the entire sky every six months in 102 channels between 0.75 and 5.0 μm, so successive passes view every distant body from opposite sides of Earth’s orbit. We exploit this cadence to measure distances from parallax alone, without assuming an orbit. Because SPHEREx samples wavelength with linear variable filters, we difference each exposure against references matched in wavelength pixel by pixel. Validated on known main-belt asteroids, detections reach 50% completeness at AB {{v.mag50}} per exposure, with an astrometric accuracy of {{v.a_med}}″. Fitting parallax jointly with a bounded orbital drift recovers injected bodies at 500–3000 au to a median distance error of {{v.g_med}}%, and a blind search in fields following Makemake and Haumea measures their distances as {{v.mm_d}} and {{v.hm_d}} au, within {{v.mm_err}}% and {{v.hm_err}}% of their orbits. Over a year, the linear-drift approximation holds within 8″ beyond ≈{{v.d_crit}} au. Shift-and-stack reaches AB {{v.st_m50}} beyond 400 au in uncrowded fields and AB ≈{{v.effA}} near the Galactic plane. Along {{v.sv_area}} deg² of the predicted path of Planet Nine and around a proposed IRAS/AKARI candidate, we find no distant body in single exposures and no stacked detection above the chance-alignment rate measured by relabelling the pass epochs. Within these fields, which retain a body over the year only beyond ≈{{v.d_field}} au, the data exclude, for an albedo of 0.4 and solar colours, Neptune-sized bodies at {{v.nep_b}} and Jupiter-sized bodies at {{v.jup_b}}; strong methane absorption could remove the latter exclusion.</p>
+    </section>
+
+    <section id="s2" data-reveal>
+      <h2><span class="n">01</span>Introduction</h2>
+      <p>The bodies beyond Neptune are fossils of the formation and early migration of the giant planets. The clustering of the orbits of distant detached objects such as Sedna and 2012 VP<sub>113</sub> has been interpreted as evidence for an undiscovered planet several times the mass of Earth (Batygin &amp; Brown 2016; Brown et al. 2024), while other work attributes it to observational biases. A pair of far-infrared detections by IRAS and AKARI 23 years apart has recently been proposed as a candidate (Phan et al. 2025); it has not been confirmed.</p>
+      <p>Distant bodies are recognised by their motion. Over a night, a body at hundreds of au moves only a few arcseconds, mostly by Earth’s reflex motion; over half a year, the parallax reaches hundreds of arcseconds and measures the distance directly. SPHEREx (Bock et al. 2026) provides exactly this baseline. The difficulty is that its linear variable filters give every pixel a different wavelength, and its PSF (FWHM ≈ 5″) is narrower than its 6.15″ pixels. We present differencing, classification, linking and distance measurement designed for these data, validate them on injected bodies, known asteroids and dwarf planets, and apply them along the predicted path of Planet Nine.</p>
+    </section>
+
+    <section id="s3" data-reveal>
+      <h2><span class="n">02</span>Data</h2>
+      <p>We use level-2 spectral images from the SPHEREx Quick Releases 2 and 3 distributed by NASA/IPAC IRSA, spanning 2025 May to 2026 September: three complete all-sky passes and part of a fourth. We retrieve cutouts with their variance, flags, per-pixel wavelength solution and PSF model. The PSF model is used only to inject synthetic sources; the difference images and the detection and astrometry of real sources do not depend on it. Positions of known bodies come from JPL Horizons with SPHEREx as the observer.</p>
+    </section>
+
+    <section id="s4" data-reveal>
+      <h2><span class="n">03</span>Method</h2>
+      <h3>Wavelength-matched difference imaging</h3>
+      <p>The same sky is observed at different wavelengths: across a 0.5° field the filter wavelength varies by ≈7%. For each exposure and pixel we therefore build the reference from exposures of the same detector, at least 3 h apart, that sampled the same wavelength at that pixel within 3%, and take their median. The difference is expressed as a significance,</p>
+      <span class="eq">S = (I − αR) / √( σ<sub>I</sub>² + α²σ<sub>R</sub>² + (ε α R<sub>+</sub>)² ),  ε = 0.1</span>
+      <p>The last term describes the residuals of stars that the undersampled PSF leaves after sub-pixel resampling. It is deliberately evaluated on the reference alone: with max(I, R) instead, any body absent from the reference would inflate its own noise and saturate at S ≈ 1/ε ≈ 10. Repeating an independent field with ε = 0.05, 0.10 and 0.20 gives completeness of 59.3–59.4% for the injected sources: the results are insensitive to ε.</p>
+      <h3>Synthetic sources and classification</h3>
+      <p>Synthetic movers are injected into the native images before resampling, so they pass through every step and also enter the references of other exposures. A 321,505-parameter CNN (inputs: image, reference, S and flags) is trained only on injections and artifacts. The pipeline’s MP_OUTLIER flag marks real movers but never injected ones, so it is deliberately excluded as an input to avoid a simulation shortcut.</p>
+      <h3>Distances from parallax</h3>
+      <p>For a trial distance <span class="math">d</span>, the apparent direction follows from Earth’s changing position; the body’s own motion is approximated by a linear drift on the sky, restricted to bound orbits:</p>
+      <span class="eq">|μ| ≤ √2 μ<sub>circ</sub>(d),  μ<sub>circ</sub> = 2π d<sup>−3/2</sup> rad yr<sup>−1</sup></span>
+      <p>The drift follows by linear least squares, and the distance is the trial value with the smallest residuals (1500 values when linking, 3000 for the final fit, log-spaced over 30–3000 au). At least three passes are required: with two, a drift can absorb any displacement. The linking tolerance is 8″ plus a curvature allowance for the departure of a circular orbit from a straight line (33″ over a year at 50 au, below 0.3″ beyond 229 au). Refinement may add detections but never remove a linked window. Each track also carries a residual-profile ratio — the best residual against the lowest residual at any distance differing by more than 20% — and a ratio below 3 flags a distance–drift ambiguity.</p>
+      <h3>Parallax-guided shift-and-stack</h3>
+      <p>Below the single-exposure limit, the ~100 significance images of a pass are shifted by the parallax of each of 36 trial distances (40–3000 au) and summed, after clipping each frame at ±3σ and normalising by the median absolute deviation. Peaks with S̃ ≥ 7 are linked across passes with a 4″ tolerance and must be recovered with S̃ ≥ 5.6 when re-stacked at the fitted distance. The stack compensates parallax only; the body’s own motion within a two-week pass stays below one pixel beyond 400 au, so stacked limits apply only there.</p>
+      <h3>Vetting and the rate of chance alignments</h3>
+      <p>A distant-body track must span three passes, fit with r.m.s. ≤ 4″ on a bound orbit, not be static, lie away from the edges of the distance range, and have no known small body within 30″; stacked tracks must also have consistent brightness. In crowded fields, unrelated peaks can align by chance. We estimate this rate directly by cyclically relabelling the pass epochs and repeating the linking: no real body links under the wrong epochs.</p>
+    </section>
+
+    <section id="s5" data-reveal>
+      <h2><span class="n">04</span>Main belt: completeness and astrometry</h2>
+      <p>In {{v.kc_fields}} fields never used for training, {{v.kc_n}} detections of known asteroids with V ≤ 18.5 lie among {{v.kc_bogus}} artifacts. At the operating point that rejects 99% of validation artifacts, {{v.kc_rec}}% of the known asteroids are retained while {{v.kc_fpr}}% of artifacts survive (AUROC {{v.kc_auc}}); significance alone does no better than chance ({{v.kc_snr}}). The single-exposure 50% completeness of injected sources is AB {{v.mag50}}, and AB {{v.m50_D1}}, {{v.m50_D2}}, {{v.m50_D3}}, {{v.m50_D4}}, {{v.m50_D5}} and {{v.m50_D6}} for D1–D6.</p>
+      <figure class="plate brackets"><img class="paper-fig" src="figures/aj/roc.svg" alt="Completeness against the fraction of artifacts retained" loading="lazy"><figcaption><span class="fn">Fig. 4</span><span>Completeness of known asteroids (blue) and injected sources (green) against the fraction of artifacts retained; solid after classification, dashed by significance alone, dotted the operating point.</span></figcaption></figure>
+      <p>Positions are the first moment of the positive difference-image flux in the 3×3 window at the significance peak. They agree with JPL ephemerides to a median of {{v.a_med}}″ ({{v.a_px}} pixel; {{v.a_n}} detections); a simulated pixel-phase bias is at most 0.19″, and no detector is systematically worse.</p>
+      <div class="note"><p class="eyebrow">Artifacts in D4</p><p>The false-positive fraction in D4 (2.4–3.8 μm) is about ten times that in D2, yet D4 is the deepest detector, so higher background noise does not explain it, and changing ε barely affects it. Unstable and telegraph-noise pixels of the long-cutoff H2RG detectors, and molecular bands of cool stars that defeat the wavelength matching, are plausible causes we have not yet separated.</p></div>
+    </section>
+
+    <section id="s6" data-reveal>
+      <h2><span class="n">05</span>The outer Solar System: geometric distances</h2>
+      <h3>Injected distant bodies</h3>
+      <p>Bodies at 500–3000 au and AB 15–17 on circular orbits were injected into {{v.g_fields}} fields. In fields with three passes, {{v.g3_rec}} of {{v.g3_n}} are recovered with a median distance error of {{v.g_med}}% and no false tracks; in the field with two passes none yields a distance, as expected. The single outlier was injected at 1500 au and fitted at 937 au: a nearer distance with a larger drift reproduces its three-pass displacement almost as well. A fourth pass would separate the two solutions.</p>
+      <figure class="plate brackets"><img class="paper-fig" src="figures/aj/distances.svg" alt="Distance errors of injected bodies" loading="lazy"><figcaption><span class="fn">Fig. 6</span><span>Fractional distance error of recovered injected bodies, coloured by magnitude; dotted: 2%.</span></figcaption></figure>
+      <h3>Makemake and Haumea</h3>
+      <p>A blind search of all classified detections in fields following the two dwarf planets returns one distant track each: Makemake at {{v.mm_d}} au (JPL {{v.mm_jpl}}; {{v.mm_err}}%) and Haumea at {{v.hm_d}} au (JPL {{v.hm_jpl}}; {{v.hm_err}}%). Both span three windows ({{v.mm_w}} and {{v.hm_w}} detections) with residual-profile ratios of {{v.mm_prof}} and {{v.hm_prof}}. Haumea has 25 detections in its middle window, but they lie 20–25″ from the fitted path, just beyond the refinement tolerance, and only one was retained; its distance rests mainly on windows 1 and 3 and the drift bound. The r.m.s. of both tracks ({{v.mm_rms}}″ and {{v.hm_rms}}″) reflects orbital curvature at 50 au and would fail the 4″ survey criterion, which applies only beyond 229 au.</p>
+      <figure class="plate brackets"><img class="paper-fig" src="figures/aj/dwarfs.svg" alt="Blind tracks of Makemake and Haumea" loading="lazy"><figcaption><span class="fn">Fig. 7</span><span>Blind recovery of Makemake (left) and Haumea (right).</span></figcaption></figure>
+      <h3>Validity of the linear drift, and the field of view</h3>
+      <p>Circular orbits with eight orientations, sampled at the epochs of Makemake, show that the largest three-window residual exceeds 8″ inside ≈{{v.d_crit}} au and falls below 1″ beyond 200 au, with distance bias under 1% throughout. A stricter limit comes from the field of view: the parallactic displacement between passes is ≈2/d rad, so a fixed 0.5° field retains a body over three passes only for d ≳ {{v.d_field}} au. With fields that follow the parallactic path, simulations show the linker recovering 90–100% of bodies at 35–100 au for e = 0 and 0.2 (an upper bound without other sources).</p>
+      <figure class="plate brackets"><img class="paper-fig" src="figures/aj/curvature.svg" alt="Departure of circular orbits from the linear-drift model" loading="lazy"><figcaption><span class="fn">Fig. 8</span><span>Departure of circular orbits from the parallax-plus-linear-drift model, sampled at the windows of Makemake.</span></figcaption></figure>
+    </section>
+
+    <section id="s7" data-reveal>
+      <h2><span class="n">06</span>The extreme outer fringe: stacking and the Planet Nine path</h2>
+      <p>Bodies of AB 18–20.5 at 500 and 1500 au injected into three uncrowded fields are recovered {{v.st_1819}} of {{v.st_1819n}} times at AB 18–19 and never at AB ≥ 19.5: the 50% completeness is AB ≈{{v.st_m50}}, about 2 mag deeper than single exposures, with no chance alignments. The 13% spacing of trial distances costs up to 0.43 mag (90th percentile) at 400–600 au in some passes.</p>
+      <p>We placed one 0.5° field every 1.5° along the sky path of the median orbit of Brown &amp; Batygin (2021) in region A (RA 75–105°, crossing the northern Galactic plane) and region B (RA 45–74°, near the predicted aphelion), and a 3×3 grid (region D) over the extrapolated position of the candidate of Phan et al. (2025). Only fields with three passes were kept: {{v.sv_A}} in region A (the other 18 have two passes in the data available to us), {{v.sv_B}} in B and {{v.sv_D}} in D, {{v.sv_area}} deg² in all.</p>
+      <figure class="plate brackets"><img class="paper-fig" src="figures/aj/skymap.svg" alt="Searched fields and the predicted path of Planet Nine" loading="lazy"><figcaption><span class="fn">Fig. 9</span><span>Searched fields, the sky path of the median orbit of Brown &amp; Batygin (2021) with its ±12° band, and the IRAS/AKARI candidate extrapolated to 2025.</span></figcaption></figure>
+      <p>No distant body is detected in single exposures. The stacks give {{v.sv_raw}} linked tracks, concentrated in the most crowded fields; relabelling the epochs gives {{v.nl_a}} and {{v.nl_b}} (mean {{v.nl_mean}}), a difference of {{v.nl_sig}} times the Poisson dispersion. None is considered a detection.</p>
+      <div class="table-wrap" tabindex="0" role="region" aria-label="Effective stacked limits by region"><table><thead><tr><th>Region</th><th>Fields</th><th>Stacked tracks</th><th>Relabelled</th><th>m<sub>eff</sub> (AB)</th></tr></thead><tbody>
+        <tr><td>A · Galactic plane</td><td>{{v.sv_A}}</td><td>20</td><td>16, 22</td><td>{{v.effA}} (injections)</td></tr>
+        <tr><td>B · aphelion</td><td>{{v.sv_B}}</td><td>38</td><td>39, 36</td><td>{{v.effB}}</td></tr>
+        <tr><td>D · IRAS/AKARI</td><td>{{v.sv_D}}</td><td>5</td><td>0, 2</td><td>{{v.effD}}</td></tr>
+      </tbody></table></div>
+      <p class="table-note">Region A was verified with {{v.mcA_n}} injected bodies: 50% completeness at AB {{v.mcA7}} at the nominal threshold and AB {{v.mcAs}} when the significance must exceed the largest chance track ({{v.smaxA}}); the heuristic gave an optimistic {{v.effA_heur}}. Regions B and D are not verified by injection.</p>
+    </section>
+
+    <section id="s8" data-reveal>
+      <h2><span class="n">07</span>Discussion</h2>
+      <h3>Constraints on distant bodies and on Planet Nine</h3>
+      <p>A small distant body is seen in reflected sunlight, at <span class="math">m = H + 5 log[d(d−1)]</span> with diameter <span class="math">D = 1329 km · p<sup>−1/2</sup> · 10<sup>−H/5</sup></span>. A body with a flat reflectance has solar colours and is on average {{v.solcol}} mag fainter in our data than in V (solar AB magnitudes of Willmer 2018, detectors weighted by depth), which enlarges the excluded diameters by 14%. Using the single-exposure limit beyond {{v.d_field}} au and the conservative stacked limit AB {{v.m_eff}} beyond 400 au, for p = 0.4 the data exclude Neptune-sized bodies at {{v.nep_b}} and Jupiter-sized bodies at {{v.jup_b}}; Earth-sized bodies are not constrained. At 500 au only bodies larger than ≈{{v.d500_b}},000 km would be detected.</p>
+      <figure class="plate brackets"><img class="paper-fig" src="figures/aj/radius.svg" alt="Largest undetected diameter against heliocentric distance" loading="lazy"><figcaption><span class="fn">Fig. 11</span><span>Largest undetected diameter. Dashed: single exposures (beyond {{v.d_field}} au); solid: conservative stacked limit (beyond 400 au); dotted: effective albedo reduced to 0.04 by methane, a parametric illustration.</span></figcaption></figure>
+      <p>Methane absorbs strongly at 1.7, 2.3 and 3.3 μm. If it lowers the effective near-infrared albedo to 30% or 10% of the visible value, the excluded diameters grow by 1.8 or 3.2 times, and the Jupiter-sized exclusion shrinks to {{v.jup_m30}} or vanishes. A self-luminous cold giant may instead release its internal heat through windows at 3–5 μm: the most luminous case of Fortney et al. (2016), at 50 K with methane depleted, reaches AB ≈18.8 at 3.4 μm, comparable to our stacked depth, but its flux falls in channels that make up only ≈6% of the exposures, and an all-channel stack dilutes it by ≈1.6 mag. The present search is not sensitive to it; a stack of the 3–3.5 μm channels of D4 would be.</p>
+      <p>The candidate of Phan et al. (2025) corresponds in their analysis to 500–700 au and 7–17 Earth masses. In reflected light, region D excludes only bodies larger than ≈{{v.phan500}},000 km at 500 au and ≈{{v.phan700}},000 km at 700 au, far larger than such a planet (3–6 Earth radii), so our data neither confirm nor exclude it. All limits apply to the lines of sight searched — well under 1% of the ±12° band — and do not exclude the Planet Nine hypothesis.</p>
+      <h3>Crowding and chance alignments</h3>
+      <p>The number of chance tracks grows roughly as the square of the number of stacked peaks per field (maximum-likelihood exponent 2.2), so nearly all come from the densest fields. The stacked search uses significance images, not the classifier, so classifier calibration does not enter. The rate can be reduced at the detection stage: a per-field threshold from the predicted chance rate, a requirement of peaks in at least two detectors with flux ratios consistent with reflected sunlight, and a stellar mask built from a catalogue.</p>
+      <figure class="plate brackets"><img class="paper-fig" src="figures/aj/spectral.svg" alt="Schematic of spectral vetting" loading="lazy"><figcaption><span class="fn">Fig. 12</span><span>Schematic of spectral vetting (not a fit to data): the reflectance of a distant icy body against the per-channel fluxes of a chance alignment of stellar residuals.</span></figcaption></figure>
+      <h3>Methodological scope</h3>
+      <p>Stacking compensates parallax only and applies beyond 400 au; fixed 0.5° fields retain bodies only beyond ≈{{v.d_field}} au; inside {{v.d_crit}} au linking all windows needs a Keplerian parametrisation; and the bound-orbit condition excludes interstellar objects by construction. Each of these limits is quantified in the manuscript.</p>
+    </section>
+
+    <section id="s9" data-reveal>
+      <h2><span class="n">08</span>Conclusions</h2>
+      <p>SPHEREx observes every distant Solar System body from opposite sides of Earth’s orbit within each year, which allows distances to be measured from parallax alone. Wavelength-matched difference imaging makes its linear-variable-filter imaging suitable for moving bodies; fitting parallax jointly with a bounded drift measures injected distances to {{v.g_med}}% and, in fields following them, Makemake and Haumea to {{v.mm_err}}% and {{v.hm_err}}%. Along {{v.sv_area}} deg² of the predicted path of Planet Nine there is no distant body above the rate of chance alignments. Further passes, reflectance-weighted broad-band stacking, a search of orbital motion within the stack and spectral vetting of linked tracks will extend the reach to fainter bodies, with distance, size and surface composition measured directly from all-sky near-infrared spectral imaging.</p>
+      <div class="note"><p class="eyebrow">AI disclosure</p><p>An AI assistant (Claude, Anthropic) was used to write and debug the analysis code and to draft the manuscript. All results were produced by the code described and checked by the authors, and every reference was verified against its publisher’s record.</p></div>
+      <div class="note"><p class="eyebrow">Acknowledgements</p><p>This publication makes use of data products from the Spectro-Photometer for the History of the Universe, Epoch of Reionization and Ices Explorer (SPHEREx), which is a joint project of the Jet Propulsion Laboratory and the California Institute of Technology, and is funded by the National Aeronautics and Space Administration. This work has made use of the NASA/IPAC Infrared Science Archive, which is funded by the National Aeronautics and Space Administration and operated by the California Institute of Technology: DR1 (DOI 10.26131/IRSA678) and QR3 (DOI 10.26131/IRSA662); the simulated Planet X test field uses QR2 (DOI 10.26131/IRSA652). This work has made use of data from the European Space Agency (ESA) mission Gaia, processed by the Gaia Data Processing and Analysis Consortium (DPAC), and contains data from the Canadian Space Agency&#8217;s NEOSSat mission (Open Government Licence &#8211; Canada, via CADC).</p></div>
+    </section>
+
+    <section id="s10" data-reveal>
+      <h2><span class="n">09</span>Key references</h2>
+      <ul class="refs">
+        <li>Alard, C., &amp; Lupton, R. H. 1998, ApJ, 503, 325</li>
+        <li>Batygin, K., &amp; Brown, M. E. 2016, AJ, 151, 22</li>
+        <li>Bock, J. J., Aboobaker, A. M., Adamo, J., et al. 2026, ApJ, 999, 139</li>
+        <li>Brown, M. E., &amp; Batygin, K. 2021, AJ, 162, 219</li>
+        <li>Brown, M. E., Holman, M. J., &amp; Batygin, K. 2024, AJ, 167, 146</li>
+        <li>Fortney, J. J., Marley, M. S., Laughlin, G., et al. 2016, ApJL, 824, L25</li>
+        <li>Holman, M. J., Payne, M. J., Blankley, P., et al. 2018, AJ, 156, 135</li>
+        <li>Phan, T. L., Goto, T., Yamamura, I., et al. 2025, PASA, 42, e064</li>
+        <li>Trujillo, C. A., &amp; Sheppard, S. S. 2014, Natur, 507, 471</li>
+        <li>Whidden, P. J., Kalmbach, J. B., Connolly, A. J., et al. 2019, AJ, 157, 119</li>
+        <li>Willmer, C. N. A. 2018, ApJS, 236, 47</li>
+      </ul>
+      <p class="muted">All {{v.refs_n}} references are in the PDF.</p>
+    </section>
+  </main>
+</div>
+
+<footer>
+  <span class="brand"><svg viewBox="0 0 24 24" aria-hidden="true" width="16" height="16"><circle cx="12" cy="12" r="5.2" fill="currentColor"/><ellipse cx="12" cy="12" rx="10.5" ry="4" fill="none" stroke="currentColor" stroke-width="1.1" transform="rotate(-18 12 12)"/></svg><span>SPHEREX</span></span>
+  <span>Data: NASA/IPAC IRSA · JPL Horizons</span>
+  <a href="#">Back to top ↑</a>
+</footer>
+<script src="paper.js" defer></script>
+</body></html>

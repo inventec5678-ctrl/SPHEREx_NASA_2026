@@ -1,0 +1,33 @@
+/* The sky viewer's side panel as pictures (UPGRADE_PLAN.md §9.5, "檢視器、天體頁：側欄的偵測清單加小圖").
+   Each row of the object list leads with a glyph of its track (direction; length = speed) and ends with the three
+   checks as marks; the selected object's card leads with its own chart. Tokens only (theme.css). */
+
+/* a row: glyph | name over rate | status over check marks */
+.viewer.v2 .thead.vrow { display: flex; align-items: center; gap: 12px; padding: 8px 16px 8px 8px; min-height: 56px; }
+.vrow-text { flex: 1 1 auto; display: grid; gap: 2px; min-width: 0; }
+.viewer.v2 .vrow .tname { flex: none; }
+.vrow-sub { font-size: var(--fs-small); color: var(--sx-ink-3); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; font-variant-numeric: tabular-nums; }
+.vrow-end { flex: none; display: grid; justify-items: end; gap: 8px; }
+.vglyph { display: block; flex: none; }
+.vglyph-ring { fill: rgb(var(--c-white) / .04); stroke: rgb(var(--c-white) / .12); stroke-width: 1; }
+.tcard.on .vglyph-ring { fill: rgb(var(--c-accent) / .08); stroke: rgb(var(--c-accent) / .4); }
+.vpips { display: block; }
+
+/* the selected object's chart, before its text (the panel's column is the panel's width, never the chart's) */
+.viewer.v2 .vpanel-body { grid-template-columns: minmax(0, 1fr); }
+.vdetail, .vchart { min-width: 0; }
+.vchart { margin: 8px 0; }
+.vchart .plot svg { touch-action: pan-y; }
+.vchart-cap { margin: 0; font-size: var(--fs-small); line-height: 1.45; color: var(--sx-ink-3); }
+.vdetail .plain { margin-top: 8px; }
+
+/* a loose AI candidate: its score on a bar with the linking threshold */
+.vai { display: block; margin: 8px 0 0 auto; }
+.vai-bg { fill: rgb(var(--c-white) / .1); }
+
+/* research: exposures per detector */
+.vbars { margin: 8px 0 16px; }
+
+@media (max-width: 900px) {
+  .viewer.v2 .thead.vrow { min-height: 64px; }
+}

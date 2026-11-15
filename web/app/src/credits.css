@@ -1,0 +1,13 @@
+/* #/credits and the one-line credit under pages */
+.credits { max-width: var(--sx-page); margin: 0 auto; padding: 32px var(--sx-gutter) 64px; }
+.credits h1 { font-size: var(--fs-h2); }
+.credits .lead { max-width: 70ch; }
+.cr-block { margin-top: 40px; }
+.cr-block h2 { font-size: var(--fs-h3); }
+.cr-block h3 { font-size: var(--fs-lead); margin-top: 24px; }
+.cr-block blockquote { margin: 16px 0 0; padding: 16px 20px; border-left: 3px solid var(--sx-accent); background: var(--sx-surface); border-radius: var(--r-sm); font-size: var(--fs-body); max-width: 90ch; }
+.cr-list { list-style: none; padding: 0; margin: 12px 0 0; display: grid; gap: 10px; }
+.cr-list li { display: grid; grid-template-columns: minmax(200px, 1fr) 2fr; gap: 4px 20px; font-size: var(--fs-body); }
+.cr-list li span:nth-child(3) { grid-column: 2; color: var(--sx-ink-3); }
+.credit-line { color: var(--sx-ink-3); font-size: var(--fs-small); margin-top: 12px; }
+@media (max-width: 560px) { .cr-list li { grid-template-columns: 1fr; } .cr-list li span:nth-child(3) { grid-column: 1; } }

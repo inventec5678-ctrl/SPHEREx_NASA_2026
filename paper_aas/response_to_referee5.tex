@@ -1,0 +1,82 @@
+\documentclass[11pt]{article}
+\usepackage[margin=2.3cm]{geometry}
+\usepackage{xcolor}
+\usepackage{parskip}
+\usepackage{amssymb,amsmath}
+\newcommand{\arcsec}{\ensuremath{^{\prime\prime}}}
+\newenvironment{referee}{\par\color{black!60}\itshape}{\par}
+\newcommand{\resp}{\par\noindent\textbf{Response.} }
+\begin{document}
+\begin{center}
+{\large\bfseries Response to the Referee}\\[4pt]
+\emph{Probing the Outer Solar System with SPHEREx: Parallax-Guided Moving-Object Discovery and Limits on Distant Bodies in All-Sky Spectral Imaging}
+\end{center}
+
+We thank the referee for a thorough report. Every point led to a new check, and one led to a correction of a physical statement (the thermal emission of a self-luminous Planet Nine; Major comment 5 and the minor comment on D6). The scripts that produce the new numbers are part of the analysis code. This letter is anonymised for dual-anonymous review.
+
+\section*{Major comments}
+
+\begin{referee}
+1. The vetting criterion r.m.s.\ $\le 4''$ contradicts the Makemake (10.1$''$) and Haumea (6.1$''$) tracks.
+\end{referee}
+\resp The referee is right that the manuscript did not make this distinction. The vetting criteria were applied only to the survey of Section 6. The dwarf-planet tracks are outputs of the linker, which has a tolerance of $8'' + c(d,\Delta t)$. Here $c = \tfrac12\mu_{\rm circ}^2\Delta t^2$ is the departure of a circular orbit from a straight line: $33''$ over a year at 50\,au and below $0.3''$ beyond 229\,au. The tracks were not passed through vetting, and they would fail the $4''$ criterion. This curvature allowance was used in the code but was not described in the manuscript; Section 3.4 now gives it.
+
+Section 3.6 now states that the criteria apply to the survey, where every retained body lies beyond $\approx$229\,au (Section 5.3) and curvature is negligible. It also states that a search inside $\sim$100\,au would need the same allowance in the r.m.s.\ criterion, $4'' + c(d, 1\,\mathrm{yr})$, or a Keplerian fit. Section 5.2 notes that both dwarf-planet tracks would fail the $4''$ criterion and explains why that criterion does not apply there. The survey results are unaffected. A blind search at $\lesssim$100\,au with the present vetting would indeed lose such bodies. However, the fixed survey fields could not retain them in any case (Section 5.3).
+
+\begin{referee}
+2. Distance-grid mismatch loss of the 36-value stacking grid, and the effect of eccentric orbits; why no drift grid?
+\end{referee}
+\resp The 36 trial distances are spaced geometrically between 40 and 3000\,au, by a factor of 1.13. We computed the loss for a body midway between two trial distances, stacked at the better of the two, using the actual exposure times of the survey fields. The median loss is below 0.02\,mag. The 90th percentile is 0.43\,mag at 400--600\,au, 0.20\,mag at 600--1000\,au and 0.05\,mag beyond 1000\,au, and the worst cases occur in passes spanning more than three weeks. The injected bodies at 500 and 1500\,au lie between grid points and include this loss in part. The grid is therefore adequate beyond $\sim$1000\,au but too coarse at 400--600\,au for some passes. We state this in Section 3.5 and do not claim otherwise. We could not rerun the survey with a finer grid for this revision.
+
+For eccentric orbits the perihelion speed is $\sqrt{1+e}$ times the circular value. The trailing loss at 400\,au rises from 0.19\,mag (circular) to 0.24 and 0.29\,mag for $e = 0.3$ and 0.6, and at 500\,au from 0.10 to 0.13 and 0.15\,mag. These values are now in Section 3.5. A drift grid multiplies the cost of the search by the number of drift vectors. It is needed mainly inside 400\,au, where we quote no stacked limit. We note it, together with a finer distance grid, as the natural extension.
+
+\begin{referee}
+3. Sensitivity to the global $\varepsilon = 0.1$, and whether the D4 excess reflects residuals beyond $\varepsilon$.
+\end{referee}
+\resp We performed the requested test (Section 3.1). We injected 150 synthetic movers of AB 15--18.5 into a $0.3^\circ$ field never used for training or calibration (339 exposures). We then repeated the detection and classification with $\varepsilon = 0.05$, 0.10 and 0.20, with the classifier and its threshold fixed. The completeness of the 5210 injected detections is 59.3\%, 59.4\% and 59.4\%. The number of other sources passing the classifier is 0.43, 0.40 and 0.39 per exposure; these include real asteroids in this ecliptic field, so they bound the artifact rate from above. In D4 this rate falls only from 1.05 to 0.95 per exposure and remains about five times that of D2 at every $\varepsilon$ (Section 7.2). The D4 excess is therefore not caused by the choice of $\varepsilon$. This test uses a single field of moderate stellar density; we have not repeated it in a crowded field.
+
+\begin{referee}
+4. Does the classifier's over-confidence at intermediate probabilities cause the Region A tracks? Effect of missing source shot noise.
+\end{referee}
+\resp No. The stacked search operates on the significance images and does not use the classifier, so the classifier's calibration does not enter the chance tracks of Region A. Section 7.3 now states this. On shot noise, Section 7.5 now adds that the noise near the detection limit is dominated by the zodiacal background, so the missing shot noise of the source changes its significance little. We also state that we have not injected sources with their own shot noise to confirm that the classifier treats them identically at AB 17--17.5.
+
+\begin{referee}
+5. Explicit limits for the Phan et al.\ (2025) candidate; why only three fields in Region A?
+\end{referee}
+\resp Section 7.4 now has a paragraph on the candidate. In their analysis, its motion corresponds to 500--700\,au and 7--17\,$M_\oplus$. Region D reaches AB $\approx$18.6 stacked and 17.3 in single exposures. In reflected light and for $p = 0.4$, this excludes only bodies larger than $\approx$100{,}000\,km at 500\,au and $\approx$196{,}000\,km at 700\,au. That is far larger than a 7--17\,$M_\oplus$ planet, whose radius is about 3--6\,$R_\oplus$ (Fortney et al.\ 2016). Its intrinsic emission is not tested either (see the next paragraph). We therefore state explicitly that our data neither confirm nor exclude the candidate. We prefer this to an exclusion statement that the data do not support.
+
+In Region A, the remaining 18 fields ($\alpha \ge 79.5^\circ$) have only two passes in the Quick Release data available to us, so they could not be used for a three-pass measurement. This is now stated in Section 6.2.
+
+\section*{Minor comments}
+
+\begin{referee}
+QR2/QR3 PSF.
+\end{referee}
+\resp As stated in Section 2.1, the PSF model is used only to inject synthetic sources. The detection and astrometry of real sources do not use it. The QR3 astrometric residuals ($0.87''$, 10 detections) and the QR2 residuals ($0.68''$, 68 detections) are consistent within the small sample. We have not compared the QR2 and QR3 PSFs directly.
+
+\begin{referee}
+Definition of $\sigma_R^2$.
+\end{referee}
+\resp $\overline{\sigma_j^2}$ is the mean of the pixel variances of the references, as in the code. Section 3.1 now states this. It also notes that $\pi/2$ is the large-$n$ limit for Gaussian noise; for the typical $n = 8$ the exact factor is 1.35, so the approximation slightly overestimates the reference variance and is conservative.
+
+\begin{referee}
+Derivation of $\mu_{\rm circ}$ and the conversion factor.
+\end{referee}
+\resp Added after equation 5: $\mu_{\rm circ} = 2\pi/P$ with $P = d^{3/2}$\,yr (Kepler's third law), converted to arcseconds by the factor 206{,}265.
+
+\begin{referee}
+Haumea has a single detection in window 2.
+\end{referee}
+\resp Haumea is detected in window 2. Twenty-five classified detections lie 20--25$''$ from the fitted path, just beyond the refinement tolerance at that epoch ($\approx 19''$). This offset is the orbital curvature discussed in Section 5.3, and only one detection was retained. The middle window therefore carries the weight of one detection, and the distance rests mainly on windows 1 and 3 together with the drift bound. Section 5.2 now says so.
+
+\begin{referee}
+Thermal emission in D6 from a self-luminous Planet Nine.
+\end{referee}
+\resp The referee is correct, and our statement that thermal emission is negligible below 5\,$\mu$m was wrong for a self-luminous giant planet. Section 7.4 now has a paragraph based on Fortney et al.\ (2016). In their models the intrinsic emission emerges through opacity windows at 3--5\,$\mu$m and dominates at $L'$ and longer wavelengths. For 40\,K the predicted brightness at 622\,au is $W1 \ge 20.5$ and $W2 \ge 22.8$, far below our limits. Their most luminous case, at 50\,K with methane depleted, reaches $W1 = 16.1$ (AB $\approx$18.8 with the WISE offset of 2.70\,mag), with flux concentrated at 3--3.5\,$\mu$m. At 4.6\,$\mu$m, the band nearest D6, the same case gives $W2 = 17.2$ (AB $\approx$20.5), so D6 is not the most favourable channel. The 3--3.5\,$\mu$m channels are only $\approx$6\% of the exposures of a pass, so our all-channel stacks dilute such a signal by $\approx$1.6\,mag and are not sensitive to it. A stack restricted to those channels would be, and because intrinsic emission fades only as $\Delta^{-2}$, it would constrain the intrinsic temperature almost independently of distance. We did not find magnitudes at 3--5\,$\mu$m in the abstract of Linder \& Mordasini (2016) and do not quote any from it.
+
+\begin{referee}
+Figures 6 and 12; typographical corrections.
+\end{referee}
+\resp The caption of Figure 6 now explains that a fourth pass, at a further parallactic phase, would distinguish the two solutions of the outlier. For Figure 12 we state that spectral vetting has not been implemented and must become an automatic step before the search is extended to the full sky. We fixed the sentence beginning ``and they reach'' in the Introduction. ``Ten times'' now reads ``approximately a factor of ten''.
+
+\end{document}

@@ -1,0 +1,69 @@
+\documentclass[11pt]{article}
+\usepackage[margin=2.3cm]{geometry}
+\usepackage{xcolor}
+\usepackage{parskip}
+\usepackage{amssymb}
+\newenvironment{referee}{\par\color{black!60}\itshape}{\par}
+\newcommand{\resp}{\par\noindent\textbf{Response.} }
+\begin{document}
+
+\begin{center}
+{\large\bfseries Response to the Referee (second report)}\\[4pt]
+\emph{Probing the Outer Solar System with SPHEREx: Parallax-Guided Moving-Object Discovery and Limits on Distant Bodies in All-Sky Spectral Imaging}
+\end{center}
+
+We thank the referee for a second careful report. In answering the comment on completeness at 30--72\,au we found a limitation that is more restrictive than the one the referee raised, and that changes the size limits. We describe it first, then respond point by point. This manuscript is submitted for dual-anonymous review, and this letter has been anonymised accordingly.
+
+\paragraph{Summary of substantive changes.}
+\begin{enumerate}
+\item \emph{Field retention.} The parallactic displacement between passes half a year apart is $\approx 2/d$\,rad. A body therefore stays inside a fixed $0.5^\circ$ field in all three passes only for $d \gtrsim 229$\,au. The survey fields along the Planet Nine path are fixed, so the survey constrains only $d \gtrsim 229$\,au. The previous version applied the single-exposure limit from 30\,au outward; this was incorrect.
+\item \emph{Effective stacked limits for crowded fields.} The stacked limit is now replaced, for each region, by the magnitude at which a body would outshine the most significant chance track: AB 18.4 (region A), 18.6 (B) and 18.6 (D), against 19.2 in uncrowded fields. The size limits use the most conservative value, AB 18.4.
+\item \emph{Size limits recomputed.} For $p = 0.4$, the data now exclude Neptune-sized bodies at 229--261\,au and Jupiter-sized bodies at 229--570\,au. Earth-sized bodies are no longer constrained at any distance (previously within $\approx$133\,au), and for $p = 0.08$ only Jupiter-sized bodies are excluded (229--293\,au). The abstract, Sections 5.3, 6.3, 7.4 and 7.5, Table 7, Figure 11 and the Conclusions have been revised accordingly.
+\item \emph{Authorship and anonymity.} We have opted for dual-anonymous review. The manuscript is compiled with the AASTeX \texttt{anonymous} option, which suppresses the author list, affiliations and acknowledgments; the text contains no self-identifying references or links. The complete author information has been entered in the submission system.
+\end{enumerate}
+
+\section*{Major comments}
+
+\begin{referee}
+1. Author and affiliation placeholders must be completed.
+\end{referee}
+\resp The author block is complete in the version held by the editorial office. Because we request dual-anonymous review, the reviewed PDF shows ``Anonymous author(s)''.
+
+\begin{referee}
+2. The stacked limit in region A: please state the effective limit there and propagate it to Section 6.3 and Figure 11.
+\end{referee}
+\resp We now define an effective limit $m_{\rm eff} = m_{50} - 2.5\log_{10}(\widetilde{S}_{\max}/7)$, where $m_{50} = 19.2$ is the uncrowded stacked limit, $\widetilde{S}_{\max}$ the largest stacked significance of any chance track in the region, and 7 the stacking threshold. A real body would be distinguishable from chance tracks only above this significance. The largest chance-track significances are 14.1 (region A), 12.7 (B) and 11.9 (D), giving $m_{\rm eff} \approx 18.4$, 18.6 and 18.6. These values are given in Section 6.3 and in a new column of Table 7, and Figure 11 and all size limits now use AB 18.4. This is a conservative definition, since a body brighter than the chance tracks could still be missed for other reasons; we have not measured the completeness in crowded fields by injection.
+
+\begin{referee}
+3. Methane absorption: please quantify its effect on the excluded diameters.
+\end{referee}
+\resp At fixed magnitude the excluded diameter scales as $D \propto p_{\rm eff}^{-1/2}$, with $p_{\rm eff}$ the geometric albedo averaged over the channels used. If methane reduces the effective near-infrared albedo to 30\% or 10\% of its visible value, the excluded diameters grow by factors of 1.8 or 3.2. If only the pseudo-window channels (about a third of the 102) carry flux, the stack loses $\approx$1.2\,mag of depth and the diameters grow by a factor of 1.7. At $p = 0.4$, the Jupiter-sized exclusion would then shrink towards 229\,au or vanish. Section 7.4 now gives these factors and states that the limits of Figure 11, which assume a flat reflectance, are lower bounds on the diameter of an undetected methane-rich planet. A definite correction requires model reflectance spectra of cold giant planets (e.g.\ Fortney et al.\ 2016; Linder \& Mordasini 2016) integrated over the SPHEREx bandpasses. We have not done this and do not quote a number from those papers.
+
+\begin{referee}
+4. Completeness at 30--72\,au, given that the linear drift is inaccurate there.
+\end{referee}
+\resp As noted above, the field of view is the stronger limit. In the fixed fields of the survey, the completeness for linking three passes is effectively zero inside $\approx$229\,au, whatever the orbital model, because the body leaves the field between passes. The Makemake and Haumea tests used fields centred on each body in each window; they test the distance measurement, not the completeness of a fixed-field search, and we now say so in Section 5.3. Inside $\approx$72\,au the linear drift also fails to link all windows, as shown in Figure 8. A search at these distances would need the full sky coverage of each pass, which SPHEREx provides, or fields placed along trial parallactic paths, together with a Keplerian parametrisation. Section 7.5 lists both limits.
+
+\section*{Minor comments}
+
+\begin{referee}
+After equation 2, emphasise that the systematic term protects only against sources present in the reference.
+\end{referee}
+\resp Added (Section 3.1): ``The systematic term is deliberately asymmetric: it is evaluated on the reference alone, so that it protects against residuals of sources already present at the reference epochs, but grants no protection to flux that appears only in $I$.''
+
+\begin{referee}
+Table 2: why is the completeness at $V < 15$ (94.6\%) lower than at $V = 15$--16 (99.3\%)?
+\end{referee}
+\resp The 95\% intervals overlap (88.7--97.5\% and 96.0--99.9\%), so the difference is not significant with 111 and 136 detections. Section 4 now notes the difference and a likely cause: the cores of the brightest asteroids approach the non-linear regime and are partly flagged, so that the flag channel of the classifier input resembles that of saturated stellar residuals. We have not inspected the six missed detections individually and present this as a hypothesis.
+
+\begin{referee}
+Keep the epoch-relabelling test prominent.
+\end{referee}
+\resp It is now mentioned in the abstract and the Conclusions as the basis for the statement that no stacked track exceeds the chance-alignment rate, in addition to Sections 3.6 and 6.2 and Figure 10.
+
+\begin{referee}
+The AI disclosure is acceptable.
+\end{referee}
+\resp We thank the referee. The statement is unchanged.
+
+\end{document}

@@ -1,0 +1,99 @@
+\documentclass[11pt]{article}
+\usepackage[margin=2.3cm]{geometry}
+\usepackage{xcolor}
+\usepackage{parskip}
+\usepackage{amssymb}
+\newenvironment{referee}{\par\color{black!60}\itshape}{\par}
+\newcommand{\resp}{\par\noindent\textbf{Response.} }
+\begin{document}
+
+\begin{center}
+{\large\bfseries Response to the Referee}\\[4pt]
+\emph{Probing the Outer Solar System with SPHEREx: Parallax-Guided Moving-Object Discovery and Limits on Distant Bodies in All-Sky Spectral Imaging}
+\end{center}
+
+We thank the referee for a careful and constructive report. Addressing it led us to new analyses, to the correction of a defect in the track-refinement step, and to two corrections of statements in the original manuscript. We list them first, then respond point by point. Changes in the manuscript are described with their section numbers.
+
+\paragraph{Summary of substantive changes.}
+\begin{enumerate}
+\item \emph{Track refinement no longer removes a linked observing window} (Major comment 1). With this correction, the blind tracks of Makemake and Haumea span all three windows, and their distances are 52.79 and 49.87\,au (JPL: 52.72 and 49.82\,au; errors 0.13\% and 0.11\%), compared with 52.71 and 49.49\,au in the previous version.
+\item \emph{Validity range of the stacked search corrected.} The previous version stated that parallax-only stacking applies beyond $\sim$150\,au. This was incorrect: at 150\,au the orbital motion within a two-week pass is $\approx$4 pixels. Requiring less than one pixel gives $d \gtrsim 400$\,au, which is the range verified by our injections (500 and 1500\,au). All stacked limits are now restricted to $d \ge 400$\,au.
+\item \emph{Size limits recomputed accordingly.} The single-exposure limit is applied at all distances and the stacked limit only beyond 400\,au. For $p = 0.4$ the data exclude Earth-sized bodies within $\approx$133\,au (previously 205\,au), Neptune-sized bodies within $\approx$261\,au (previously 404\,au), and Jupiter-sized bodies within $\approx$679\,au (new).
+\item \emph{The interpretation of the D4 false positives was revised} in light of the per-detector depths (Major comment 3): D4 is the deepest detector, so a higher background noise cannot explain its excess.
+\item The reference list has been expanded from 20 to 66 entries, each verified against the publisher's record.
+\end{enumerate}
+
+\section*{Major comments}
+
+\begin{referee}
+1. Loss of the middle observing window in the blind dwarf-planet tracks. If the method requires at least three passes to break the degeneracy between parallax and orbital drift, but the blind tracks effectively used only two windows at nearly the same parallactic phase, how was the degeneracy broken and the uniqueness of the solution ensured? In a search for unknown bodies, how are false links between windows 1 and 3 avoided when the middle pass is discarded?
+\end{referee}
+\resp The referee identified a real defect. We traced the history of the two tracks through the pipeline. At the \emph{linking} stage, both bodies were linked across all three windows: the linker returned partial tracks of Makemake at 52.79--52.87\,au and of Haumea at 49.95\,au, each containing groups from the first, second and third windows. The three-window requirement was therefore satisfied when the tracks were formed. The middle window was lost only in the subsequent \emph{refinement}, which refits all detections and re-selects those within the tolerance of the new path. At 50\,au the middle-window detections lie 10--30$''$ from a parallax-plus-linear-drift path fitted to all windows, because of orbital curvature (Section 5.3), and the refinement discarded them.
+
+We have corrected the refinement so that it may add detections but may not remove a linked window (Section 3.4). The blind tracks now contain 27/18/29 (Makemake) and 36/1/38 (Haumea) detections in the three windows, with distances of 52.79\,au (0.13\%) and 49.87\,au (0.11\%). We note in the text that the middle window of Haumea contributes a single detection. The correction does not change any other test: the single-body fields, a synthetic field with twelve distant bodies (all twelve recovered, no false tracks) and the Planet X injection are unaffected.
+
+To address uniqueness directly, we now compute for every track the residual as a function of trial distance, and record the ratio between the best residual and the lowest residual at any distance differing by more than 20\%. For the dwarf-planet tracks this ratio is 57 (Makemake) and 26 (Haumea): the solution is sharply unimodal (Sections 3.4 and 5.2). Regarding false links between two windows a year apart, a track must be formed from groups in three windows that lie on a single parallax-plus-drift path with a bound drift, and the refinement can no longer reduce it to two windows. A coincidence of unrelated sources in two windows therefore cannot form a track. We also verified that the distances are robust: fitting the three-window detections changes them by less than 0.7\% relative to the earlier two-window fits.
+
+\begin{referee}
+2. Chance alignments in shift-and-stack near the Galactic plane. In region A there are $\sim$20 chance tracks per 0.75\,deg$^2$, so position and brightness consistency are nearly ineffective there. Are there spatial or spectral priors that could suppress false signals at the detection stage rather than after linking?
+\end{referee}
+\resp We agree, and have quantified the dependence on stellar density. The number of chance tracks obtained with relabelled epochs scales approximately as the square of the number of stacked peaks per field (Poisson maximum-likelihood exponent 2.2 over the 32 fields). Fields with fewer than 150 stacked peaks yield 5 tracks with the true epochs and 4.0 with relabelled ones, so nearly all chance alignments arise in the densest fields (Section 7.3). Because the rate scales with peak density, it can be controlled at the detection stage. Section 7.3 now discusses three measures:
+\begin{enumerate}
+\item a stacking threshold set per field from the predicted chance rate;
+\item a chromatic-coincidence requirement: since SPHEREx observes each field at many wavelengths within a pass, stacks can be formed per detector and a peak required in at least two detectors with flux ratios consistent with reflected sunlight, which stellar residuals do not satisfy;
+\item a stellar mask built from a catalogue rather than from the median image.
+\end{enumerate}
+The spectral vetting of linked tracks (Section 7.6) complements these at a later stage. We have not yet implemented these measures; the manuscript presents them as the way forward and does not claim results from them.
+
+\begin{referee}
+3. False-positive rate of D4--D6 and its effect on completeness. Please provide the detection limits by detector. If the thermal background rises steeply, the S/N for a given flux should fall; if the completeness is unchanged, does this indicate a colour or selection bias in the known-asteroid sample?
+\end{referee}
+\resp Table 3 now lists the single-exposure 50\% completeness magnitude of injected sources for each detector: AB 17.5, 17.4, 17.6, 17.8, 16.7 and 16.4 for D1--D6. This changed our interpretation. The thermal background indeed reduces the depth, but in D5 and D6, not in D4, which is the deepest detector. The excess false positives in D4 are therefore not a consequence of higher background noise, which the noise model already includes, but of non-Gaussian features that the variance does not describe. We now attribute them, as hypotheses to be tested, to unstable and telegraph-noise pixels in the long-wavelength-cutoff detectors and to stellar spectral structure that limits the wavelength matching (Section 7.2), and we have removed the previous suggestion that the thermal background is the main driver.
+
+The referee is right that the known-asteroid completeness does not probe the depth: the sample ($V \le 18.5$) is dominated by objects brighter than the limit of every detector. It therefore measures the efficiency of classification, not the depth, and we now state this explicitly in Section 4. The depth by detector is given by the injected sources.
+
+\begin{referee}
+4. Using the QR2 PSF for QR3 exposures. Given the undersampled PSF and the sensitivity of equation (2) to stellar-core residuals, does the substitution introduce position-dependent or time-variable errors? Please quantify.
+\end{referee}
+\resp The PSF model enters only the injection of synthetic sources; the difference images, the noise model of equation (2), the detection of real sources and their astrometry do not use it. The systematic term $\varepsilon$ describes the empirical residuals of real stars and is independent of the PSF model. The substitution can therefore affect only the shape of injected sources in QR3 exposures. In the three fields used for astrometric validation, QR3 contributes 110 of 1113 exposures. Positions of known asteroids in QR3 exposures agree with the ephemerides to a median of $0.87''$ (10 detections), compared with $0.68''$ (68 detections) in QR2 exposures, consistent within the small sample. This is now stated in Section 2.1.
+
+\section*{Minor comments}
+
+\begin{referee}
+Equation (2): if a faint residual or variable star is present in $I$ but not in $R$, does the systematic term underestimate its noise and introduce false positives?
+\end{referee}
+\resp Yes; such a source is assigned only the systematic noise of its fainter reference flux. Because it does not move, it is removed by the requirement of motion within a pass and by the test for static positions across passes. Section 3.1 now states this.
+
+\begin{referee}
+Equation (5): does the bound on the drift include the sky-plane projection of the motion for arbitrary geometry?
+\end{referee}
+\resp The bound refers to the heliocentric velocity. Its projection on the sky can only be smaller, and the conversion from heliocentric to geocentric angular rate enlarges it by at most $d/(d-1)$, or 2\% at 50\,au, which the factor $\sqrt{2}$ easily accommodates (Section 3.4).
+
+\begin{referee}
+Section 5.1: the 38\% outlier indicates multimodality. Is there a diagnostic for secondary minima in the grid search?
+\end{referee}
+\resp The outlier was injected at 1500\,au with a drift of $22''$\,yr$^{-1}$ and fitted at 937\,au with a drift of $64''$\,yr$^{-1}$: a nearer distance with a larger drift reproduces its three-pass displacement almost as well. We now give these values in Section 5.1, and every track carries the residual-profile diagnostic described under Major comment 1 (Section 3.4). The injection grid was computed before this diagnostic was introduced and has not been rerun; we therefore do not report the diagnostic value for this particular body.
+
+\begin{referee}
+Eris and the lower distance limit of parallax-only stacking: please state the theoretical cutoff.
+\end{referee}
+\resp See summary item 2. The orbital motion within a pass of duration $T$ is $\mu_{\rm circ}(d)\,T$. For $T = 2$ weeks it is below one pixel for $d \gtrsim 400$\,au and below two pixels for $d \gtrsim 250$\,au. Sections 3.5, 6.1, 6.3 and 7.5 now state that the stacked search is valid beyond $\approx 400$\,au, and the earlier figure of 150\,au has been removed.
+
+\begin{referee}
+Table 7, region D: does the $3\times3$ grid account for the uncertainty of the extrapolated motion?
+\end{referee}
+\resp The grid spans $\pm0.75^\circ$ around the extrapolated position. This covers the 33--55$'$ of motion between 2006 and 2024 estimated by Phan et al.\ (2025) along the direction of motion, as well as the uncertainty of a linear extrapolation over 19 years (Section 6.2).
+
+\begin{referee}
+Temperature scaling: is the calibration maintained on the test fields?
+\end{referee}
+\resp We added a reliability diagram for the test fields (Appendix A, Figure 14). 97.6\% of sources lie in the lowest and highest probability bins, where the calibration is good, and the expected calibration error is 0.015. In the intermediate range ($0.1 < p < 0.9$) the probabilities are overconfident: their mean is 0.37, while the fraction of injected sources is 0.06. Part of this is expected, because real moving objects in the test fields count as negatives in this comparison; part reflects a different mixture of artifacts from that of the validation fields. The analysis uses the probabilities only through a threshold fixed at a given artifact acceptance, so the results are unaffected. We state, however, that intermediate probabilities should not be interpreted as calibrated in new fields.
+
+\section*{Editorial comments}
+\begin{itemize}
+\item \emph{Units.} Arcsecond values are now typeset with the AASTeX macro \texttt{\textbackslash arcsec} throughout.
+\item \emph{Preprints.} The SPHEREx mission paper is now cited in its published form (Bock et al.\ 2026, ApJ, 999, 139), and Phan et al.\ (2025) with its PASA volume and article number (42, e064).
+\item \emph{Affiliation.} The author list and affiliations will be completed before resubmission.
+\end{itemize}
+
+\end{document}

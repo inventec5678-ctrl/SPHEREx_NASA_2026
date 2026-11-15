@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SPHEREx Sky Change Explorer</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="top">
+  <div class="brand">
+    <span class="logo" aria-hidden="true"></span>
+    <div>
+      <h1>SPHEREx Sky Change Explorer</h1>
+      <p class="sub">See how the infrared sky changes over time and help an AI find things that move.</p>
+    </div>
+  </div>
+  <div class="pickers">
+    <label class="sr" for="fieldSel">Sky field</label>
+    <select id="fieldSel"></select>
+    <form id="jobForm" class="job" autocomplete="off">
+      <input id="raIn" inputmode="decimal" placeholder="RA°" aria-label="Right ascension in degrees">
+      <input id="decIn" inputmode="decimal" placeholder="Dec°" aria-label="Declination in degrees">
+      <button type="submit" title="Analyse a new 0.3° patch of sky">Explore</button>
+    </form>
+  </div>
+</header>
+
+<div id="jobBox" class="jobbox" hidden>
+  <div class="jobhead"><strong id="jobTitle">Analysing…</strong><button id="jobClose" class="ghost" aria-label="Hide">×</button></div>
+  <div class="bar"><div id="jobBar"></div></div>
+  <pre id="jobLog"></pre>
+</div>
+
+<main>
+  <section class="viewer">
+    <div class="fieldinfo">
+      <div>
+        <h2 id="fieldName">Loading…</h2>
+        <p id="fieldDesc" class="muted"></p>
+      </div>
+      <div id="fieldStats" class="stats"></div>
+    </div>
+
+    <div class="stage" id="stage">
+      <canvas id="sky" width="586" height="586"></canvas>
+      <canvas id="overlay" width="586" height="586"></canvas>
+      <div class="hud">
+        <span id="hudTime"></span>
+        <span id="hudBand"></span>
+      </div>
+      <div class="cursor" id="cursorInfo"></div>
+      <div id="trackBanner" class="banner" hidden>
+        <span id="trackBannerText"></span>
+        <button id="trackClear" class="ghost">Show whole field</button>
+      </div>
+    </div>
+
+    <div class="controls">
+      <button id="playBtn" class="play" aria-label="Play">▶</button>
+      <button id="prevBtn" class="ghost" aria-label="Previous frame">⟨</button>
+      <button id="nextBtn" class="ghost" aria-label="Next frame">⟩</button>
+      <input id="frameSlider" type="range" min="0" max="0" value="0" aria-label="Frame">
+      <span id="frameLabel" class="muted mono"></span>
+    </div>
+    <canvas id="timeline" height="38" aria-label="Observation timeline"></canvas>
+
+    <div class="toolbar">
+      <div class="seg" role="group" aria-label="View mode">
+        <button data-mode="sky" class="on" title="Calibrated SPHEREx image">Sky</button>
+        <button data-mode="change" title="This image minus a wavelength-matched reference: anything that changed lights up">Change</button>
+      </div>
+      <div class="dets" id="detChips" role="group" aria-label="Detectors (wavelength bands)"></div>
+      <div class="toggles">
+        <label><input type="checkbox" id="showCands" checked> AI detections</label>
+        <label><input type="checkbox" id="showTracks" checked> Tracks</label>
+        <label><input type="checkbox" id="showKnown" checked> Known objects</label>
+        <label class="speed">Speed <input type="range" id="speed" min="1" max="12" value="5"></label>
+      </div>
+    </div>
+  </section>
+
+  <aside class="side">
+    <nav class="tabs" role="tablist">
+      <button role="tab" data-tab="movers" class="on">Moving objects</button>
+      <button role="tab" data-tab="planetx">Planet X</button>
+      <button role="tab" data-tab="how">How it works</button>
+    </nav>
+
+    <div class="tab" id="tab-movers">
+      <div class="filterrow">
+        <label><input type="checkbox" id="onlyUnknown"> Unknown only</label>
+        <span id="trackCount" class="muted"></span>
+      </div>
+      <ol id="trackList" class="tracks"></ol>
+      <p id="noTracks" class="muted" hidden>No linked moving objects in this field yet.</p>
+    </div>
+
+    <div class="tab" id="tab-planetx" hidden>
+      <h3>Why SPHEREx can catch a distant planet</h3>
+      <p>SPHEREx images the whole sky every six months, from opposite sides of Earth's orbit. Anything far away
+        but inside the Solar System appears to <em>shift</em> between those visits: that is parallax. The farther
+        the object, the smaller the shift, so the size of the shift tells us the distance.</p>
+      <div class="calc">
+        <label for="dSlider">Distance <strong id="dVal">400</strong> AU</label>
+        <input type="range" id="dSlider" min="30" max="1500" value="400">
+        <p>Shift between visits six months apart: up to <strong id="pVal"></strong> arcsec
+          (≈ <strong id="pxVal"></strong> SPHEREx pixels).</p>
+        <canvas id="parallaxPlot" width="320" height="150"></canvas>
+      </div>
+      <h3>Distant-body candidates in this field</h3>
+      <ol id="distantList" class="tracks"></ol>
+      <p id="noDistant" class="muted">None in this field. Detections that match one distance across survey
+        passes would appear here.</p>
+      <div id="simBox" class="simbox" hidden></div>
+    </div>
+
+    <div class="tab" id="tab-how" hidden>
+      <ol class="steps">
+        <li><strong>Fetch.</strong> Every SPHEREx image covering this patch (all survey passes since May 2025) is
+          requested from NASA/IPAC IRSA as a small cutout.</li>
+        <li><strong>Align.</strong> Images are resampled onto one sky grid. SPHEREx's filter changes wavelength
+          across the detector, so each pixel keeps its own wavelength.</li>
+        <li><strong>Compare.</strong> Each image is compared with a reference built from images of the same
+          detector, at the same wavelength (within 3%, pixel by pixel), taken at least 3 hours apart.
+          Moving things have left by then; stars cancel.</li>
+        <li><strong>Detect.</strong> Anything brighter than expected by 5 sigma becomes a candidate.</li>
+        <li><strong>AI check.</strong> A small CNN, trained only on simulated movers and real artifacts,
+          looks at 4-channel cutouts (image, reference, change, catalogue/ghost flags) and scores each candidate as
+          a real point source or an artifact. SPHEREx's own pipeline "outlier" flag is shown separately as an
+          independent hint.</li>
+        <li><strong>Link.</strong> Confident detections are joined into straight-line tracks within a pass
+          (asteroids), or fitted with Earth's parallax across passes (distant bodies).</li>
+        <li><strong>Check.</strong> Tracks are compared with every known asteroid and comet (JPL). What is left is
+          for you to inspect.</li>
+      </ol>
+      <h3>How well does it work?</h3>
+      <div id="metricBox" class="metrics muted">Loading metrics…</div>
+      <figure><img id="rocImg" alt="ROC curves of the CNN versus S/N alone" loading="lazy"></figure>
+      <figure><img id="recImg" alt="Injection-recovery completeness" loading="lazy"></figure>
+      <p class="muted small">Data: SPHEREx Quick Release spectral images (NASA/IPAC IRSA). Known objects: JPL
+        Small-Body Identification API. This is a hackathon prototype, not an official NASA product.</p>
+    </div>
+  </aside>
+</main>
+
+<template id="trackTpl">
+  <li class="track">
+    <button class="trk">
+      <span class="badge"></span>
+      <span class="title"></span>
+      <span class="meta muted"></span>
+      <span class="strip"></span>
+    </button>
+    <div class="vote" hidden>
+      <span class="muted">Does this look like a real moving object?</span>
+      <button data-v="real">Real</button><button data-v="artifact">Artifact</button><button data-v="unsure">Not sure</button>
+      <span class="tally muted"></span>
+    </div>
+  </li>
+</template>
+
+<script src="app.js"></script>
+</body>
+</html>

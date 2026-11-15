@@ -1,0 +1,48 @@
+# environments and caches
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.taste-skill/
+node_modules/
+*.tmp
+
+# downloaded / generated data (rebuilt by the pipeline)
+cache/
+var/
+logs/
+/data/
+web/data/
+outputs/*
+# ... except the small validation results the guide's charts are drawn from (/api/validation)
+!outputs/pm_validation.json
+!outputs/xepoch_validation.json
+!outputs/var_search.json
+!outputs/var_targets.json
+scratch/
+scratch*
+shots/
+demo/
+
+# frontend build products (see web/app/.gitignore); public/media (4 MB: hero, all-sky map, demo videos, feature
+# screenshots) is kept, so a clone builds the whole site
+dist/
+web/app/public/paper/static/pdfs/
+
+# training artefacts (the released model rb_cnn.pt and its metrics are kept)
+models/rb_cnn.train.pt
+models/test_scores.npz
+
+# manuscripts, videos and submission bundles (built from paper_tex / paper_aas and scripts/demo_*.py)
+*.pdf
+*.mp4
+*.zip
+
+# deployment helper with private cloud details
+sync.sh
+.claude/
+submission/
+llm/index/
+llm/models/
+llm/data/

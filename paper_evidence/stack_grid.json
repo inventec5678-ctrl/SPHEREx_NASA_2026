@@ -1,0 +1,338 @@
+{
+ "fields": [
+  "ecl180+00",
+  "ecl060+00",
+  "ecl315-12"
+ ],
+ "d_grid": [
+  150.0,
+  500.0,
+  1500.0
+ ],
+ "mag_grid": [
+  18.0,
+  18.5,
+  19.0,
+  19.5,
+  20.0,
+  20.5
+ ],
+ "table": [
+  {
+   "mag": 18.0,
+   "n": 6,
+   "recovered": 4,
+   "median_d_err_pct": 0.195
+  },
+  {
+   "mag": 18.5,
+   "n": 6,
+   "recovered": 5,
+   "median_d_err_pct": 0.68
+  },
+  {
+   "mag": 19.0,
+   "n": 6,
+   "recovered": 5,
+   "median_d_err_pct": 0.52
+  },
+  {
+   "mag": 19.5,
+   "n": 6,
+   "recovered": 0,
+   "median_d_err_pct": null
+  },
+  {
+   "mag": 20.0,
+   "n": 6,
+   "recovered": 0,
+   "median_d_err_pct": null
+  },
+  {
+   "mag": 20.5,
+   "n": 6,
+   "recovered": 0,
+   "median_d_err_pct": null
+  }
+ ],
+ "per_field": [
+  {
+   "field": "ecl180+00",
+   "bodies": [
+    {
+     "d_au": 500.0,
+     "mag": 18.0,
+     "recovered": false,
+     "d_fit": null,
+     "d_err_pct": null
+    },
+    {
+     "d_au": 500.0,
+     "mag": 18.5,
+     "recovered": false,
+     "d_fit": null,
+     "d_err_pct": null
+    },
+    {
+     "d_au": 500.0,
+     "mag": 19.0,
+     "recovered": true,
+     "d_fit": 499.8754808571808,
+     "d_err_pct": 0.02
+    },
+    {
+     "d_au": 500.0,
+     "mag": 19.5,
+     "recovered": false,
+     "d_fit": null,
+     "d_err_pct": null
+    },
+    {
+     "d_au": 500.0,
+     "mag": 20.0,
+     "recovered": false,
+     "d_fit": null,
+     "d_err_pct": null
+    },
+    {
+     "d_au": 500.0,
+     "mag": 20.5,
+     "recovered": false,
+     "d_fit": null,
+     "d_err_pct": null
+    },
+    {
+     "d_au": 1500.0,
+     "mag": 18.0,
+     "recovered": false,
+     "d_fit": null,
+     "d_err_pct": null
+    },
+    {
+     "d_au": 1500.0,
+     "mag": 18.5,
+     "recovered": true,
+     "d_fit": 1510.1562635039268,
+     "d_err_pct": 0.68
+    },
+    {
+     "d_au": 1500.0,
+     "mag": 19.0,
+     "recovered": true,
+     "d_fit": 1514.8012896421199,
+     "d_err_pct": 0.99
+    },
+    {
+     "d_au": 1500.0,
+     "mag": 19.5,
+     "recovered": false,
+     "d_fit": null,
+     "d_err_pct": null
+    },
+    {
+     "d_au": 1500.0,
+     "mag": 20.0,
+     "recovered": false,
+     "d_fit": null,
+     "d_err_pct": null
+    },
+    {
+     "d_au": 1500.0,
+     "mag": 20.5,
+     "recovered": false,
+     "d_fit": null,
+     "d_err_pct": null
+    }
+   ],
+   "false_tracks": 0,
+   "n_tracks": 3,
+   "masked_fraction": 0.021001991869445187
+  },
+  {
+   "field": "ecl060+00",
+   "bodies": [
+    {
+     "d_au": 500.0,
+     "mag": 18.0,
+     "recovered": true,
+     "d_fit": 499.8754808571808,
+     "d_err_pct": 0.02
+    },
+    {
+     "d_au": 500.0,
+     "mag": 18.5,
+     "recovered": true,
+     "d_fit": 502.18357237885436,
+     "d_err_pct": 0.44
+    },
+    {
+     "d_au": 500.0,
+     "mag": 19.0,
+     "recovered": true,
+     "d_fit": 499.1084768168044,
+     "d_err_pct": 0.18
+    },
+    {
+     "d_au": 500.0,
+     "mag": 19.5,
+     "recovered": false,
+     "d_fit": null,
+     "d_err_pct": null
+    },
+    {
+     "d_au": 500.0,
+     "mag": 20.0,
+     "recovered": false,
+     "d_fit": null,
+     "d_err_pct": null
+    },
+    {
+     "d_au": 500.0,
+     "mag": 20.5,
+     "recovered": false,
+     "d_fit": null,
+     "d_err_pct": null
+    },
+    {
+     "d_au": 1500.0,
+     "mag": 18.0,
+     "recovered": true,
+     "d_fit": 815.8295168367277,
+     "d_err_pct": 45.61
+    },
+    {
+     "d_au": 1500.0,
+     "mag": 18.5,
+     "recovered": true,
+     "d_fit": 1514.8012896421199,
+     "d_err_pct": 0.99
+    },
+    {
+     "d_au": 1500.0,
+     "mag": 19.0,
+     "recovered": true,
+     "d_fit": 1514.8012896421199,
+     "d_err_pct": 0.99
+    },
+    {
+     "d_au": 1500.0,
+     "mag": 19.5,
+     "recovered": false,
+     "d_fit": null,
+     "d_err_pct": null
+    },
+    {
+     "d_au": 1500.0,
+     "mag": 20.0,
+     "recovered": false,
+     "d_fit": null,
+     "d_err_pct": null
+    },
+    {
+     "d_au": 1500.0,
+     "mag": 20.5,
+     "recovered": false,
+     "d_fit": null,
+     "d_err_pct": null
+    }
+   ],
+   "false_tracks": 0,
+   "n_tracks": 6,
+   "masked_fraction": 0.01447891064543559
+  },
+  {
+   "field": "ecl315-12",
+   "bodies": [
+    {
+     "d_au": 500.0,
+     "mag": 18.0,
+     "recovered": true,
+     "d_fit": 498.342649659913,
+     "d_err_pct": 0.33
+    },
+    {
+     "d_au": 500.0,
+     "mag": 18.5,
+     "recovered": true,
+     "d_fit": 500.64366358961513,
+     "d_err_pct": 0.13
+    },
+    {
+     "d_au": 500.0,
+     "mag": 19.0,
+     "recovered": false,
+     "d_fit": null,
+     "d_err_pct": null
+    },
+    {
+     "d_au": 500.0,
+     "mag": 19.5,
+     "recovered": false,
+     "d_fit": null,
+     "d_err_pct": null
+    },
+    {
+     "d_au": 500.0,
+     "mag": 20.0,
+     "recovered": false,
+     "d_fit": null,
+     "d_err_pct": null
+    },
+    {
+     "d_au": 500.0,
+     "mag": 20.5,
+     "recovered": false,
+     "d_fit": null,
+     "d_err_pct": null
+    },
+    {
+     "d_au": 1500.0,
+     "mag": 18.0,
+     "recovered": true,
+     "d_fit": 1500.9088984379898,
+     "d_err_pct": 0.06
+    },
+    {
+     "d_au": 1500.0,
+     "mag": 18.5,
+     "recovered": true,
+     "d_fit": 1489.4292814131568,
+     "d_err_pct": 0.7
+    },
+    {
+     "d_au": 1500.0,
+     "mag": 19.0,
+     "recovered": true,
+     "d_fit": 1507.8390945287233,
+     "d_err_pct": 0.52
+    },
+    {
+     "d_au": 1500.0,
+     "mag": 19.5,
+     "recovered": false,
+     "d_fit": null,
+     "d_err_pct": null
+    },
+    {
+     "d_au": 1500.0,
+     "mag": 20.0,
+     "recovered": false,
+     "d_fit": null,
+     "d_err_pct": null
+    },
+    {
+     "d_au": 1500.0,
+     "mag": 20.5,
+     "recovered": false,
+     "d_fit": null,
+     "d_err_pct": null
+    }
+   ],
+   "false_tracks": 0,
+   "n_tracks": 5,
+   "masked_fraction": 0.009423522696828153
+  }
+ ],
+ "false_tracks_total": 0,
+ "note": "faint distant bodies with circular-orbit motion injected into 3-pass fields; shift-and-stack per pass + parallax/orbit linking"
+}

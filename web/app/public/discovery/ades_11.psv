@@ -1,0 +1,19 @@
+# version=2017
+# observatory
+! mpcCode 288
+# submitter
+! name TO BE FILLED
+# observers
+! name SPHEREx Project
+# measurers
+! name TO BE FILLED
+# telescope
+! name SPHEREx
+! aperture 0.2
+! design reflector
+# comment
+! line DRAFT - spacecraft position (sys ctr pos1 pos2 pos3) must be added; contact the MPC before submitting
+trkSub|mode|stn|obsTime|ra|dec|rmsRA|rmsDec|astCat|remarks
+SPX0011|CCD|288|2025-09-01T09:57:57.60Z|70.659180|+15.014570|1.500|1.500|Gaia3|NEW TNO candidate, needs follow-up
+SPX0011|CCD|288|2026-02-22T19:56:21.98Z|70.452250|+14.985580|1.500|1.500|Gaia3|NEW TNO candidate, needs follow-up
+SPX0011|CCD|288|2026-08-29T16:47:14.20Z|70.657420|+15.016280|1.500|1.500|Gaia3|NEW TNO candidate, needs follow-up

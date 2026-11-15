@@ -1,0 +1,192 @@
+/* The home page (landing.jsx; UPGRADE_PLAN.md §9). One content width and one left edge for every section, type from
+   the theme tokens with nothing under 15 px (13 px only for chart ticks and the map's graticule numbers), spacing in
+   steps of 8 px. Rules that restyle a shared component (search box, blink, play bar, buttons) start with `.home`. */
+.home { --fs-hero: calc(var(--fs-h2) / 2 + var(--fs-display) / 2); --hm-line: rgb(var(--c-white) / .1); --hm-gap: 96px; --hm-chip: 88px; }
+.home:lang(en) { --hm-chip: 152px; }
+.hm-sec { max-width: calc(var(--sx-page) + 2 * var(--sx-gutter)); margin: var(--hm-gap) auto 0; padding: 0 var(--sx-gutter); }
+.hm-sec > h2, .hm-story h2 { margin: 0; font: 700 var(--fs-h2)/1.2 var(--sx-font); letter-spacing: -.02em; color: var(--sx-ink); }
+.hm-sub { margin: 8px 0 0; font-size: var(--fs-lead); line-height: 1.5; color: var(--sx-ink-2); max-width: 44em; }
+.home .btn { font-size: var(--fs-ui); }
+.home .btn.small { font-size: var(--fs-small); }
+
+/* ---- first screen: the search on the left, a live example as large as the screen allows on the right ---- */
+.hm-hero { margin-top: 24px; display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 32px; align-items: center; }
+.hm-hero-main { min-width: 0; }
+.hm-hero h1 { margin: 0; font: 800 var(--fs-hero)/1.1 var(--sx-font); letter-spacing: -.03em; color: var(--sx-white); text-wrap: balance; }
+:lang(zh-Hant) .hm-hero h1 { font-weight: 700; line-height: 1.25; }
+.hm-hero h1 em { display: block; font-style: normal; color: var(--sx-sunlit); }
+.hm-lead { margin: 16px 0 24px; font-size: var(--fs-lead); line-height: 1.5; color: var(--sx-ink-2); max-width: 32em; text-wrap: pretty; }
+/* the search box, the examples and the two links share six columns, so their left edges fall on the same lines */
+.home .hm-hero .skysearch form { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 8px; }
+.home .hm-hero .skysearch input[type="search"] { grid-column: 1 / -1; min-height: 56px; }
+.home .hm-hero .ss-fov { grid-column: span 2; min-height: 52px; justify-content: space-between; font-size: var(--fs-ui); min-width: 0; }
+.home .hm-hero .ss-fov select { min-width: 0; }
+.home .hm-hero .skysearch .btn { grid-column: span 4; justify-content: center; }
+.home .hm-hero .ss-ex { display: grid; grid-template-columns: repeat(auto-fill, minmax(var(--hm-chip), 1fr)); gap: 8px; margin-top: 16px; }
+.home .hm-hero .ss-ex > span, .home .hm-hero .ss-hint { display: none; }
+.home .hm-hero .ss-ex .chip { display: block; min-width: 0; min-height: 44px; padding: 0 4px; text-align: center; font-size: var(--fs-small); overflow: hidden; text-overflow: ellipsis; }
+.hm-links { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; margin-top: 16px; }
+.hm-links a { display: flex; align-items: center; min-height: 44px; color: var(--sx-earth); text-decoration: none; font-size: var(--fs-ui); }
+.hm-links a:hover { color: var(--sx-white); text-decoration: underline; }
+.hm-demo { margin: 0; width: clamp(320px, min(100svh - 200px, 50vw), 696px); display: grid; gap: 8px; }
+.hm-demo figcaption { font-size: var(--fs-small); line-height: 1.5; color: var(--sx-ink-2); }
+.hm-demo figcaption a { color: var(--sx-earth); }
+/* a blink of survey passes that fills its column; the place of the picture and of its play bar is kept while it loads */
+.hm-blink { min-width: 0; }
+.hm-ph { aspect-ratio: 1; border-radius: var(--r-md); background: var(--sx-black); box-shadow: inset 0 0 0 1px var(--hm-line); }
+.hm-blink > .hm-ph { margin-bottom: 52px; }
+.home .hm-blink .blinkbox { display: grid; gap: 8px; justify-items: stretch; }
+.home .hm-blink .blink-frame { width: 100% !important; }
+.home .hm-blink .mv-blink { box-shadow: inset 0 0 0 1px var(--hm-line); }
+.home .hm-blink .playbar { min-height: 44px; }
+.home .hm-blink .blink-tag { left: 0; top: 0; padding: 8px 16px; border-radius: var(--r-md) 0 var(--r-sm) 0; font-size: var(--fs-ui); }
+.home .hm-blink .blink-tag small { font-size: var(--fs-small); }
+/* the first screen keeps one control (pause); the pass count and the step button are on the cards below */
+.home .hm-demo .playbar-count, .home .hm-demo .playbar > .btn:not(.playbtn), .home .hm-demo .blink-tag small { display: none; }
+
+/* ---- three kinds of result ---- */
+.hm-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 352px), 1fr)); gap: 24px; margin-top: 32px; }
+.hm-card { margin: 0; padding: 24px; border-radius: var(--r-md); background: var(--sx-surface); box-shadow: inset 0 0 0 1px var(--hm-line); display: flex; flex-direction: column; gap: 16px; min-width: 0; }
+.hm-card figcaption { display: grid; gap: 8px; }
+.hm-kind { font: 600 var(--fs-ui)/1.2 var(--sx-font); color: var(--sx-earth); }
+.hm-card h3 { margin: 0; font: 700 var(--fs-h3)/1.2 var(--sx-font); letter-spacing: -.01em; }
+.hm-take { margin: 0; min-height: 4.5em; font-size: var(--fs-body); line-height: 1.5; color: var(--sx-ink-2); text-wrap: pretty; }
+:lang(en) .hm-take { min-height: 6em; }
+.home .hm-seg { display: grid; grid-auto-flow: column; grid-auto-columns: minmax(0, 1fr); border-radius: var(--r-md); box-shadow: inset 0 0 0 1px var(--hm-line); }
+.home .hm-seg button { min-height: 44px; padding: 4px 8px; border-radius: var(--r-sm); white-space: normal; line-height: 1.2; font-size: var(--fs-small); }
+.hm-chart { display: grid; gap: 16px; align-content: start; min-width: 0; }
+.hm-cap { margin: 0; font-size: var(--fs-small); line-height: 1.5; color: var(--sx-ink-2); }
+.hm-dash { display: inline-block; width: 24px; margin-right: 8px; vertical-align: middle; border-top: 2px dashed var(--sx-known); }
+.hm-eph { fill: none; stroke: var(--sx-known); stroke-width: 2; stroke-dasharray: 6 5; }
+.hm-err { stroke: currentColor; stroke-width: 2; opacity: .7; }
+.hm-ring { fill: none; stroke: currentColor; stroke-width: 2; opacity: .8; }
+.home .hm-chart .mark-label[fill] { fill: currentColor; }
+.hm-open { align-self: flex-start; margin-top: auto; }
+.hm-h4 { margin: 8px 0 0; font: 600 var(--fs-ui)/1.3 var(--sx-font); color: var(--sx-ink); }
+/* a tooltip may stand above its plot (app.css clips .plot) */
+.home .hm-chart .plot { overflow: visible; }
+.hm-targets { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin-top: 32px; font-size: var(--fs-ui); color: var(--sx-ink-2); }
+.hm-targets > span { margin-right: 8px; }
+.home .hm-targets .chip { min-height: 44px; padding: 0 16px; text-decoration: none; font-size: var(--fs-ui); }
+.hm-targets > a:last-child { display: inline-flex; align-items: center; min-height: 44px; margin-left: 8px; color: var(--sx-earth); text-decoration: none; }
+.hm-targets > a:last-child:hover { color: var(--sx-white); text-decoration: underline; }
+
+/* ---- all-sky map: the picture, a graticule, markers that answer to the pointer and the keyboard ---- */
+.hm-mapwrap { margin-top: 32px; }
+.hm-map { position: relative; aspect-ratio: 2 / 1; cursor: crosshair; user-select: none; -webkit-tap-highlight-color: transparent;
+  background: radial-gradient(ellipse 50% 50% at center, rgb(var(--c-map-2) / .55) 99.6%, transparent 100%); }
+.hm-map.on-mark { cursor: pointer; }
+.hm-map > img, .hm-map > svg { position: absolute; inset: 0; width: 100%; height: 100%; display: block; pointer-events: none; }
+.hm-map svg * { fill: none; vector-effect: non-scaling-stroke; }
+.hm-rim { stroke: rgb(var(--c-white) / .28); }
+.hm-grid { stroke: rgb(var(--c-white) / .13); }
+.hm-ecl { stroke: var(--sx-amber); stroke-width: 1.5; stroke-dasharray: 6 5; }
+.hm-tick, .hm-line, .hm-name { position: absolute; pointer-events: none; white-space: nowrap; text-shadow: 0 0 3px var(--sx-black), 0 0 6px var(--sx-black), 0 0 10px var(--sx-black); }
+.hm-tick { transform: translate(8px, -50%); font: 500 var(--fs-xs)/1 var(--sx-font); color: var(--sx-ink-2); font-variant-numeric: tabular-nums; }
+.hm-tick.ra { transform: translate(-50%, 8px); }
+.hm-line { transform: translate(-50%, -150%); font: 600 var(--fs-small)/1 var(--sx-font); color: var(--sx-ink); }
+.hm-line.ecl { transform: translate(-50%, 60%); color: var(--sx-amber); }
+.hm-name { transform: translate(16px, -50%); font: 700 var(--fs-ui)/1 var(--sx-font); color: var(--sx-accent); }
+.hm-name.left { transform: translate(calc(-100% - 16px), -50%); }
+.hm-mark { position: absolute; width: 16px; height: 16px; margin: -8px 0 0 -8px; border-radius: 50%; background: var(--sx-white); box-shadow: 0 0 0 2px rgb(var(--c-black) / .75); pointer-events: none; }
+.hm-mark.target { background: var(--sx-accent); }
+.hm-mark.sim { background: var(--sx-sim); }
+.hm-mark.quick { background: var(--sx-black); box-shadow: inset 0 0 0 3px var(--sx-known), 0 0 0 2px rgb(var(--c-black) / .75); }
+.hm-mark.on, .hm-mark:focus-visible { outline: 2px solid var(--sx-white); outline-offset: 4px; z-index: 2; }
+.hm-pick { position: absolute; width: 40px; height: 40px; margin: -20px 0 0 -20px; border-radius: 50%; box-shadow: inset 0 0 0 3px var(--sx-amber); pointer-events: none; }
+.hm-float { position: absolute; z-index: 4; width: 264px; padding: 8px; border-radius: var(--r-md); background: var(--sx-surface-2); cursor: default;
+  box-shadow: 0 0 0 1px rgb(var(--c-white) / .16), 0 16px 32px rgb(var(--c-black) / .6); }
+.hm-tip { display: grid; gap: 8px; pointer-events: none; }
+.hm-tip.sticky { pointer-events: auto; }
+.hm-tip a { display: grid; grid-template-columns: 72px minmax(0, 1fr); gap: 16px; align-items: center; min-height: 72px; color: var(--sx-ink-2); text-decoration: none; font-size: var(--fs-small); line-height: 1.3; }
+.hm-tip img { display: block; width: 72px; height: 72px; border-radius: var(--r-sm); object-fit: cover; image-rendering: pixelated; background: var(--sx-black); }
+.hm-tip span { display: grid; gap: 4px; min-width: 0; }
+.hm-tip b { color: var(--sx-ink); font-size: var(--fs-ui); }
+.hm-tip small { font-size: var(--fs-small); color: var(--sx-earth); }
+.hm-pop { display: grid; gap: 16px; padding: 16px; font-size: var(--fs-ui); }
+.hm-pop .btn { justify-content: center; }
+.hm-key { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 24px; margin: 16px 0 0; padding: 0; list-style: none; font-size: var(--fs-small); color: var(--sx-ink-2); }
+.hm-key li { display: inline-flex; align-items: center; gap: 8px; }
+.hm-key .hm-mark { position: static; margin: 0; flex: none; }
+.hm-key .hm-dash { margin: 0; border-color: var(--sx-amber); }
+.hm-credit { margin-left: auto; color: var(--sx-ink-3); }
+.hm-mapform { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: 16px 24px; align-items: start; margin-top: 24px; }
+.home .hm-mapform .full-run { margin: 0; padding: 0 16px; border: 0; border-radius: var(--r-sm); box-shadow: inset 0 0 0 1px var(--hm-line); }
+.home .hm-mapform .full-run summary { min-height: 52px; font-size: var(--fs-ui); }
+.home .hm-mapform .full-run .hint { margin: 0 0 16px; }
+.home .hm-mapform .full-row { margin-bottom: 16px; }
+.hm-mapform .job { grid-column: 1 / -1; margin: 0; }
+
+/* ---- analysed fields ---- */
+.hm-fields { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 296px), 1fr)); gap: 24px; margin-top: 32px; }
+.hm-field { display: grid; grid-template-rows: auto 1fr; overflow: hidden; border-radius: var(--r-md); background: var(--sx-surface); box-shadow: inset 0 0 0 1px var(--hm-line);
+  color: var(--sx-ink); text-decoration: none; transition: box-shadow .25s, translate .25s var(--sx-ease); }
+.hm-field:hover { box-shadow: inset 0 0 0 1px rgb(var(--c-earth) / .45), 0 16px 40px -16px rgb(var(--c-black) / .8); translate: 0 -2px; }
+.hm-field img { display: block; width: 100%; height: auto; aspect-ratio: 4 / 3; object-fit: cover; image-rendering: pixelated; background: var(--sx-surface-2); }
+.hm-field > div { display: grid; gap: 8px; align-content: start; padding: 16px 24px 24px; }
+.hm-field h3 { margin: 0; font: 700 var(--fs-lead)/1.3 var(--sx-font); letter-spacing: -.01em; }
+.hm-field p { font-size: var(--fs-small); line-height: 1.5; color: var(--sx-ink-2); display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+.hm-counts { display: flex; gap: 24px; margin-top: 8px; }
+.hm-counts b { display: block; font: 700 var(--fs-lead)/1.2 var(--sx-font); font-variant-numeric: tabular-nums; }
+.hm-counts span { font-size: var(--fs-small); color: var(--sx-ink-3); }
+.hm-go { margin-top: 8px; font: 600 var(--fs-ui)/1.2 var(--sx-font); color: var(--sx-accent); }
+
+/* ---- the way to the research story, the footer ---- */
+.hm-story { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 24px; }
+.home .footer { max-width: calc(var(--sx-page) + 2 * var(--sx-gutter)); margin-top: var(--hm-gap); padding: 48px var(--sx-gutter); }
+
+@media (max-width: 900px) {
+  .home { --hm-gap: 64px; }
+  .hm-hero { grid-template-columns: minmax(0, 1fr); margin-top: 16px; }
+  .hm-demo { width: 100%; max-width: 480px; }
+  .hm-mapform { grid-template-columns: minmax(0, 1fr); }
+  .hm-credit { margin-left: 0; }
+}
+@media (max-width: 560px) {
+  .home .hm-hero .ss-fov, .home .hm-hero .skysearch .btn { grid-column: span 3; padding-left: 8px; padding-right: 8px; }
+  .hm-links { grid-template-columns: minmax(0, 1fr); gap: 0; }
+  .hm-card { padding: 16px; }
+  .hm-tick, .hm-line { display: none; }
+  .hm-tip a { grid-template-columns: 48px minmax(0, 1fr); min-height: 48px; }
+  .hm-tip img { width: 48px; height: 48px; }
+  .hm-name { font-size: var(--fs-small); }
+  /* a field is a row on a phone: picture on the left, numbers on the right */
+  .hm-fields { gap: 16px; }
+  .hm-field { grid-template-columns: 104px minmax(0, 1fr); grid-template-rows: none; }
+  .hm-field img { width: 104px; height: 100%; min-height: 104px; aspect-ratio: auto; }
+  .hm-field > div { padding: 16px; }
+  .hm-counts { gap: 16px; }
+}
+@media (prefers-reduced-motion: reduce) { .hm-field { transition: none; } }
+/* Planet Nine on the all-sky map (round 9) */
+.hm-map .hm-p9band { fill: rgb(var(--c-distant) / .16); stroke: rgb(var(--c-distant) / .45); stroke-width: .25; vector-effect: non-scaling-stroke; }
+.hm-map .hm-p9 { fill: none; stroke: var(--sx-distant); stroke-width: 1.5; stroke-dasharray: 2 3; vector-effect: non-scaling-stroke; }
+.hm-line.p9 { color: var(--sx-distant); }
+.hm-band { display: inline-block; width: 24px; height: 12px; margin-right: 8px; vertical-align: middle; border-radius: var(--r-sm); background: rgb(var(--c-distant) / .3); box-shadow: inset 0 0 0 1px rgb(var(--c-distant) / .6); }
+
+/* ---- first screen: the 3D cosmos behind the search (cosmos/Cosmos.jsx) ---- */
+.hm-hero.hm-hero-cz { position: relative; display: block; max-width: none; margin: -64px 0 0; padding: 0; height: 100svh; min-height: 620px; overflow: hidden; }
+.hm-hero-cz::after { content: ""; position: absolute; inset: 0; pointer-events: none;
+  background: linear-gradient(90deg, rgb(var(--c-bg) / .88) 0%, rgb(var(--c-bg) / .55) 34%, rgb(var(--c-bg) / 0) 58%), linear-gradient(0deg, var(--sx-bg) 0%, rgb(var(--c-bg) / 0) 18%); }
+.hm-hero-panel { position: absolute; z-index: 2; left: max(var(--sx-gutter), calc((100vw - var(--sx-page)) / 2)); top: 50%; transform: translateY(-46%); width: min(560px, calc(100vw - 2 * var(--sx-gutter))); }
+.hm-kicker { margin: 0 0 18px; font: 500 var(--fs-xs)/1.3 var(--sx-mono); letter-spacing: .16em; text-transform: uppercase; color: var(--sx-earth); }
+.hm-hero-cz h1 { font-family: var(--sx-display); font-weight: 400; letter-spacing: .01em; font-size: var(--fs-display); line-height: 1.12; }
+:lang(zh-Hant) .hm-hero-cz h1 { font-weight: 700; letter-spacing: .04em; }
+.hm-hero-cz::after { z-index: 1; }
+.hm-hero-cz .cz-hud { z-index: 3; }
+@media (max-width: 900px) {
+  .hm-hero.hm-hero-cz { height: auto; min-height: 0; padding: 96px 0 0; }
+  .hm-hero-cz .cz { position: relative; height: 62svh; margin-top: 24px; }
+  .hm-hero-panel { position: relative; left: auto; top: auto; transform: none; margin: 0 var(--sx-gutter); width: auto; }
+  .hm-hero-cz::after { background: none; }
+}
+@media (max-width: 900px) {
+  /* phones: the search stays on the first screen, the cosmos follows it */
+  .hm-hero.hm-hero-cz { display: flex; flex-direction: column; padding-top: 64px; }
+  .hm-hero-cz .hm-hero-panel { order: 1; margin-top: 28px; }
+  .hm-hero-cz .cz { height: calc(100svh - 64px); min-height: 520px; margin-top: 0; width: 100%; flex: none; }
+}
+@media (max-width: 900px) { .hm-hero-cz::after { display: none; } }
+/* once the journey has started, the search panel and the left shade step aside (desktop) */
+.hm-hero-panel, .hm-hero-cz::after { transition: opacity .6s var(--sx-ease); }
+@media (min-width: 901px) { .hm-hero-cz.is-deep .hm-hero-panel, .hm-hero-cz.is-deep::after { opacity: 0; pointer-events: none; visibility: hidden; transition: opacity .6s var(--sx-ease), visibility 0s .6s; } }

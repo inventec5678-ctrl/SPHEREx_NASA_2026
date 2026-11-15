@@ -1,0 +1,185 @@
+{
+ "created": "2026-11-13T21:14:35",
+ "fields": {
+  "barnard": {
+   "n_measured": 171,
+   "n_isolated": 84,
+   "floor_mas_yr": 12.6,
+   "scatter_per_axis_mas_yr": 13.9,
+   "n_candidates": 0,
+   "limit_arcsec_yr": 0.08,
+   "rejected": {
+    "not_isolated": 11,
+    "edge": 1
+   }
+  },
+  "cybele": {
+   "n_measured": 362,
+   "n_isolated": 184,
+   "floor_mas_yr": 20.6,
+   "scatter_per_axis_mas_yr": 12.9,
+   "n_candidates": 1,
+   "limit_arcsec_yr": 0.112,
+   "rejected": {
+    "bright": 1,
+    "not_isolated": 25,
+    "edge": 4
+   }
+  },
+  "epsindi": {
+   "n_measured": 47,
+   "n_isolated": 26,
+   "floor_mas_yr": 25.0,
+   "scatter_per_axis_mas_yr": 13.3,
+   "n_candidates": 0,
+   "limit_arcsec_yr": 0.126,
+   "rejected": {
+    "not_isolated": 5
+   }
+  },
+  "q043p280+16p853s15": {
+   "n_measured": 30,
+   "n_isolated": 13,
+   "floor_mas_yr": 25.0,
+   "scatter_per_axis_mas_yr": 10.2,
+   "n_candidates": 1,
+   "limit_arcsec_yr": 0.126,
+   "rejected": {
+    "not_isolated": 2,
+    "edge": 1
+   }
+  },
+  "q183p200-01p400": {
+   "n_measured": 157,
+   "n_isolated": 74,
+   "floor_mas_yr": 18.9,
+   "scatter_per_axis_mas_yr": 14.0,
+   "n_candidates": 0,
+   "limit_arcsec_yr": 0.105,
+   "rejected": {
+    "not_isolated": 17
+   }
+  },
+  "rdra": {
+   "n_measured": 24,
+   "n_isolated": 19,
+   "floor_mas_yr": 25.0,
+   "scatter_per_axis_mas_yr": 10.1,
+   "n_candidates": 0,
+   "limit_arcsec_yr": 0.126,
+   "rejected": {
+    "not_isolated": 1
+   }
+  },
+  "rwaur": {
+   "n_measured": 212,
+   "n_isolated": 83,
+   "floor_mas_yr": 13.7,
+   "scatter_per_axis_mas_yr": 13.1,
+   "n_candidates": 0,
+   "limit_arcsec_yr": 0.08,
+   "rejected": {
+    "not_isolated": 13,
+    "edge": 1
+   }
+  },
+  "taurus": {
+   "n_measured": 475,
+   "n_isolated": 262,
+   "floor_mas_yr": 15.2,
+   "scatter_per_axis_mas_yr": 12.9,
+   "n_candidates": 2,
+   "limit_arcsec_yr": 0.089,
+   "rejected": {
+    "not_isolated": 48,
+    "edge": 1
+   }
+  },
+  "wise0855": {
+   "n_measured": 181,
+   "n_isolated": 80,
+   "floor_mas_yr": 14.0,
+   "scatter_per_axis_mas_yr": 15.0,
+   "n_candidates": 0,
+   "limit_arcsec_yr": 0.08,
+   "rejected": {
+    "not_isolated": 15
+   }
+  }
+ },
+ "n_measured": 1659,
+ "n_with_gaia": 1335,
+ "scatter_per_axis_mas_yr": 13.8,
+ "recall": [
+  {
+   "gaia_pm_lo": 0.15,
+   "gaia_pm_hi": 99.0,
+   "n": 4,
+   "n_isolated": 2,
+   "found": 2
+  },
+  {
+   "gaia_pm_lo": 0.1,
+   "gaia_pm_hi": 0.15,
+   "n": 3,
+   "n_isolated": 1,
+   "found": 0
+  },
+  {
+   "gaia_pm_lo": 0.05,
+   "gaia_pm_hi": 0.1,
+   "n": 28,
+   "n_isolated": 20,
+   "found": 2
+  }
+ ],
+ "static": {
+  "n": 1300,
+  "n_isolated": 710,
+  "flagged": 0
+ },
+ "no_gaia": {
+  "n": 324,
+  "n_isolated": 92,
+  "flagged": 0
+ },
+ "injected_isolated": [
+  {
+   "pm": 0.05,
+   "n": 658,
+   "found": 12,
+   "frac": 0.018
+  },
+  {
+   "pm": 0.08,
+   "n": 658,
+   "found": 173,
+   "frac": 0.263
+  },
+  {
+   "pm": 0.1,
+   "n": 658,
+   "found": 334,
+   "frac": 0.508
+  },
+  {
+   "pm": 0.15,
+   "n": 658,
+   "found": 519,
+   "frac": 0.789
+  },
+  {
+   "pm": 0.2,
+   "n": 658,
+   "found": 570,
+   "frac": 0.866
+  },
+  {
+   "pm": 0.3,
+   "n": 658,
+   "found": 599,
+   "frac": 0.91
+  }
+ ],
+ "isolated_fraction": 0.497
+}

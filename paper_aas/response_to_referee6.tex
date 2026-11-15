@@ -1,0 +1,99 @@
+\documentclass[11pt]{article}
+\usepackage[margin=2.3cm]{geometry}
+\usepackage{xcolor}
+\usepackage{parskip}
+\usepackage{amssymb,amsmath}
+\newcommand{\arcsec}{\ensuremath{^{\prime\prime}}}
+\newenvironment{referee}{\par\color{black!60}\itshape}{\par}
+\newcommand{\resp}{\par\noindent\textbf{Response.} }
+\begin{document}
+\begin{center}
+{\large\bfseries Response to the Referee}\\[4pt]
+\emph{Probing the Outer Solar System with SPHEREx: Parallax-Guided Moving-Object Discovery and Limits on Distant Bodies in All-Sky Spectral Imaging}
+\end{center}
+
+We thank the referee for a careful report. We answered each point with a new calculation or simulation, and two of them changed our results. Monte Carlo injections in region A show that our heuristic effective limit was optimistic by 0.4\,mag. In addition, the conversion from SPHEREx AB magnitudes to $V$ for bodies with solar colours enlarges the excluded diameters by 14\%. Both corrections are propagated to the abstract, Table 7, Figure 11 and the size limits. While checking the manuscript against the code we also found two discrepancies, which we report below. This letter is anonymised for dual-anonymous review.
+
+\paragraph{Summary of changes to results.} For $p = 0.4$, the excluded ranges are now 229--245\,au for Neptune-sized bodies (previously 229--261\,au) and 229--483\,au for Jupiter-sized bodies (previously 229--570\,au). The region-A stacked limit is AB 18.0 (previously 18.4). With strong methane absorption ($p_{\rm eff} = 0.04$), the Jupiter-sized exclusion becomes negligible (229--231\,au).
+
+\paragraph{Corrections found by the authors.} (i) The final distance fit of each track uses 3000 trial distances; the 1500 quoted earlier is the number used in linking. Both are now stated. (ii) Earlier versions stated that every track carries the residual-profile diagnostic. In fact it had been computed only for the dwarf-planet tracks. It is now part of the linking code and has been computed for all 63 stacked survey tracks (minor comment on Figure 6 below).
+
+\section*{Major comments}
+
+\begin{referee}
+1. Linear drift below 72\,au; Makemake/Haumea as blind tests; completeness for an unknown 40--60\,au body with $e \approx 0.2$.
+\end{referee}
+\resp The abstract now reads ``a blind search in fields following Makemake and Haumea''. Section 5.3 already explains that these fields test the distance measurement, not the completeness of a fixed-field search. We separated the three factors that limit a search for nearer bodies and quantified each.
+\begin{enumerate}
+\item \emph{The linker.} It includes a curvature allowance, $8'' + \tfrac12\mu_{\rm circ}^2\Delta t^2$, which is described in Section 3.4. We simulated unknown bodies on random orbits at the exposure times of the Makemake fields, with 25 detections per window and $0.7''$ errors. All three windows are linked with a distance within 5\% for 36--40 of 40 bodies at 35--55\,au and for all 40 at 65--100\,au. This holds both for circular orbits and for $e = 0.2$ (Section 5.3). These figures are upper bounds, because the simulation contains no other sources.
+\item \emph{Vetting.} The $4''$ r.m.s.\ criterion would reject such tracks. It is applied only beyond 229\,au, and a search inside $\sim$100\,au needs the same curvature allowance in this criterion (Section 3.6).
+\item \emph{Field retention.} Fixed $0.5^\circ$ fields retain a body over three passes only beyond 229\,au, so the completeness of our fixed-field survey is zero at 40--60\,au.
+\end{enumerate}
+The answer to the referee's question is therefore as follows. The blind linker would find such a body if the fields followed its parallactic path and the vetting criterion included the curvature allowance. Our survey, as executed, could not.
+
+On Haumea: as stated in Section 5.2, its middle window contributes one detection. Its distance therefore rests mainly on windows 1 and 3 and the drift bound, and we say so explicitly.
+
+\begin{referee}
+2. Region A: fraction of down-weighted pixels, and a statistical basis or Monte Carlo verification of $m_{\rm eff}$.
+\end{referee}
+\resp We ran both checks.
+
+\emph{Down-weighted pixels.} In the three region-A fields, $\varepsilon\alpha R_+ > \sigma_I$ in 3.6\% of the pixels, compared with 1.0\% in the ecliptic field (Section 3.1).
+
+\emph{Monte Carlo verification.} We injected 108 bodies of AB 17.5--20 at 500 and 1500\,au into the three region-A fields, using three random seeds, and repeated the full stack, link and confirm search. The 50\% completeness at the nominal threshold is AB 18.3, compared with 19.2 in uncrowded fields. Crowding therefore lowers the detection efficiency itself, not only the purity. Requiring in addition a stacked significance above the largest chance track ($\widetilde{S} > 14.1$) gives AB 18.0. Equation 7 gives 18.4 for this region and is thus optimistic by $\approx$0.4\,mag. We adopt the injection result, AB 18.0, for region A. Section 6.3 now states the assumptions of equation 7 and reports this test. For regions B and D we keep equation 7 (AB 18.6), note that it is unverified and may be optimistic by a similar amount, and use AB 18.0 for all size limits, which remains conservative for those regions.
+
+In statistical terms, $m_{\rm eff}$ is now the magnitude at which half of the injected bodies are recovered with a significance exceeding every chance track found in the region with the true epochs. We have not measured the false-alarm probability above that significance beyond the two relabelled realisations. In one injection run in a region-A field, a non-injected track reached $\widetilde{S} = 19.3$, which shows that the maximum chance significance itself fluctuates.
+
+\begin{referee}
+3. D4--D6 false positives, classifier over-confidence and combinatorial explosion in linking; detector-specific thresholds.
+\end{referee}
+\resp Linking uses the classifier only through its fixed threshold, so the over-confidence at intermediate probabilities does not enter. A single-exposure track requires stationary groups of at least three detections at two or more epochs in each of three passes. An isolated artifact cannot form such a group, and recurring artifacts at fixed positions fail the static test. At the present artifact density, the single-exposure linker returned no distant track in any of the 32 survey fields. Section 7.2 now states this. The same section already proposes a detector-dependent threshold at equal artifact acceptance and a stability mask; the former is straightforward and would be applied before a full-sky search. The $\varepsilon$ test reported in our previous revision shows that the D4 excess, about five times the D2 rate, is insensitive to $\varepsilon$.
+
+\begin{referee}
+4. The abstract should tie the size limits to the searched fields.
+\end{referee}
+\resp The abstract now reads: ``Within these fields, which retain a body over the year only beyond $\approx$229\,au, the data exclude, for an albedo of 0.4 and solar colours, Neptune-sized bodies at 229--245\,au and Jupiter-sized bodies at 229--483\,au; strong methane absorption could remove the latter exclusion.'' The preceding sentence specifies the 7.89\,deg$^2$, and the Conclusions state that the limits apply to the lines of sight searched.
+
+\section*{Minor comments}
+
+\begin{referee}
+QR2/QR3 PSF stability.
+\end{referee}
+\resp The PSF model is used only for injection; detection, classification of real sources and astrometry do not use it. We have not compared the QR2 and QR3 PSFs directly or examined focus stability, and we do not claim either. The QR3 and QR2 astrometric residuals ($0.87''$ from 10 detections and $0.68''$ from 68 detections) are consistent within the small sample.
+
+\begin{referee}
+Spectral residuals of late-type stars at 3\% tolerance.
+\end{referee}
+\resp We have not counted them. Doing so requires a cross-match of candidates with stellar catalogues and their colours. Section 7.2 states the prediction that such residuals should cluster on stars of late spectral type, as one of two hypotheses for the D4 excess.
+
+\begin{referee}
+$\sigma_R^2$ approximation.
+\end{referee}
+\resp Added: the approximation lowers $S$ by $\lesssim 2\%$, a negligible loss of sensitivity.
+
+\begin{referee}
+Bound orbits exclude interstellar objects.
+\end{referee}
+\resp Added after equation 5: the method is insensitive by construction to unbound objects such as 1I/`Oumuamua and 2I/Borisov.
+
+\begin{referee}
+Flags of the six missed $V < 15$ detections.
+\end{referee}
+\resp We have not inspected them; the text says so and presents the explanation as a hypothesis. We added that, if the hypothesis is confirmed, presenting saturation to the classifier separately from the morphology of the source would remove the loss.
+
+\begin{referee}
+A quantitative threshold for the residual-profile ratio.
+\end{referee}
+\resp We simulated 480 tracks at 500--3000\,au with drifts up to the bound, using either 25 detections per pass with $0.7''$ errors or 4 detections per pass with $2''$ errors. Correctly fitted tracks have ratios of at least 6.2, and no simulated fit was in error by more than 10\%. We therefore flag tracks with a ratio below 3. None of the 63 stacked survey tracks is flagged (minimum 8.3, median 57). The simulations did not reproduce the injected outlier, for which the diagnostic was not computed. We state this in Section 3.4 rather than claim that the threshold would have caught it.
+
+\begin{referee}
+Colour conversion between $V$ and the SPHEREx channels in the diameter formula.
+\end{referee}
+\resp The referee is right that the conversion was not made. A body with a flat reflectance has solar colours. Using the solar AB absolute magnitudes of Willmer (2018), such a body is 0.16 and 0.21\,mag brighter than in $V$ in D1 and D2, and 0.14, 0.88, 1.51 and 1.75\,mag fainter in D3--D6. Weighting the detectors by their depth, it is on average 0.28\,mag fainter in our data than in $V$. We now convert the AB limits to $V$ by this amount, which enlarges all excluded diameters by 14\%. The same conversion is applied to the fraction of the predicted Planet Nine brightness distribution above our limit (Section 7.4 and Figure 11).
+
+\begin{referee}
+Eris; Figure 10; AI disclosure.
+\end{referee}
+\resp We thank the referee for these comments; no changes were needed.
+
+\end{document}

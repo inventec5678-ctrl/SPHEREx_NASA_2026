@@ -1,0 +1,555 @@
+{
+ "fields": [
+  {
+   "id": "svA_075p000+16p667",
+   "n_peaks": 297,
+   "passes": 3,
+   "true": {
+    "linked": 15,
+    "confirmed": 8
+   },
+   "shift1": {
+    "linked": 11,
+    "confirmed": 4
+   },
+   "shift2": {
+    "linked": 7,
+    "confirmed": 2
+   }
+  },
+  {
+   "id": "svA_076p500+17p167",
+   "n_peaks": 329,
+   "passes": 3,
+   "true": {
+    "linked": 6,
+    "confirmed": 5
+   },
+   "shift1": {
+    "linked": 7,
+    "confirmed": 5
+   },
+   "shift2": {
+    "linked": 8,
+    "confirmed": 6
+   }
+  },
+  {
+   "id": "svA_078p000+17p667",
+   "n_peaks": 417,
+   "passes": 3,
+   "true": {
+    "linked": 12,
+    "confirmed": 7
+   },
+   "shift1": {
+    "linked": 10,
+    "confirmed": 7
+   },
+   "shift2": {
+    "linked": 19,
+    "confirmed": 14
+   }
+  },
+  {
+   "id": "svB_045p000+03p692",
+   "n_peaks": 11,
+   "passes": 3,
+   "true": {
+    "linked": 0,
+    "confirmed": 0
+   },
+   "shift1": {
+    "linked": 0,
+    "confirmed": 0
+   },
+   "shift2": {
+    "linked": 0,
+    "confirmed": 0
+   }
+  },
+  {
+   "id": "svB_046p500+04p500",
+   "n_peaks": 55,
+   "passes": 3,
+   "true": {
+    "linked": 0,
+    "confirmed": 0
+   },
+   "shift1": {
+    "linked": 0,
+    "confirmed": 0
+   },
+   "shift2": {
+    "linked": 0,
+    "confirmed": 0
+   }
+  },
+  {
+   "id": "svB_048p000+05p308",
+   "n_peaks": 62,
+   "passes": 3,
+   "true": {
+    "linked": 0,
+    "confirmed": 0
+   },
+   "shift1": {
+    "linked": 1,
+    "confirmed": 0
+   },
+   "shift2": {
+    "linked": 0,
+    "confirmed": 0
+   }
+  },
+  {
+   "id": "svB_049p500+06p115",
+   "n_peaks": 66,
+   "passes": 3,
+   "true": {
+    "linked": 1,
+    "confirmed": 1
+   },
+   "shift1": {
+    "linked": 2,
+    "confirmed": 0
+   },
+   "shift2": {
+    "linked": 0,
+    "confirmed": 0
+   }
+  },
+  {
+   "id": "svB_051p000+06p923",
+   "n_peaks": 55,
+   "passes": 3,
+   "true": {
+    "linked": 0,
+    "confirmed": 0
+   },
+   "shift1": {
+    "linked": 1,
+    "confirmed": 0
+   },
+   "shift2": {
+    "linked": 1,
+    "confirmed": 0
+   }
+  },
+  {
+   "id": "svB_052p500+07p731",
+   "n_peaks": 38,
+   "passes": 3,
+   "true": {
+    "linked": 0,
+    "confirmed": 0
+   },
+   "shift1": {
+    "linked": 0,
+    "confirmed": 0
+   },
+   "shift2": {
+    "linked": 0,
+    "confirmed": 0
+   }
+  },
+  {
+   "id": "svB_054p000+08p429",
+   "n_peaks": 39,
+   "passes": 3,
+   "true": {
+    "linked": 0,
+    "confirmed": 0
+   },
+   "shift1": {
+    "linked": 1,
+    "confirmed": 0
+   },
+   "shift2": {
+    "linked": 0,
+    "confirmed": 0
+   }
+  },
+  {
+   "id": "svB_055p500+09p071",
+   "n_peaks": 68,
+   "passes": 3,
+   "true": {
+    "linked": 1,
+    "confirmed": 0
+   },
+   "shift1": {
+    "linked": 1,
+    "confirmed": 0
+   },
+   "shift2": {
+    "linked": 2,
+    "confirmed": 0
+   }
+  },
+  {
+   "id": "svB_057p000+09p714",
+   "n_peaks": 129,
+   "passes": 3,
+   "true": {
+    "linked": 2,
+    "confirmed": 0
+   },
+   "shift1": {
+    "linked": 4,
+    "confirmed": 1
+   },
+   "shift2": {
+    "linked": 3,
+    "confirmed": 2
+   }
+  },
+  {
+   "id": "svB_058p500+10p357",
+   "n_peaks": 92,
+   "passes": 3,
+   "true": {
+    "linked": 2,
+    "confirmed": 2
+   },
+   "shift1": {
+    "linked": 0,
+    "confirmed": 0
+   },
+   "shift2": {
+    "linked": 2,
+    "confirmed": 1
+   }
+  },
+  {
+   "id": "svB_060p000+11p000",
+   "n_peaks": 157,
+   "passes": 3,
+   "true": {
+    "linked": 3,
+    "confirmed": 3
+   },
+   "shift1": {
+    "linked": 4,
+    "confirmed": 3
+   },
+   "shift2": {
+    "linked": 3,
+    "confirmed": 1
+   }
+  },
+  {
+   "id": "svB_061p500+11p643",
+   "n_peaks": 81,
+   "passes": 3,
+   "true": {
+    "linked": 0,
+    "confirmed": 0
+   },
+   "shift1": {
+    "linked": 0,
+    "confirmed": 0
+   },
+   "shift2": {
+    "linked": 4,
+    "confirmed": 2
+   }
+  },
+  {
+   "id": "svB_063p000+12p286",
+   "n_peaks": 65,
+   "passes": 3,
+   "true": {
+    "linked": 0,
+    "confirmed": 0
+   },
+   "shift1": {
+    "linked": 0,
+    "confirmed": 0
+   },
+   "shift2": {
+    "linked": 0,
+    "confirmed": 0
+   }
+  },
+  {
+   "id": "svB_064p500+12p929",
+   "n_peaks": 231,
+   "passes": 3,
+   "true": {
+    "linked": 13,
+    "confirmed": 0
+   },
+   "shift1": {
+    "linked": 12,
+    "confirmed": 2
+   },
+   "shift2": {
+    "linked": 13,
+    "confirmed": 3
+   }
+  },
+  {
+   "id": "svB_066p000+13p571",
+   "n_peaks": 155,
+   "passes": 3,
+   "true": {
+    "linked": 4,
+    "confirmed": 1
+   },
+   "shift1": {
+    "linked": 6,
+    "confirmed": 0
+   },
+   "shift2": {
+    "linked": 3,
+    "confirmed": 3
+   }
+  },
+  {
+   "id": "svB_067p500+14p167",
+   "n_peaks": 247,
+   "passes": 3,
+   "true": {
+    "linked": 15,
+    "confirmed": 4
+   },
+   "shift1": {
+    "linked": 12,
+    "confirmed": 5
+   },
+   "shift2": {
+    "linked": 16,
+    "confirmed": 7
+   }
+  },
+  {
+   "id": "svB_069p000+14p667",
+   "n_peaks": 185,
+   "passes": 3,
+   "true": {
+    "linked": 7,
+    "confirmed": 2
+   },
+   "shift1": {
+    "linked": 9,
+    "confirmed": 4
+   },
+   "shift2": {
+    "linked": 8,
+    "confirmed": 3
+   }
+  },
+  {
+   "id": "svB_070p500+15p167",
+   "n_peaks": 182,
+   "passes": 3,
+   "true": {
+    "linked": 12,
+    "confirmed": 6
+   },
+   "shift1": {
+    "linked": 5,
+    "confirmed": 4
+   },
+   "shift2": {
+    "linked": 3,
+    "confirmed": 2
+   }
+  },
+  {
+   "id": "svB_072p000+15p667",
+   "n_peaks": 251,
+   "passes": 3,
+   "true": {
+    "linked": 10,
+    "confirmed": 9
+   },
+   "shift1": {
+    "linked": 11,
+    "confirmed": 9
+   },
+   "shift2": {
+    "linked": 11,
+    "confirmed": 8
+   }
+  },
+  {
+   "id": "svB_073p500+16p167",
+   "n_peaks": 271,
+   "passes": 3,
+   "true": {
+    "linked": 19,
+    "confirmed": 10
+   },
+   "shift1": {
+    "linked": 17,
+    "confirmed": 11
+   },
+   "shift2": {
+    "linked": 6,
+    "confirmed": 4
+   }
+  },
+  {
+   "id": "svD_033p951-49p290",
+   "n_peaks": 21,
+   "passes": 3,
+   "true": {
+    "linked": 0,
+    "confirmed": 0
+   },
+   "shift1": {
+    "linked": 0,
+    "confirmed": 0
+   },
+   "shift2": {
+    "linked": 0,
+    "confirmed": 0
+   }
+  },
+  {
+   "id": "svD_033p951-49p790",
+   "n_peaks": 66,
+   "passes": 3,
+   "true": {
+    "linked": 1,
+    "confirmed": 1
+   },
+   "shift1": {
+    "linked": 1,
+    "confirmed": 0
+   },
+   "shift2": {
+    "linked": 3,
+    "confirmed": 0
+   }
+  },
+  {
+   "id": "svD_033p951-50p290",
+   "n_peaks": 153,
+   "passes": 3,
+   "true": {
+    "linked": 1,
+    "confirmed": 1
+   },
+   "shift1": {
+    "linked": 0,
+    "confirmed": 0
+   },
+   "shift2": {
+    "linked": 1,
+    "confirmed": 0
+   }
+  },
+  {
+   "id": "svD_034p726-49p290",
+   "n_peaks": 63,
+   "passes": 3,
+   "true": {
+    "linked": 0,
+    "confirmed": 0
+   },
+   "shift1": {
+    "linked": 0,
+    "confirmed": 0
+   },
+   "shift2": {
+    "linked": 0,
+    "confirmed": 0
+   }
+  },
+  {
+   "id": "svD_034p726-49p790",
+   "n_peaks": 41,
+   "passes": 3,
+   "true": {
+    "linked": 0,
+    "confirmed": 0
+   },
+   "shift1": {
+    "linked": 0,
+    "confirmed": 0
+   },
+   "shift2": {
+    "linked": 0,
+    "confirmed": 0
+   }
+  },
+  {
+   "id": "svD_034p726-50p290",
+   "n_peaks": 156,
+   "passes": 3,
+   "true": {
+    "linked": 6,
+    "confirmed": 2
+   },
+   "shift1": {
+    "linked": 1,
+    "confirmed": 0
+   },
+   "shift2": {
+    "linked": 1,
+    "confirmed": 0
+   }
+  },
+  {
+   "id": "svD_035p500-49p290",
+   "n_peaks": 107,
+   "passes": 3,
+   "true": {
+    "linked": 2,
+    "confirmed": 1
+   },
+   "shift1": {
+    "linked": 0,
+    "confirmed": 0
+   },
+   "shift2": {
+    "linked": 4,
+    "confirmed": 1
+   }
+  },
+  {
+   "id": "svD_035p500-49p790",
+   "n_peaks": 29,
+   "passes": 3,
+   "true": {
+    "linked": 0,
+    "confirmed": 0
+   },
+   "shift1": {
+    "linked": 0,
+    "confirmed": 0
+   },
+   "shift2": {
+    "linked": 0,
+    "confirmed": 0
+   }
+  },
+  {
+   "id": "svD_035p500-50p290",
+   "n_peaks": 49,
+   "passes": 3,
+   "true": {
+    "linked": 0,
+    "confirmed": 0
+   },
+   "shift1": {
+    "linked": 4,
+    "confirmed": 0
+   },
+   "shift2": {
+    "linked": 3,
+    "confirmed": 1
+   }
+  }
+ ],
+ "total_true": 63,
+ "total_null_mean": 57.5,
+ "total_null": [
+  55,
+  60
+ ],
+ "note": "confirmed stacked tracks with true pass times vs. cyclically relabelled pass times (chance alignments)"
+}

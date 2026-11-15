@@ -1,0 +1,313 @@
+{
+ "updated": "2026-11-13T21:15:52",
+ "fields": {
+  "barnard": {
+   "n_sources": 147,
+   "n_measured": 143,
+   "n_candidates": 0,
+   "n_searched": 99,
+   "n_blended": 33,
+   "n_near_saturated": 17,
+   "by_status": {
+    "known_variable": 0,
+    "catalogued_constant": 0,
+    "new": 0
+   },
+   "target_check": {
+    "id": "barnard",
+    "kind": "pm",
+    "measured": true,
+    "flagged": false,
+    "cand_id": null,
+    "amp": 1.041,
+    "sig": 1.35,
+    "n_dets_agree": 0,
+    "amp_det": {
+     "D1": 1.095,
+     "D2": 0.776,
+     "D3": 1.056,
+     "D4": 1.046,
+     "D5": 1.095,
+     "D6": 1.115
+    },
+    "saturated": true
+   },
+   "catalogued_variables": {
+    "n_in_field": 41,
+    "n_on_a_measured_source": 6,
+    "n_searched": 3,
+    "n_flagged": 0
+   },
+   "threshold_unsat": 1.04,
+   "catalogue_errors": {}
+  },
+  "cybele": {
+   "n_sources": 261,
+   "n_measured": 248,
+   "n_candidates": 0,
+   "n_searched": 197,
+   "n_blended": 49,
+   "n_near_saturated": 2,
+   "by_status": {
+    "known_variable": 0,
+    "catalogued_constant": 0,
+    "new": 0
+   },
+   "target_check": null,
+   "catalogued_variables": {
+    "n_in_field": 12,
+    "n_on_a_measured_source": 3,
+    "n_searched": 3,
+    "n_flagged": 0
+   },
+   "threshold_unsat": 1.075,
+   "catalogue_errors": {}
+  },
+  "epsindi": {
+   "n_sources": 52,
+   "n_measured": 51,
+   "n_candidates": 0,
+   "n_searched": 45,
+   "n_blended": 6,
+   "n_near_saturated": 0,
+   "by_status": {
+    "known_variable": 0,
+    "catalogued_constant": 0,
+    "new": 0
+   },
+   "target_check": {
+    "id": "epsindi",
+    "kind": "pm",
+    "measured": true,
+    "flagged": false,
+    "cand_id": null,
+    "amp": 1.041,
+    "sig": 1.23,
+    "n_dets_agree": 0,
+    "amp_det": {
+     "D2": 1.104,
+     "D3": 0.967,
+     "D4": 1.133,
+     "D5": 1.076,
+     "D6": 0.961
+    },
+    "saturated": false
+   },
+   "catalogued_variables": {
+    "n_in_field": 10,
+    "n_on_a_measured_source": 1,
+    "n_searched": 1,
+    "n_flagged": 0
+   },
+   "threshold_unsat": 1.077,
+   "catalogue_errors": {}
+  },
+  "q043p280+16p853s15": {
+   "n_sources": 22,
+   "n_measured": 20,
+   "n_candidates": 0,
+   "n_searched": 16,
+   "n_blended": 3,
+   "n_near_saturated": 1,
+   "by_status": {
+    "known_variable": 0,
+    "catalogued_constant": 0,
+    "new": 0
+   },
+   "target_check": null,
+   "catalogued_variables": {
+    "n_in_field": 2,
+    "n_on_a_measured_source": 1,
+    "n_searched": 1,
+    "n_flagged": 0
+   },
+   "threshold_unsat": 1.051,
+   "catalogue_errors": {}
+  },
+  "q183p200-01p400": {
+   "n_sources": 109,
+   "n_measured": 102,
+   "n_candidates": 0,
+   "n_searched": 77,
+   "n_blended": 25,
+   "n_near_saturated": 0,
+   "by_status": {
+    "known_variable": 0,
+    "catalogued_constant": 0,
+    "new": 0
+   },
+   "target_check": null,
+   "catalogued_variables": {
+    "n_in_field": 9,
+    "n_on_a_measured_source": 3,
+    "n_searched": 3,
+    "n_flagged": 0
+   },
+   "threshold_unsat": 1.073,
+   "catalogue_errors": {}
+  },
+  "rdra": {
+   "n_sources": 33,
+   "n_measured": 30,
+   "n_candidates": 1,
+   "n_searched": 27,
+   "n_blended": 3,
+   "n_near_saturated": 2,
+   "by_status": {
+    "known_variable": 1,
+    "catalogued_constant": 0,
+    "new": 0
+   },
+   "target_check": {
+    "id": "rdra",
+    "kind": "var",
+    "measured": true,
+    "flagged": true,
+    "cand_id": 0,
+    "amp": 1.897,
+    "sig": 5.9,
+    "n_dets_agree": 3,
+    "amp_det": {
+     "D1": 1.968,
+     "D2": 1.997,
+     "D3": 2.165,
+     "D4": 1.652,
+     "D5": 1.73,
+     "D6": 2.105
+    },
+    "saturated": true
+   },
+   "catalogued_variables": {
+    "n_in_field": 10,
+    "n_on_a_measured_source": 2,
+    "n_searched": 2,
+    "n_flagged": 1
+   },
+   "threshold_unsat": 1.057,
+   "catalogue_errors": {}
+  },
+  "rwaur": {
+   "n_sources": 153,
+   "n_measured": 145,
+   "n_candidates": 1,
+   "n_searched": 104,
+   "n_blended": 40,
+   "n_near_saturated": 2,
+   "by_status": {
+    "known_variable": 1,
+    "catalogued_constant": 0,
+    "new": 0
+   },
+   "target_check": {
+    "id": "rwaur",
+    "kind": "var",
+    "measured": true,
+    "flagged": true,
+    "cand_id": 0,
+    "amp": 1.231,
+    "sig": 7.85,
+    "n_dets_agree": 2,
+    "amp_det": {
+     "D1": 0.879,
+     "D2": 0.9,
+     "D3": 0.965,
+     "D4": 1.485,
+     "D5": 1.893,
+     "D6": 1.974
+    },
+    "saturated": true
+   },
+   "catalogued_variables": {
+    "n_in_field": 53,
+    "n_on_a_measured_source": 11,
+    "n_searched": 7,
+    "n_flagged": 1
+   },
+   "threshold_unsat": 1.039,
+   "catalogue_errors": {}
+  },
+  "taurus": {
+   "n_sources": 400,
+   "n_measured": 393,
+   "n_candidates": 0,
+   "n_searched": 275,
+   "n_blended": 118,
+   "n_near_saturated": 0,
+   "by_status": {
+    "known_variable": 0,
+    "catalogued_constant": 0,
+    "new": 0
+   },
+   "target_check": null,
+   "catalogued_variables": {
+    "n_in_field": 43,
+    "n_on_a_measured_source": 24,
+    "n_searched": 17,
+    "n_flagged": 0
+   },
+   "threshold_unsat": 1.062,
+   "catalogue_errors": {}
+  },
+  "wise0855": {
+   "n_sources": 134,
+   "n_measured": 130,
+   "n_candidates": 0,
+   "n_searched": 87,
+   "n_blended": 42,
+   "n_near_saturated": 4,
+   "by_status": {
+    "known_variable": 0,
+    "catalogued_constant": 0,
+    "new": 0
+   },
+   "target_check": {
+    "id": "wise0855",
+    "kind": "pm",
+    "measured": true,
+    "flagged": false,
+    "cand_id": null,
+    "amp": 1.018,
+    "sig": 0.73,
+    "n_dets_agree": 0,
+    "amp_det": {
+     "D1": 0.991,
+     "D2": 1.015,
+     "D3": 1.02,
+     "D4": 1.108
+    },
+    "saturated": false
+   },
+   "catalogued_variables": {
+    "n_in_field": 14,
+    "n_on_a_measured_source": 4,
+    "n_searched": 3,
+    "n_flagged": 0
+   },
+   "threshold_unsat": 1.067,
+   "catalogue_errors": {}
+  }
+ },
+ "control_barnard": {
+  "measured": true,
+  "flagged": false,
+  "amp": 1.041,
+  "sig": 1.35,
+  "amp_det": {
+   "D1": 1.095,
+   "D2": 0.776,
+   "D3": 1.056,
+   "D4": 1.046,
+   "D5": 1.095,
+   "D6": 1.115
+  }
+ },
+ "ring_pool_excluding_targets": {
+  "n_differences": 244,
+  "robust_sigma_ln": 0.0383,
+  "median_fit_err_ln": 0.027,
+  "amp_p95": 1.187,
+  "amp_p99": 1.334,
+  "max_z": 3.61,
+  "n_z_ge_5": 0
+ }
+}

@@ -1,0 +1,132 @@
+/* The interstellar comet page (comet.jsx). Charts come from the chart kit (charts.css); this is the page grid, the hero,
+   the pictures (comet-centred, north up, drawn pixel-sharp), the movie, the CO2 row and the two-agency cards.
+   Type only from the theme's sizes; colours only from theme.css; breakpoints 560 / 900 / 1280. */
+.comet { max-width: var(--sx-page); margin: 0 auto; padding: 32px var(--sx-gutter) 96px; }
+
+/* ---- hero ---- */
+.cm-hero { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: 32px; align-items: start; }
+.cm-kicker { margin: 0; font: 600 var(--fs-ui)/1.2 var(--sx-font); letter-spacing: .08em; text-transform: uppercase; color: var(--sx-accent); }
+.cm-hero h1 { margin: 8px 0 0; font: 400 var(--fs-display)/1.05 var(--sx-display); letter-spacing: .01em; }
+.cm-lead { margin: 16px 0 0; max-width: 46ch; font-size: var(--fs-lead); line-height: 1.5; color: var(--sx-ink-2); }
+.cm-facts { list-style: none; margin: 24px 0 0; padding: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+.cm-facts li { display: grid; align-content: start; gap: 8px; padding: 20px; border-radius: var(--r-md); background: var(--sx-surface); box-shadow: inset 0 0 0 1px var(--sx-line); }
+.cm-facts b { font: 400 var(--fs-h2)/1.05 var(--sx-display); letter-spacing: .02em; color: var(--sx-ink); font-variant-numeric: tabular-nums; }
+.cm-facts span { font-size: var(--fs-ui); line-height: 1.45; color: var(--sx-ink-2); }
+.cm-facts3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.cm-hero-img { margin: 0; display: grid; gap: 12px; }
+.cm-hero-img figcaption { font-size: var(--fs-small); line-height: 1.5; color: var(--sx-ink-2); }
+
+/* ---- comet-centred pictures: square, sharp pixels, compass and scale bar on top ---- */
+.cm-pic { position: relative; width: 100%; aspect-ratio: 1; overflow: hidden; border-radius: var(--r-md); background: var(--sx-black); box-shadow: inset 0 0 0 1px var(--sx-line); }
+.cm-pic img, .cm-pic canvas { display: block; width: 100%; height: 100%; image-rendering: pixelated; }
+.cm-pic-canvas { width: auto; max-width: 100%; margin: 0 auto; }
+.cm-pic-canvas canvas { height: auto; }
+.cm-pic-empty { background: var(--sx-surface-2); }
+.cm-pic-label { position: absolute; left: 12px; top: 10px; padding: 4px 10px; border-radius: 999px; background: rgb(var(--c-black) / .6); font: 600 var(--fs-small)/1.2 var(--sx-font); color: var(--sx-ink); }
+.cm-compass { position: absolute; right: 12px; top: 10px; width: 44px; height: 44px; font: 700 var(--fs-xs)/1 var(--sx-font); color: var(--sx-ink-2); }
+.cm-compass::before, .cm-compass::after { content: ''; position: absolute; right: 6px; background: rgb(var(--c-ink-2) / .8); }
+.cm-compass::before { top: 16px; width: 2px; height: 22px; }
+.cm-compass::after { top: 36px; width: 24px; height: 2px; }
+.cm-compass i { position: absolute; right: 2px; top: 0; font-style: normal; }
+.cm-compass b { position: absolute; right: 34px; top: 30px; font-weight: 700; }
+.cm-scale { position: absolute; left: 12px; bottom: 12px; height: 2px; background: var(--sx-ink); }
+.cm-scale span { position: absolute; left: 0; bottom: 8px; white-space: nowrap; font: 600 var(--fs-small)/1 var(--sx-font); color: var(--sx-ink); text-shadow: 0 0 4px var(--sx-black), 0 0 2px var(--sx-black); }
+.cm-loading { position: absolute; inset: 0; display: grid; place-items: center; font-size: var(--fs-ui); color: var(--sx-ink-2); }
+
+/* ---- section navigation and sections ---- */
+.cm-nav { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 32px; }
+.cm-nav .chip { min-height: 40px; padding: 6px 16px; font-size: var(--fs-ui); cursor: pointer; }
+.cm-sec { margin-top: 96px; scroll-margin-top: 88px; }
+.cm-sec > h2, .cm-credits > h2 { margin: 0; max-width: 30ch; font: 700 var(--fs-h2)/1.15 var(--sx-font); letter-spacing: -.02em; }
+.cm-lead2 { margin: 16px 0 0; max-width: 64ch; font-size: var(--fs-lead); line-height: 1.5; color: var(--sx-ink-2); }
+.cm-grid { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 16px; margin-top: 24px; }
+.cm-c5 { grid-column: span 5; }
+.cm-c6 { grid-column: span 6; }
+.cm-c7 { grid-column: span 7; }
+.cm-note { margin: 0; font-size: var(--fs-small); line-height: 1.5; color: var(--sx-ink-2); }
+.cm-missing { margin-top: 24px; }
+.cm-take { margin: 16px 0 0; max-width: 72ch; font-size: var(--fs-body); line-height: 1.55; color: var(--sx-ink-2); }
+.cm-toolbar { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 24px; }
+.comet .seg button { min-height: 40px; font-size: var(--fs-ui); }
+.comet .chart-card { scroll-margin-top: 88px; }
+.comet .plot .mark-note { paint-order: stroke; stroke: var(--sx-surface); stroke-width: 4px; stroke-linejoin: round; }
+
+/* ---- charts' own marks ---- */
+.cm-orb { fill: none; stroke: rgb(var(--c-white) / .16); stroke-width: 1.5; }
+.cm-path { fill: none; stroke: var(--sx-accent); stroke-width: 2.5; }
+.cm-gal { fill: none; stroke: rgb(var(--c-distant) / .55); stroke-width: 10; stroke-linecap: round; }
+.comet .plot .cm-gal-label { fill: var(--sx-distant-soft); }
+.cm-skypath { fill: none; stroke: var(--sx-ink-3); stroke-width: 1.5; stroke-dasharray: 5 4; }
+.cm-bandline { stroke: rgb(var(--c-white) / .22); stroke-width: 1; stroke-dasharray: 3 4; }
+.cm-run { fill: none; stroke: var(--sx-ink); stroke-width: 2; opacity: .8; }
+.cm-band { fill: rgb(var(--c-amber) / .14); }
+.cm-contband { fill: rgb(var(--c-white) / .05); }
+
+/* ---- movie ---- */
+.cm-movie { align-content: start; }
+.cm-moviebox { width: 100%; }
+.cm-frameinfo { display: grid; gap: 8px; }
+.cm-frameinfo-row { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 16px; font-size: var(--fs-ui); color: var(--sx-ink-2); }
+.cm-frameinfo-row b { font: 400 var(--fs-h3)/1 var(--sx-display); }
+.cm-co2tag { margin-left: 8px; padding: 2px 10px; border-radius: 999px; background: rgb(var(--c-amber) / .2); color: var(--sx-amber); font-style: normal; font-weight: 700; }
+.cm-ruler { position: relative; height: 12px; border-radius: 999px;
+  background: linear-gradient(90deg, var(--sx-d1), var(--sx-d2), var(--sx-d3), var(--sx-d4), var(--sx-d5), var(--sx-d6)); opacity: .9; }
+.cm-ruler-co2 { position: absolute; top: -4px; bottom: -4px; border-radius: var(--r-sm); box-shadow: 0 0 0 2px var(--sx-amber); }
+.cm-ruler b { position: absolute; top: -7px; width: 4px; height: 26px; margin-left: -2px; border-radius: 999px; background: var(--sx-ink); box-shadow: 0 0 0 2px var(--sx-black); transition: left .15s var(--sx-ease); }
+.cm-ruler-ticks { display: flex; justify-content: space-between; font-size: var(--fs-small); color: var(--sx-ink-3); }
+.cm-deep .chart-card { gap: 8px; }
+.cm-deep .cm-pic { max-width: 520px; }
+
+/* ---- CO2 row: four pictures on one scale ---- */
+.cm-co2row { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; margin-top: 24px; }
+.cm-co2pic { margin: 0; display: grid; gap: 8px; }
+.cm-co2pic figcaption { display: grid; gap: 2px; }
+.cm-co2pic figcaption b { font: 700 var(--fs-lead)/1.2 var(--sx-font); color: var(--sx-ink); }
+.cm-co2pic figcaption span { font-size: var(--fs-small); color: var(--sx-ink-2); }
+.cm-co2pic.on .cm-pic { box-shadow: 0 0 0 2px var(--sx-amber); }
+.cm-co2pic.on figcaption b { color: var(--sx-amber); }
+.cm-co2pic .cm-compass { display: none; }
+.cm-co2pic .cm-scale span { font-size: var(--fs-xs); }
+.cm-detail p { margin: 8px 0 0; max-width: 80ch; line-height: 1.55; }
+
+/* ---- two agencies ---- */
+.cm-agency h3 { display: flex; align-items: baseline; gap: 12px; margin: 0; font: 700 var(--fs-h3)/1.2 var(--sx-font); }
+.cm-agency h3 small { font: 500 var(--fs-ui)/1 var(--sx-font); color: var(--sx-ink-2); }
+.cm-agency .cm-pic { max-width: 560px; }
+.cm-specs { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px 16px; margin: 0; }
+.cm-specs div { display: grid; gap: 2px; }
+.cm-specs dt { font-size: var(--fs-small); color: var(--sx-ink-3); }
+.cm-specs dd { margin: 0; font-size: var(--fs-ui); color: var(--sx-ink); }
+.cm-placeholder { display: grid; place-content: center; gap: 12px; padding: 32px; text-align: center; font-size: var(--fs-body); color: var(--sx-ink-2); }
+.cm-placeholder p { margin: 0; max-width: 40ch; }
+.cm-neoseg { justify-self: start; }
+
+/* ---- caveats and credits ---- */
+.cm-notes { margin: 24px 0 0; padding-left: 24px; display: grid; gap: 12px; max-width: 80ch; font-size: var(--fs-body); line-height: 1.55; color: var(--sx-ink-2); }
+.cm-credits { margin-top: 96px; padding-top: 32px; border-top: 1px solid var(--sx-line); }
+.cm-credits > h2 { font-size: var(--fs-h3); }
+.cm-credits ul { margin: 16px 0 0; padding-left: 20px; display: grid; gap: 10px; max-width: 90ch; font-size: var(--fs-small); line-height: 1.55; color: var(--sx-ink-2); }
+.cm-credits a { color: var(--sx-known); }
+.cm-credits code { font: 500 var(--fs-small)/1 var(--sx-mono); color: var(--sx-ink); }
+
+@media (max-width: 1280px) {
+  .cm-c5, .cm-c7 { grid-column: span 12; }
+  .cm-movie .cm-pic { max-width: 560px; }
+}
+@media (max-width: 900px) {
+  .cm-hero { grid-template-columns: minmax(0, 1fr); }
+  .cm-hero-img { max-width: 560px; }
+  .cm-c6 { grid-column: span 12; }
+  .cm-co2row { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .cm-sec { margin-top: 72px; }
+}
+@media (max-width: 560px) {
+  .cm-facts, .cm-facts3 { grid-template-columns: minmax(0, 1fr); }
+  .cm-facts li { padding: 16px; }
+  .cm-specs { grid-template-columns: minmax(0, 1fr); }
+  .cm-co2row { gap: 12px; }
+}
+.cm-gc { fill: rgb(var(--c-distant) / .18); stroke: rgb(var(--c-distant) / .6); stroke-width: 1.5; }
+/* the NEOSSat stack keeps its own shape (it need not be square), so the scale bar's width matches the picture */
+.cm-pic-free { aspect-ratio: auto; }
+.cm-pic-free img { height: auto; }

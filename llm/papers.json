@@ -1,0 +1,686 @@
+[
+  {
+    "arxiv_id": "2511.02985",
+    "title": "The SPHEREx Satellite Mission",
+    "first_author": "James J. Bock",
+    "year": 2025,
+    "journal_ref": null,
+    "topic": "spherex",
+    "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/"
+  },
+  {
+    "arxiv_id": "2511.15823",
+    "title": "The SPHEREx Image and Spectrophotometry Processing Pipeline",
+    "first_author": "Rachel Akeson",
+    "year": 2026,
+    "journal_ref": null,
+    "topic": "spherex",
+    "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/"
+  },
+  {
+    "arxiv_id": "2505.24856",
+    "title": "The SPHEREx Sky Simulator: Science Data Modeling for the First All-Sky Near-Infrared Spectral Survey",
+    "first_author": "Brendan P. Crill",
+    "year": 2025,
+    "journal_ref": "ApJS 281 10 (2025)",
+    "topic": "spherex",
+    "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/"
+  },
+  {
+    "arxiv_id": "2603.29835",
+    "title": "The SPHEREx Instrument: Calibration, testing and performance measurements of the NIR spectroscopic surveyor from the laboratory to in-orbit commissioning",
+    "first_author": "Phil M. Korngut",
+    "year": 2026,
+    "journal_ref": null,
+    "topic": "spherex",
+    "license": "http://creativecommons.org/licenses/by-nc-sa/4.0/"
+  },
+  {
+    "arxiv_id": "1412.4872",
+    "title": "Cosmology with the SPHEREX All-Sky Spectral Survey",
+    "first_author": "Olivier Doré",
+    "year": 2015,
+    "journal_ref": null,
+    "topic": "spherex",
+    "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/"
+  },
+  {
+    "arxiv_id": "1606.07039",
+    "title": "Science Impacts of the SPHEREx All-Sky Optical to Near-Infrared Spectral Survey: Report of a Community Workshop Examining Extragalactic, Galactic, Stellar and Planetary Science",
+    "first_author": "Olivier Doré",
+    "year": 2016,
+    "journal_ref": null,
+    "topic": "spherex",
+    "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/"
+  },
+  {
+    "arxiv_id": "1805.05489",
+    "title": "Science Impacts of the SPHEREx All-Sky Optical to Near-Infrared Spectral Survey II: Report of a Community Workshop on the Scientific Synergies Between the SPHEREx Survey and Other Astronomy Observatories",
+    "first_author": "Olivier Doré",
+    "year": 2018,
+    "journal_ref": null,
+    "topic": "spherex",
+    "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/"
+  },
+  {
+    "arxiv_id": "2404.11017",
+    "title": "SPHEREx: NASA's Near-Infrared Spectrophotmetric All-Sky Survey",
+    "first_author": "Brendan P. Crill",
+    "year": 2020,
+    "journal_ref": "Proceedings Volume 11443, Space Telescopes and Instrumentation 2020: Optical, Infrared, and Millimeter Wave; 114430I (2020)",
+    "topic": "spherex",
+    "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/"
+  },
+  {
+    "arxiv_id": "2602.09139",
+    "title": "Spectral response of SPHEREx",
+    "first_author": "Howard Hui",
+    "year": 2026,
+    "journal_ref": "ApJS 284 10 (2026)",
+    "topic": "spherex",
+    "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/"
+  },
+  {
+    "arxiv_id": "2603.25790",
+    "title": "Spectral Map Making with SPHEREx",
+    "first_author": "Ari J. Cukierman",
+    "year": 2026,
+    "journal_ref": "ApJS 286 22 (2026)",
+    "topic": "spherex",
+    "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/"
+  },
+  {
+    "arxiv_id": "2508.20332",
+    "title": "Optimized Observation Sequencing in Low-Earth Orbit with the SPHEREx Survey Planning Software",
+    "first_author": "Sean Bryan",
+    "year": 2025,
+    "journal_ref": null,
+    "topic": "spherex",
+    "license": "http://creativecommons.org/licenses/by/4.0/"
+  },
+  {
+    "arxiv_id": "2402.08705",
+    "title": "Planetary Defense Use of the SPHEREx Solar System Object Catalog",
+    "first_author": "Carey Lisse",
+    "year": 2024,
+    "journal_ref": null,
+    "topic": "spherex",
+    "license": "http://creativecommons.org/licenses/by/4.0/"
+  },
+  {
+    "arxiv_id": "2602.08037",
+    "title": "SOLO: wide-field asteroid light curve monitoring system for SPHEREx",
+    "first_author": "Bumhoo Lim",
+    "year": 2026,
+    "journal_ref": null,
+    "topic": "spherex",
+    "license": "http://creativecommons.org/licenses/by/4.0/"
+  },
+  {
+    "arxiv_id": "2508.15469",
+    "title": "SPHEREx Discovery of Strong Water Ice Absorption and an Extended Carbon Dioxide Coma in 3I/ATLAS",
+    "first_author": "C. M. Lisse",
+    "year": 2025,
+    "journal_ref": null,
+    "topic": "spherex",
+    "license": "http://creativecommons.org/licenses/by/4.0/"
+  },
+  {
+    "arxiv_id": "2607.00543",
+    "title": "SPHEREx 0.75 to 5 $μ$m Spectra for a Sequence of Nearby Brown Dwarfs",
+    "first_author": "Zafar Rustamkulov",
+    "year": 2026,
+    "journal_ref": null,
+    "topic": "spherex",
+    "license": "http://creativecommons.org/licenses/by/4.0/"
+  },
+  {
+    "arxiv_id": "1404.6501",
+    "title": "Discovery of a ~250 K Brown Dwarf at 2 pc from the Sun",
+    "first_author": "K. L. Luhman",
+    "year": 2014,
+    "journal_ref": "Astrophys.J.786(2014)L18",
+    "topic": "target",
+    "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/"
+  },
+  {
+    "arxiv_id": "1409.5899",
+    "title": "A New Parallax Measurement for the Coldest Known Brown Dwarf",
+    "first_author": "K. L. Luhman",
+    "year": 2014,
+    "journal_ref": null,
+    "topic": "target",
+    "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/"
+  },
+  {
+    "arxiv_id": "1605.06655",
+    "title": "The Spectral Energy Distribution of the Coldest Known Brown Dwarf",
+    "first_author": "K. L. Luhman",
+    "year": 2016,
+    "journal_ref": null,
+    "topic": "target",
+    "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/"
+  },
+  {
+    "arxiv_id": "1408.4671",
+    "title": "Indications of Water Clouds in the Coldest Known Brown Dwarf",
+    "first_author": "Jacqueline K. Faherty",
+    "year": 2014,
+    "journal_ref": null,
+    "topic": "target",
+    "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/"
+  },
+  {
+    "arxiv_id": "1605.04902",
+    "title": "The First Spectrum of the Coldest Brown Dwarf",
+    "first_author": "Andrew Skemer",
+    "year": 2016,
+    "journal_ref": null,
+    "topic": "target",
+    "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/"
+  },
+  {
+    "arxiv_id": "2311.17316",
+    "title": "JWST/NIRSpec Observations of the Coldest Known Brown Dwarf",
+    "first_author": "K. L. Luhman",
+    "year": 2023,
+    "journal_ref": null,
+    "topic": "target",
+    "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/"
+  },
+  {
+    "arxiv_id": "1609.05850",
+    "title": "Photometric Monitoring of the Coldest Known Brown Dwarf with the Spitzer Space Telescope",
+    "first_author": "Taran Esplin",
+    "year": 2016,
+    "journal_ref": null,
+    "topic": "target",
+    "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/"
+  },
+  {
+    "arxiv_id": "astro-ph/0212487",
+    "title": "Epsilon Indi B: a new benchmark T dwarf",
+    "first_author": "R. -D. Scholz",
+    "year": 2003,
+    "journal_ref": "Astron.Astrophys. 398 (2003) L29-L34",
+    "topic": "target",
+    "license": "arxiv-nonexclusive"
+  },
+  {
+    "arxiv_id": "astro-ph/0309256",
+    "title": "Epsilon Indi Ba/Bb: the nearest binary brown dwarf",
+    "first_author": "M. J. McCaughrean",
+    "year": 2003,
+    "journal_ref": null,
+    "topic": "target",
+    "license": "arxiv-nonexclusive"
+  },
+  {
+    "arxiv_id": "2503.01599",
+    "title": "A temperate super-Jupiter imaged with JWST in the mid-infrared",
+    "first_author": "E. C. Matthews",
+    "year": 2024,
+    "journal_ref": "Nature 633, 879-792 (2024)",
+    "topic": "target",
+    "license": "http://creativecommons.org/licenses/by/4.0/"
+  },
+  {
+    "arxiv_id": "1811.05955",
+    "title": "A candidate super-Earth planet orbiting near the snow line of Barnard's star",
+    "first_author": "I. Ribas",
+    "year": 2018,
+    "journal_ref": null,
+    "topic": "target",
+    "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/"
+  },
+  {
+    "arxiv_id": "2410.00569",
+    "title": "A sub-Earth-mass planet orbiting Barnard's star",
+    "first_author": "J. I. Gonzalez Hernandez",
+    "year": 2024,
+    "journal_ref": "A&A, 690, A79 (2024)",
+    "topic": "target",
+    "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/"
+  },
+  {
+    "arxiv_id": "2503.08095",
+    "title": "Four sub-Earth planets orbiting Barnard's Star from MAROON-X and ESPRESSO",
+    "first_author": "Ritvik Basant",
+    "year": 2025,
+    "journal_ref": null,
+    "topic": "target",
+    "license": "http://creativecommons.org/publicdomain/zero/1.0/"
+  },
+  {
+    "arxiv_id": "1308.2017",
+    "title": "Occultation of the T Tauri Star RW Aurigae A by its Tidally Disrupted Disk",
+    "first_author": "Joseph E. Rodriguez",
+    "year": 2013,
+    "journal_ref": null,
+    "topic": "target",
+    "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/"
+  },
+  {
+    "arxiv_id": "1503.04158",
+    "title": "Another deep dimming of the classical T Tauri star RW Aur A",
+    "first_author": "P. P. Petrov",
+    "year": 2015,
+    "journal_ref": "A&A 577, A73 (2015)",
+    "topic": "target",
+    "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/"
+  },
+  {
+    "arxiv_id": "1609.05667",
+    "title": "The disappearing act: A dusty wind eclipsing RW Aur",
+    "first_author": "I. Bozhinova",
+    "year": 2016,
+    "journal_ref": null,
+    "topic": "target",
+    "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/"
+  },
+  {
+    "arxiv_id": "1108.4678",
+    "title": "The Discovery of Y Dwarfs Using Data from the Wide-field Infrared Survey Explorer (WISE)",
+    "first_author": "Michael C. Cushing",
+    "year": 2011,
+    "journal_ref": null,
+    "topic": "brown_dwarf",
+    "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/"
+  },
+  {
+    "arxiv_id": "1108.4677",
+    "title": "The First Hundred Brown Dwarfs Discovered by the Wide-field Infrared Survey Explorer (WISE)",
+    "first_author": "J. Davy Kirkpatrick",
+    "year": 2011,
+    "journal_ref": null,
+    "topic": "brown_dwarf",
+    "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/"
+  },
+  {
+    "arxiv_id": "2011.11616",
+    "title": "The Field Substellar Mass Function Based on the Full-sky 20-pc Census of 525 L, T, and Y Dwarfs",
+    "first_author": "J. Davy Kirkpatrick",
+    "year": 2020,
+    "journal_ref": null,
+    "topic": "brown_dwarf",
+    "license": "http://creativecommons.org/licenses/by/4.0/"
+  },
+  {
+    "arxiv_id": "1812.01208",
+    "title": "Preliminary Trigonometric Parallaxes of 184 Late-T and Y Dwarfs and an Analysis of the Field Substellar Mass Function into the \"Planetary\" Mass Regime",
+    "first_author": "J. Davy Kirkpatrick",
+    "year": 2018,
+    "journal_ref": null,
+    "topic": "brown_dwarf",
+    "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/"
+  },
+  {
+    "arxiv_id": "2312.03639",
+    "title": "The Initial Mass Function Based on the Full-sky 20-pc Census of $\\sim$3,600 Stars and Brown Dwarfs",
+    "first_author": "J. Davy Kirkpatrick",
+    "year": 2023,
+    "journal_ref": null,
+    "topic": "brown_dwarf",
+    "license": "http://creativecommons.org/licenses/by/4.0/"
+  },
+  {
+    "arxiv_id": "astro-ph/0510090",
+    "title": "A Unified Near Infrared Spectral Classification Scheme for T Dwarfs",
+    "first_author": "Adam J. Burgasser",
+    "year": 2006,
+    "journal_ref": "Astrophys.J.637:1067-1093,2006",
+    "topic": "brown_dwarf",
+    "license": "arxiv-nonexclusive"
+  },
+  {
+    "arxiv_id": "astro-ph/0103383",
+    "title": "The Theory of Brown Dwarfs and Extrasolar Giant Planets",
+    "first_author": "Adam Burrows",
+    "year": 2001,
+    "journal_ref": "Rev.Mod.Phys.73:719-765,2001",
+    "topic": "brown_dwarf",
+    "license": "arxiv-nonexclusive"
+  },
+  {
+    "arxiv_id": "1410.6029",
+    "title": "Atmospheres of Brown Dwarfs",
+    "first_author": "Christiane Helling",
+    "year": 2014,
+    "journal_ref": null,
+    "topic": "brown_dwarf",
+    "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/"
+  },
+  {
+    "arxiv_id": "2306.11807",
+    "title": "The First JWST Spectral Energy Distribution of a Y dwarf",
+    "first_author": "Samuel Beiler",
+    "year": 2023,
+    "journal_ref": null,
+    "topic": "brown_dwarf",
+    "license": "http://creativecommons.org/licenses/by/4.0/"
+  },
+  {
+    "arxiv_id": "1705.02919",
+    "title": "The First Brown Dwarf Discovered by the Backyard Worlds: Planet 9 Citizen Science Project",
+    "first_author": "Marc J. Kuchner",
+    "year": 2017,
+    "journal_ref": null,
+    "topic": "motion_survey",
+    "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/"
+  },
+  {
+    "arxiv_id": "2008.06396",
+    "title": "Spitzer Follow-up of Extremely Cold Brown Dwarfs Discovered by the Backyard Worlds: Planet 9 Citizen Science Project",
+    "first_author": "Aaron M. Meisner",
+    "year": 2020,
+    "journal_ref": null,
+    "topic": "motion_survey",
+    "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/"
+  },
+  {
+    "arxiv_id": "2004.12829",
+    "title": "WISEA J083011.95+283716.0: A Missing Link Planetary-Mass Object",
+    "first_author": "Daniella C. Bardalez Gagliuffi",
+    "year": 2020,
+    "journal_ref": null,
+    "topic": "motion_survey",
+    "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/"
+  },
+  {
+    "arxiv_id": "2106.01387",
+    "title": "New Candidate Extreme T Subdwarfs from the Backyard Worlds: Planet 9 Citizen Science Project",
+    "first_author": "Aaron M. Meisner",
+    "year": 2021,
+    "journal_ref": null,
+    "topic": "motion_survey",
+    "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/"
+  },
+  {
+    "arxiv_id": "2403.04592",
+    "title": "89 New Ultracool Dwarf Co-Moving Companions Identified With The Backyard Worlds: Planet 9 Citizen Science Project",
+    "first_author": "Austin Rothermich",
+    "year": 2024,
+    "journal_ref": null,
+    "topic": "motion_survey",
+    "license": "http://creativecommons.org/licenses/by/4.0/"
+  },
+  {
+    "arxiv_id": "2312.09294",
+    "title": "WRAP: A Tool for Efficient Cross-Identification of Proper Motion Objects Spanning Multiple Surveys",
+    "first_author": "Hunter Brooks",
+    "year": 2023,
+    "journal_ref": null,
+    "topic": "motion_survey",
+    "license": "http://creativecommons.org/licenses/by/4.0/"
+  },
+  {
+    "arxiv_id": "1402.0661",
+    "title": "The AllWISE Motion Survey and The Quest for Cold Subdwarfs",
+    "first_author": "J. Davy Kirkpatrick",
+    "year": 2014,
+    "journal_ref": null,
+    "topic": "motion_survey",
+    "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/"
+  },
+  {
+    "arxiv_id": "1911.12372",
+    "title": "Expanding the Y Dwarf Census with Spitzer Follow-up of the Coldest CatWISE Solar Neighborhood Discoveries",
+    "first_author": "Aaron M. Meisner",
+    "year": 2019,
+    "journal_ref": null,
+    "topic": "motion_survey",
+    "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/"
+  },
+  {
+    "arxiv_id": "2209.14327",
+    "title": "unTimely: a Full-sky, Time-Domain unWISE Catalog",
+    "first_author": "A. M. Meisner",
+    "year": 2022,
+    "journal_ref": null,
+    "topic": "motion_survey",
+    "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/"
+  },
+  {
+    "arxiv_id": "1710.02526",
+    "title": "Time-resolved WISE/NEOWISE Coadds",
+    "first_author": "A. M. Meisner",
+    "year": 2018,
+    "journal_ref": null,
+    "topic": "motion_survey",
+    "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/"
+  },
+  {
+    "arxiv_id": "1901.02492",
+    "title": "Fast algorithms for slow moving asteroids: constraints on the distribution of Kuiper Belt Objects",
+    "first_author": "Peter J. Whidden",
+    "year": 2019,
+    "journal_ref": null,
+    "topic": "motion_survey",
+    "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/"
+  },
+  {
+    "arxiv_id": "1508.01599",
+    "title": "Digital Tracking Observations Can Discover Asteroids Ten Times Fainter than Conventional Searches",
+    "first_author": "Aren Heinze",
+    "year": 2015,
+    "journal_ref": null,
+    "topic": "motion_survey",
+    "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/"
+  },
+  {
+    "arxiv_id": "2105.01056",
+    "title": "THOR: An Algorithm for Cadence-Independent Asteroid Discovery",
+    "first_author": "Joachim Moeyens",
+    "year": 2021,
+    "journal_ref": null,
+    "topic": "motion_survey",
+    "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/"
+  },
+  {
+    "arxiv_id": "2109.03296",
+    "title": "Sifting Through the Static: Moving Object Detection in Difference Images",
+    "first_author": "Hayden Smotherman",
+    "year": 2021,
+    "journal_ref": null,
+    "topic": "motion_survey",
+    "license": "http://creativecommons.org/licenses/by-sa/4.0/"
+  },
+  {
+    "arxiv_id": "2509.26279",
+    "title": "An Efficient Shift-and-Stack Algorithm Applied to Detection Catalogs",
+    "first_author": "Steven Stetzler",
+    "year": 2025,
+    "journal_ref": null,
+    "topic": "motion_survey",
+    "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/"
+  },
+  {
+    "arxiv_id": "2012.13084",
+    "title": "The CatWISE2020 Catalog",
+    "first_author": "Federico Marocco",
+    "year": 2020,
+    "journal_ref": null,
+    "topic": "catalog",
+    "license": "http://creativecommons.org/licenses/by/4.0/"
+  },
+  {
+    "arxiv_id": "1908.08902",
+    "title": "The CatWISE Preliminary Catalog: Motions from ${\\it WISE}$ and ${\\it NEOWISE}$ Data",
+    "first_author": "Peter R. M. Eisenhardt",
+    "year": 2020,
+    "journal_ref": null,
+    "topic": "catalog",
+    "license": "http://creativecommons.org/licenses/by/4.0/"
+  },
+  {
+    "arxiv_id": "1901.03337",
+    "title": "The unWISE Catalog: Two Billion Infrared Sources from Five Years of WISE Imaging",
+    "first_author": "Edward F. Schlafly",
+    "year": 2019,
+    "journal_ref": null,
+    "topic": "catalog",
+    "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/"
+  },
+  {
+    "arxiv_id": "1405.0308",
+    "title": "unWISE: unblurred coadds of the WISE imaging",
+    "first_author": "Dustin Lang",
+    "year": 2014,
+    "journal_ref": "The Astronomical Journal 147 (2014), 108",
+    "topic": "catalog",
+    "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/"
+  },
+  {
+    "arxiv_id": "1008.0031",
+    "title": "The Wide-field Infrared Survey Explorer (WISE): Mission Description and Initial On-orbit Performance",
+    "first_author": "Edward L. Wright",
+    "year": 2010,
+    "journal_ref": "Edward L. Wright et al 2010 The Astronomical Journal 140 1868",
+    "topic": "catalog",
+    "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/"
+  },
+  {
+    "arxiv_id": "1406.6025",
+    "title": "Initial Performance of the NEOWISE Reactivation Mission",
+    "first_author": "A. Mainzer",
+    "year": 2014,
+    "journal_ref": null,
+    "topic": "catalog",
+    "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/"
+  },
+  {
+    "arxiv_id": "2208.00211",
+    "title": "Gaia Data Release 3: Summary of the content and survey properties",
+    "first_author": "Gaia Collaboration",
+    "year": 2022,
+    "journal_ref": null,
+    "topic": "catalog",
+    "license": "http://creativecommons.org/licenses/by/4.0/"
+  },
+  {
+    "arxiv_id": "1609.04153",
+    "title": "The Gaia mission",
+    "first_author": "Gaia Collaboration",
+    "year": 2016,
+    "journal_ref": null,
+    "topic": "catalog",
+    "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/"
+  },
+  {
+    "arxiv_id": "1601.05438",
+    "title": "Evidence for a Distant Giant Planet in the Solar System",
+    "first_author": "Konstantin Batygin",
+    "year": 2016,
+    "journal_ref": null,
+    "topic": "planet9",
+    "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/"
+  },
+  {
+    "arxiv_id": "1902.10103",
+    "title": "The Planet Nine Hypothesis",
+    "first_author": "Konstantin Batygin",
+    "year": 2019,
+    "journal_ref": null,
+    "topic": "planet9",
+    "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/"
+  },
+  {
+    "arxiv_id": "2108.09868",
+    "title": "The orbit of Planet Nine",
+    "first_author": "Michael E. Brown",
+    "year": 2021,
+    "journal_ref": null,
+    "topic": "planet9",
+    "license": "http://creativecommons.org/licenses/by/4.0/"
+  },
+  {
+    "arxiv_id": "2110.13117",
+    "title": "A search for Planet Nine using the Zwicky Transient Facility public archive",
+    "first_author": "Michael E. Brown",
+    "year": 2021,
+    "journal_ref": null,
+    "topic": "planet9",
+    "license": "http://creativecommons.org/licenses/by/4.0/"
+  },
+  {
+    "arxiv_id": "2401.17977",
+    "title": "A Pan-STARRS1 Search for Planet Nine",
+    "first_author": "Michael E. Brown",
+    "year": 2024,
+    "journal_ref": null,
+    "topic": "planet9",
+    "license": "http://creativecommons.org/licenses/by/4.0/"
+  },
+  {
+    "arxiv_id": "1611.00015",
+    "title": "Searching for Planet Nine with Coadded WISE and NEOWISE-Reactivation Images",
+    "first_author": "Aaron M. Meisner",
+    "year": 2016,
+    "journal_ref": null,
+    "topic": "planet9",
+    "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/"
+  },
+  {
+    "arxiv_id": "1712.04950",
+    "title": "A 3pi Search for Planet Nine at 3.4 microns with WISE and NEOWISE",
+    "first_author": "A. M. Meisner",
+    "year": 2017,
+    "journal_ref": null,
+    "topic": "planet9",
+    "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/"
+  },
+  {
+    "arxiv_id": "2504.17288",
+    "title": "A Search for Planet Nine with IRAS and AKARI Data",
+    "first_author": "Terry Long Phan",
+    "year": 2025,
+    "journal_ref": "Publ. Astron. Soc. Aust. 42 (2025) e064",
+    "topic": "planet9",
+    "license": "http://creativecommons.org/licenses/by/4.0/"
+  },
+  {
+    "arxiv_id": "1904.05920",
+    "title": "DeepStreaks: identifying fast-moving objects in the Zwicky Transient Facility data with deep learning",
+    "first_author": "Dmitry A. Duev",
+    "year": 2019,
+    "journal_ref": "2019MNRAS.486.4158D",
+    "topic": "asteroid_ml",
+    "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/"
+  },
+  {
+    "arxiv_id": "1807.10912",
+    "title": "Detecting solar system objects with convolutional neural networks",
+    "first_author": "Maggie Lieu",
+    "year": 2019,
+    "journal_ref": null,
+    "topic": "asteroid_ml",
+    "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/"
+  },
+  {
+    "arxiv_id": "2101.08912",
+    "title": "A Two-Stage Deep Learning Detection Classifier for the ATLAS Asteroid Survey",
+    "first_author": "Amandin Chyba Rabeendran",
+    "year": 2021,
+    "journal_ref": null,
+    "topic": "asteroid_ml",
+    "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/"
+  },
+  {
+    "arxiv_id": "2202.00246",
+    "title": "Hubble Asteroid Hunter: I. Identifying asteroid trails in Hubble Space Telescope images",
+    "first_author": "Sandor Kruk",
+    "year": 2022,
+    "journal_ref": "A&A 661, A85 (2022)",
+    "topic": "asteroid_ml",
+    "license": "http://creativecommons.org/licenses/by/4.0/"
+  },
+  {
+    "arxiv_id": "2310.03845",
+    "title": "Euclid: Identification of asteroid streaks in simulated images using deep learning",
+    "first_author": "M. Pöntinen",
+    "year": 2023,
+    "journal_ref": "A&A 679, A135 (2023)",
+    "topic": "asteroid_ml",
+    "license": "http://creativecommons.org/licenses/by/4.0/"
+  }
+]

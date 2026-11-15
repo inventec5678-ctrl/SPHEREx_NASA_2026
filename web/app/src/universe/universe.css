@@ -1,0 +1,65 @@
+.universe { position: relative; height: calc(100svh - 64px); min-height: 600px; overflow: hidden; background: var(--sx-bg); }
+.u-canvas { position: absolute; inset: 0; width: 100%; height: 100%; display: block; cursor: grab; touch-action: none; }
+.u-fallback { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; image-rendering: pixelated; }
+/* text column on the left; the scene is offset to the right so nothing sits under the words */
+.u-head { position: absolute; left: var(--sx-gutter); top: 50%; transform: translateY(-58%); width: min(34vw, 560px); pointer-events: none; }
+.u-head > * { pointer-events: auto; }
+.u-head { transition: opacity .4s var(--sx-ease); }
+.u-head.dim { opacity: .12; }
+.u-head.dim > * { pointer-events: none; }
+.u-head h1 { font-size: var(--fs-display); line-height: .98; letter-spacing: -.05em; font-weight: 800; }
+.u-head h1 em { font-style: normal; color: var(--sx-accent); display: block; }
+.u-head p { color: var(--sx-ink-2); margin-top: 24px; font-size: var(--fs-lead); max-width: 30ch; }
+.u-actions { display: flex; gap: 24px; align-items: center; flex-wrap: wrap; margin-top: 32px; }
+.u-status { position: absolute; left: 60%; top: 50%; transform: translate(-50%, -50%); background: var(--sx-surface); padding: 12px 18px; border-radius: 12px; }
+.u-tip { position: fixed; z-index: 20; pointer-events: none; background: var(--sx-surface-2); border-radius: 10px; padding: 8px 12px; display: grid; gap: 2px; }
+.u-tip span { color: var(--sx-ink-3); font-size: var(--fs-small); }
+/* one bottom line: field switcher, then the legend that fades after the first touch */
+.u-bar { position: absolute; left: var(--sx-gutter); right: var(--sx-gutter); bottom: 24px; display: flex; justify-content: space-between; align-items: center; gap: 16px 32px; flex-wrap: wrap; }
+.u-bar.with-panel { right: calc(min(400px, 100% - 32px) + 32px); }
+.u-fields { display: flex; gap: 4px; background: var(--sx-surface); border-radius: 999px; padding: 4px; }
+.u-fields button { border: 0; background: none; color: var(--sx-ink-2); padding: 8px 16px; border-radius: 999px; cursor: pointer; font-size: var(--fs-small); font-weight: 600;
+  transition: background .2s, color .2s; }
+.u-fields button:hover { color: var(--sx-ink); }
+.u-fields button.on { background: var(--sx-ink); color: var(--sx-bg); }
+.u-legend { display: flex; gap: 20px; flex-wrap: wrap; font-size: var(--fs-small); color: var(--sx-ink-2); transition: opacity .6s; }
+.u-legend.quiet { opacity: .35; }
+.u-legend span { display: inline-flex; align-items: center; gap: 8px; }
+.u-legend i { width: 8px; height: 8px; border-radius: 50%; display: inline-block; }
+.u-legend .hint { color: var(--sx-ink-3); }
+.u-kind { color: var(--sx-ink-3); font-size: var(--fs-small); }
+.u-panel { position: absolute; right: 16px; top: 16px; bottom: 16px; width: min(400px, calc(100% - 32px)); overflow: auto; z-index: 15;
+  background: var(--sx-surface); border-radius: 18px; padding: 18px 18px 22px; }
+.u-panel h2 { margin: 6px 0 10px; font-size: 22px; letter-spacing: -.02em; }
+.u-panel h3 { font-size: 14px; margin: 18px 0 6px; }
+.u-panel .close { position: absolute; right: 12px; top: 10px; width: 32px; height: 32px; border-radius: 50%; border: 0;
+  background: var(--sx-control); color: var(--sx-ink); cursor: pointer; font-size: 18px; }
+.spec { width: 100%; height: auto; font: 11px var(--sx-font); fill: var(--sx-ink-3); background: var(--sx-bg); border-radius: 10px; }
+.editor .preview { width: 100%; aspect-ratio: 16/10; display: block; border-radius: 12px; background: var(--sx-bg); }
+.editor .field { display: grid; gap: 4px; margin: 10px 0; font-size: 12px; color: var(--sx-ink-3); }
+.editor select { background: var(--sx-surface-2); border: 0; border-radius: 10px; padding: 8px; color: var(--sx-ink); }
+.sliders { display: grid; gap: 8px; }
+.slider { display: grid; grid-template-columns: 1fr auto; gap: 2px 8px; font-size: 12px; color: var(--sx-ink-2); align-items: center; }
+.slider span { display: flex; justify-content: space-between; gap: 8px; }
+.slider b { color: var(--sx-ink); font-weight: 600; }
+.slider input { grid-column: 1 / -1; accent-color: var(--sx-accent); }
+.slider .swatch { width: 14px; height: 14px; border-radius: 50%; display: inline-block; }
+.editor .row { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 12px; }
+@media (max-width: 900px) {
+  /* phone/tablet: words first, then a tall scene, then the switcher */
+  .universe { height: auto; min-height: 0; display: flex; flex-direction: column; overflow: visible; }
+  .u-head.dim { opacity: 1; }
+  .u-head.dim > * { pointer-events: auto; }
+  .u-head { order: -1; position: static; transform: none; width: auto; padding: 32px var(--sx-gutter) 20px; }
+  .u-head h1 { font-size: clamp(40px, 11vw, 64px); }
+  .u-head p { font-size: var(--fs-body); margin-top: 14px; }
+  .u-actions { margin-top: 20px; }
+  .u-canvas { position: relative; height: min(70svh, 112vw); }
+  .u-fallback { position: static; height: 70svh; }
+  .u-fallback ~ .u-canvas, .u-canvas:has(~ .u-fallback) { display: none; }
+  .u-status { left: 50%; }
+  .u-bar { position: static; padding: 16px var(--sx-gutter) 0; }
+  .u-fields { overflow-x: auto; max-width: 100%; }
+  .u-legend .hint { display: none; }
+  .u-panel { position: fixed; top: auto; height: 62svh; left: 8px; right: 8px; width: auto; bottom: 8px; z-index: 40; }
+}

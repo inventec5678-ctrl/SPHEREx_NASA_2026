@@ -1,0 +1,7 @@
+[Unit]
+Description=Queue re-analysis of SPHEREx fields that have new data on IRSA
+
+[Service]
+Type=oneshot
+WorkingDirectory=/home/gino/nasa_2026/spherex
+ExecStart=/home/gino/nasa_2026/spherex/.venv/bin/python scripts/update_fields.py

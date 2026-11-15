@@ -1,0 +1,35 @@
+SPHEREx Sky Change
+Copyright 2026 The SPHEREx Sky Change authors
+
+Licensed under the Apache License, Version 2.0 (see LICENSE).
+
+This project was written for the NASA Space Apps Challenge 2026 ("Planet X and SPHEREx").
+It is not a NASA product.
+
+Data (public, not redistributed in this repository; fetched at run time)
+  - SPHEREx Level 2 spectral images (Data Release 1, DOI 10.26131/IRSA678; Quick Release 3, DOI 10.26131/IRSA662;
+    the fixed simulated Planet X test field: Quick Release 2, DOI 10.26131/IRSA652) and the SPHEREx DR1 all-sky
+    cube and HiPS (DOI 10.26131/IRSA679): NASA/IPAC Infrared Science Archive (IRSA). IRSA's Moving Object Search
+    Tool (MOST) for the SPHEREx images of named asteroids and comets.
+    "This publication makes use of data products from the Spectro-Photometer for the History of the Universe, Epoch
+    of Reionization and Ices Explorer (SPHEREx), which is a joint project of the Jet Propulsion Laboratory and the
+    California Institute of Technology, and is funded by the National Aeronautics and Space Administration."
+  - NEOSSat images: Canadian Space Agency, via the Canadian Astronomy Data Centre (CADC). Contains data from the
+    Canadian Space Agency's NEOSSat mission, used under the Open Government Licence - Canada.
+  - Gaia DR3: European Space Agency (ESA), Gaia Data Processing and Analysis Consortium; queried at ESA or NASA MAST.
+  - CatWISE2020, AllWISE, 2MASS, DSS2 (catalogues and HiPS, served by IRSA and CDS).
+  - AAVSO International Variable Star Index (VSX), queried through VizieR.
+  - JPL Small-Body Identification API, JPL Horizons, JPL SBDB.
+  - SIMBAD (CDS, Strasbourg), queried through the Harvard mirror, for name resolution.
+
+Software used at run time
+  - Astropy, reproject, NumPy, SciPy, PyTorch, scikit-learn, Pillow, Requests, FastAPI, Uvicorn (Python).
+  - React, three.js, Vite (JavaScript).
+  - Aladin Lite v3 (CDS, GPL-3.0): loaded by the visitor's browser from the jsDelivr CDN; it is not
+    bundled with, or redistributed by, this project.
+  - Fonts Michroma, Manrope, IBM Plex Mono and Noto Sans TC (SIL Open Font License), loaded from Google Fonts.
+
+Models
+  - models/rb_cnn.pt (real/bogus CNN) and models/bd_spec.npz (brown-dwarf spectral classifier) were trained by
+    this project, on simulated sources injected into SPHEREx images and on synthetic spectra respectively.
+    No external AI service is called at inference time.

@@ -1,0 +1,20 @@
+/* val_spectro.jsx: our spectra against IRSA's Spectrophotometry Tool (a full-width card on the validation page). */
+.vs-card { grid-column: 1 / -1; }
+.vs-bar { display: flex; flex-wrap: wrap; gap: 8px 16px; align-items: center; }
+.vs-bar .seg { background: var(--sx-surface-2); }
+.vs-bar .seg button { font-size: var(--fs-ui); min-height: 40px; }
+.vs-r { margin-left: 8px; font-size: var(--fs-small); font-weight: 600; opacity: .75; font-variant-numeric: tabular-nums; }
+.vs-line { margin: 0; padding: 12px 16px; border-radius: var(--r-sm); background: rgb(var(--c-good) / .08); box-shadow: inset 3px 0 0 var(--sx-good);
+  font-size: var(--fs-body); line-height: 1.5; color: var(--sx-ink); max-width: 60em; }
+.vs-line.warn { background: rgb(var(--c-warn) / .08); box-shadow: inset 3px 0 0 rgb(var(--c-warn)); }
+.vs-stats { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; }
+.vs-stats > div { display: grid; gap: 4px; padding: 12px 16px; border-radius: var(--r-sm); background: var(--sx-surface-2); min-width: 0; }
+.vs-stats span { font-size: var(--fs-small); color: var(--sx-ink-3); line-height: 1.3; }
+.vs-stats strong { font: 800 var(--fs-h3)/1.1 var(--sx-font); color: var(--sx-ink); font-variant-numeric: tabular-nums; }
+.vs-stats small { font-size: var(--fs-small); font-weight: 500; color: var(--sx-ink-3); }
+.vs-med { stroke: var(--sx-accent); stroke-width: 1.5; stroke-dasharray: 6 4; }
+.vs-two { grid-template-columns: repeat(auto-fit, minmax(min(100%, 380px), 1fr)); }
+@media (max-width: 560px) {
+  .vs-stats { grid-template-columns: 1fr; }
+  .vs-stats > div { grid-template-columns: 1fr auto; align-items: baseline; }
+}

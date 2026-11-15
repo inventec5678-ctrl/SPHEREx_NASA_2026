@@ -1,0 +1,38 @@
+/* The site's one chart kit (charts.jsx). Type: ticks and units 13 px, everything else 15 px or more. */
+.plot { position: relative; width: 100%; }
+.plot svg { display: block; overflow: visible; touch-action: pan-y; }
+.plot .tick { fill: var(--sx-ink-3); font: 500 var(--fs-xs)/1 var(--sx-font); font-variant-numeric: tabular-nums; }
+.plot .axis-label { fill: var(--sx-ink-2); font: 600 var(--fs-small)/1 var(--sx-font); }
+.plot .grid { stroke: rgb(var(--c-white) / .07); stroke-width: 1; }
+.plot .axis { stroke: rgb(var(--c-white) / .22); stroke-width: 1; }
+.plot .mark-label { fill: var(--sx-ink); font: 600 var(--fs-small)/1 var(--sx-font); }
+.plot .mark-note { fill: var(--sx-ink-2); font: 500 var(--fs-xs)/1 var(--sx-font); }
+.plot .plot-hov { fill: none; stroke: var(--sx-white); stroke-width: 2; pointer-events: none; }
+.plot.pickable svg { cursor: pointer; }
+.plot-tip { position: absolute; z-index: 3; transform: translate(-50%, calc(-100% - 14px)); max-width: min(320px, 80vw); padding: 8px 12px; border-radius: var(--r-sm);
+  background: var(--sx-surface-2); box-shadow: 0 0 0 1px var(--sx-line-2), 0 10px 28px rgb(var(--c-black) / .55); font-size: var(--fs-small); line-height: 1.4; color: var(--sx-ink);
+  pointer-events: none; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.plot-tip small { display: block; font-size: var(--fs-xs); color: var(--sx-ink-3); white-space: normal; }
+.plot-tip.left { transform: translate(-100%, calc(-100% - 14px)); }
+.plot-tip.right { transform: translate(0, calc(-100% - 14px)); }
+.chart-card { margin: 0; padding: 20px; border-radius: var(--r-md); background: var(--sx-surface); box-shadow: inset 0 0 0 1px var(--sx-line); display: grid; gap: 12px; align-content: start; min-width: 0; }
+.chart-card > figcaption { display: grid; gap: 6px; }
+.chart-card h3, .chart-card h4 { margin: 0; font: 700 var(--fs-lead)/1.25 var(--sx-font); letter-spacing: -.01em; }
+.chart-take { margin: 0; font-size: var(--fs-body); line-height: 1.5; color: var(--sx-ink-2); max-width: 60ch; }
+.chart-take b { color: var(--sx-ink); }
+.chart-more { font-size: var(--fs-small); color: var(--sx-ink-2); }
+.chart-more > summary { cursor: pointer; color: var(--sx-known); min-height: 32px; display: inline-flex; align-items: center; }
+.chart-more p { margin: 8px 0 0; max-width: 70ch; line-height: 1.55; }
+.legend { display: flex; flex-wrap: wrap; gap: 6px 16px; margin: 0; padding: 0; list-style: none; font-size: var(--fs-small); color: var(--sx-ink-2); }
+.legend li { display: inline-flex; align-items: center; gap: 7px; }
+.legend i { width: 12px; height: 12px; border-radius: 50%; flex: none; background: var(--c, var(--sx-ink)); }
+.legend i.hollow { background: none; box-shadow: inset 0 0 0 2px var(--c, var(--sx-ink)); }
+.legend i.line { width: 18px; height: 0; border-radius: 0; border-top: 2px dashed var(--c, var(--sx-ink-3)); background: none; }
+.legend i.sq { border-radius: var(--r-sm); }
+.chart-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 420px), 1fr)); gap: 16px; }
+.meter { display: grid; gap: 6px; font-size: var(--fs-small); color: var(--sx-ink-2); }
+.meter-bar { position: relative; height: 10px; border-radius: 999px; background: rgb(var(--c-white) / .08); }
+.meter-bar i { position: absolute; left: 0; top: 0; bottom: 0; border-radius: 999px; background: var(--c, var(--sx-known)); }
+.meter-bar b { position: absolute; top: -4px; width: 2px; height: 18px; background: var(--sx-ink-3); }
+.meter-row { display: flex; justify-content: space-between; gap: 12px; }
+.meter-row strong { color: var(--sx-ink); font-size: var(--fs-ui); font-variant-numeric: tabular-nums; }

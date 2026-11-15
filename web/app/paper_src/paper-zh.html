@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="zh-Hant" class="no-js"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>用 SPHEREx 探測外太陽系——論文</title>
+<meta name="description" content="以視差引導的移動天體搜尋，以及在全天光譜影像中對遠方天體的限制。">
+<meta name="theme-color" content="#05070c">
+<link rel="icon" href="/media/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Michroma&family=Manrope:wght@300..700&family=IBM+Plex+Mono:wght@400;500&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="paper.css"></head>
+<body>
+<a class="skip" href="#s1">跳到內容</a>
+<header class="topbar">
+  <a class="brand" href="/?lang=zh-Hant" aria-label="SPHEREx 首頁"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="5.2" fill="currentColor"/><ellipse cx="12" cy="12" rx="10.5" ry="4" fill="none" stroke="currentColor" stroke-width="1.1" transform="rotate(-18 12 12)"/></svg><span>SPHEREX</span></a>
+  <nav class="topnav" aria-label="網站導覽">
+    <a href="/?lang=zh-Hant">首頁</a><a href="/?lang=zh-Hant#/field/cybele">天空檢視器</a><a href="/?lang=zh-Hant#/universe/cybele">星體重建</a><a href="/?lang=zh-Hant#/features">功能</a><a href="/?lang=zh-Hant#/discovery">發現搜尋</a><a href="paper-zh.html" aria-current="page">論文</a>
+    <span class="langs"><a href="paper.html" lang="en">EN</a><a href="paper-zh.html" lang="zh-Hant" aria-current="true">繁中</a></span>
+    <a class="cta" href="static/pdfs/spherex_movers_manuscript.pdf">PDF</a>
+  </nav>
+</header>
+
+<section class="masthead" aria-label="論文標題">
+  <p class="eyebrow">論文 · AJ 格式稿件（匿名審查版）</p>
+  <h1 class="display">用 SPHEREx 探測外太陽系：以視差引導的移動天體搜尋，與全天光譜影像中對遠方天體的限制</h1>
+  <p class="byline label muted">匿名作者 · 2026 · 英文原稿見 PDF</p>
+  <div class="actions"><a class="cta" href="static/pdfs/spherex_movers_manuscript.pdf">下載 PDF</a><a class="cta ghost" href="/?lang=zh-Hant">開啟線上工具</a><a class="cta ghost" href="research/evidence.json">證據資料 JSON</a></div>
+  <div class="stats">
+    <div class="stat brackets"><span class="v">{{v.mm_d}} au</span><span class="k">Makemake（JPL {{v.mm_jpl}}）</span></div>
+    <div class="stat brackets"><span class="v">{{v.hm_d}} au</span><span class="k">Haumea（JPL {{v.hm_jpl}}）</span></div>
+    <div class="stat brackets"><span class="v">{{v.d_crit}} au</span><span class="k">線性漂移近似的適用下限</span></div>
+    <div class="stat brackets"><span class="v">{{v.sv_area}} deg²</span><span class="k">第九行星路徑搜尋面積</span></div>
+  </div>
+</section>
+
+<div class="layout">
+  <nav class="rail" aria-label="章節">
+    <div class="bar"><i></i></div>
+    <ol>
+      <li><a href="#s1">摘要</a></li><li><a href="#s2">簡介</a></li><li><a href="#s3">資料</a></li><li><a href="#s4">方法</a></li>
+      <li><a href="#s5">主帶小行星</a></li><li><a href="#s6">視差測距</a></li><li><a href="#s7">極外緣</a></li><li><a href="#s8">討論</a></li>
+      <li><a href="#s9">結論</a></li><li><a href="#s10">參考文獻</a></li>
+    </ol>
+  </nav>
+  <main>
+    <section id="s1" class="abstract brackets" data-reveal>
+      <p class="eyebrow">摘要</p>
+      <p>SPHEREx 每六個月以 0.75–5.0 μm 的 102 個頻道巡天一次，相繼的巡天從地球軌道的兩側觀測每一顆遠方天體。我們利用這個節奏，只靠視差、不假設軌道來量測距離。由於 SPHEREx 以線性漸變濾鏡取樣波長，我們把每張曝光與逐像素波長相符的參考影像相減。以已知主帶小行星驗證，單張曝光的 50% 完整度在 AB {{v.mag50}}，天體測量精度 {{v.a_med}}″。同時擬合視差與有上限的軌道漂移，可找回 500–3000 au 的注入天體，距離誤差中位數 {{v.g_med}}%；在跟隨 Makemake 與 Haumea 的天區中，盲搜量到 {{v.mm_d}} 與 {{v.hm_d}} au，與軌道相差 {{v.mm_err}}% 與 {{v.hm_err}}%。一年內，線性漂移近似在約 {{v.d_crit}} au 以外誤差小於 8″。移位疊加在稀疏天區、400 au 以外達 AB {{v.st_m50}}，在銀河面附近約 AB {{v.effA}}。沿第九行星預測路徑及一個 IRAS/AKARI 候選位置搜尋 {{v.sv_area}} 平方度：單張曝光沒有遠方天體，疊加結果也沒有超過「打亂巡天時間」所量得的隨機重合率。這些固定天區只在約 {{v.d_field}} au 以外能留住天體；在其中，反照率 0.4、太陽色的條件下，排除了 {{v.nep_b}} 的海王星大小天體與 {{v.jup_b}} 的木星大小天體，強甲烷吸收可能讓後者失效。</p>
+    </section>
+
+    <section id="s2" data-reveal>
+      <h2><span class="n">01</span>簡介</h2>
+      <p>海王星以外的天體是巨行星形成與遷移的化石。高近日點的離散天體（如 Sedna 與 2012 VP<sub>113</sub>）軌道聚集，被解讀為可能存在一顆數倍地球質量的遠方行星，即第九行星（Batygin &amp; Brown 2016；Brown et al. 2024）；但也有研究認為聚集可能來自觀測選擇效應。IRAS 與 AKARI 相隔 23 年的遠紅外偵測，也被提出為一個候選（Phan et al. 2025），尚未確認。</p>
+      <p>遠方天體靠運動辨認。一個晚上之內，數百 au 外的天體只移動幾角秒，主要是地球的反射運動；半年之內，視差達到數百角秒，直接量出距離。SPHEREx（Bock et al. 2026）每半年巡天一次，正好提供這個基線。挑戰在於它的線性漸變濾鏡讓每個像素的波長都不同，而且 PSF（FWHM ≈ 5″）比 6.15″ 的像素還窄。本文提出一套為此設計的差分、分類、連線與測距方法，並以注入天體、已知小行星與矮行星驗證，最後把它應用到第九行星的預測路徑上。</p>
+    </section>
+
+    <section id="s3" data-reveal>
+      <h2><span class="n">02</span>資料</h2>
+      <p>我們使用 NASA/IPAC IRSA 發布的 SPHEREx Quick Release 2 與 3 二級光譜影像（2025 年 5 月至 2026 年 9 月：三次完整巡天與第四次的一部分），透過切片服務取得影像、變異數、旗標、逐像素波長解與 PSF 模型。PSF 模型只用於注入合成源；差分影像、真實源的偵測與天體測量都不依賴它。已知天體的位置取自 JPL Horizons 以 SPHEREx 為觀測者的星曆。</p>
+    </section>
+
+    <section id="s4" data-reveal>
+      <h2><span class="n">03</span>方法</h2>
+      <h3>波長配對差分</h3>
+      <p>同一片天空在不同曝光中以不同波長觀測：0.5° 天區內濾鏡波長變化約 7%。因此每張曝光 <span class="math">i</span> 的每個像素，只取同一偵測器、時間相隔至少 3 小時、且在該像素波長相差 ≤ 3% 的曝光，取中位數作為參考影像。差分以顯著度表示：</p>
+      <span class="eq">S = (I − αR) / √( σ<sub>I</sub>² + α²σ<sub>R</sub>² + (ε α R<sub>+</sub>)² ),  ε = 0.1</span>
+      <p>最後一項代表欠取樣 PSF 在次像素重採樣時留下、正比於星光的殘差。它刻意只在參考影像上計算：若改用 max(I, R)，任何不在參考影像裡的移動天體都會被自己的通量膨脹雜訊，顯著度被壓在 1/ε ≈ 10。我們以 ε = 0.05、0.10、0.20 重跑一個獨立天區，注入源完整度都是 59.3–59.4%，結果對 ε 不敏感。</p>
+      <h3>合成源與分類</h3>
+      <p>合成移動天體在重採樣前注入原始影像，因此走過完整流程，也進入其他曝光的參考影像。一個 32 萬參數的 CNN（輸入：影像、參考、S 與旗標）只用注入源與假訊號訓練；pipeline 的 MP_OUTLIER 旗標只標記真實移動源、從不標記注入源，所以刻意不作為輸入，以免學到模擬的捷徑。</p>
+      <h3>視差測距</h3>
+      <p>對一個試驗距離 <span class="math">d</span>，天體的視方向來自地球位置的變化；其本身的軌道運動近似為天空上的線性漂移，並限制在束縛軌道內：</p>
+      <span class="eq">|μ| ≤ √2 μ<sub>circ</sub>(d),  μ<sub>circ</sub> = 2π d<sup>−3/2</sup> rad yr<sup>−1</sup></span>
+      <p>漂移以線性最小平方求得，距離取殘差最小的試驗值（連線時 1500 個、最終擬合 3000 個，30–3000 au 對數間隔）。至少需要三次巡天：只有兩次時，任何位移都能被漂移吸收，距離與運動無法分開。連線容差為 8″ 加上圓軌道偏離直線的曲率修正（50 au 一年約 33″，229 au 以外小於 0.3″）。軌跡精修時可以加入偵測，但不得移除已連上的觀測窗。每條軌跡另計算殘差剖面比值：最佳距離的殘差與相差超過 20% 的距離中最低殘差之比，低於 3 標記為距離與漂移有歧義。</p>
+      <h3>視差引導的移位疊加</h3>
+      <p>暗於單張極限的天體，在每次巡天內把約 100 張 S 影像按試驗距離的視差位移後疊加（36 個距離、40–3000 au），每張先截斷在 ±3σ，再以中位絕對偏差正規化，保留 S̃ ≥ 7 的峰值，跨巡天以 4″ 容差連線，並要求在擬合距離重新疊加時仍有 S̃ ≥ 5.6。疊加只補償視差，兩週內天體本身的軌道運動在 400 au 以外小於一個像素，因此疊加極限只用於 400 au 以外。</p>
+      <h3>審核與隨機重合率</h3>
+      <p>遠方軌跡須跨三次巡天、擬合 r.m.s. ≤ 4″、束縛軌道、不是靜止源、不在距離範圍邊緣、30″ 內沒有已知小天體；疊加軌跡另須亮度一致。擁擠天區裡，不相關的峰值可能在不同巡天間偶然排成一線。我們把各次巡天的時間循環互換、保留所有峰值後重跑連線：真正的天體在錯誤時間下不可能連上，因此得到的軌跡數就是隨機重合率的估計。</p>
+    </section>
+
+    <section id="s5" data-reveal>
+      <h2><span class="n">04</span>主帶小行星：完整度與天體測量</h2>
+      <p>在 {{v.kc_fields}} 個從未用於訓練的天區裡，{{v.kc_n}} 次 V ≤ 18.5 的已知小行星偵測混在 {{v.kc_bogus}} 個假訊號中。在驗證集排除 99% 假訊號的操作點，保留 {{v.kc_rec}}% 的已知小行星，這些天區的假訊號存活 {{v.kc_fpr}}%（AUROC {{v.kc_auc}}）；只看顯著度則與亂猜無異（{{v.kc_snr}}）。注入源的單張曝光 50% 完整度在 AB {{v.mag50}}，六個偵測器分別為 {{v.m50_D1}}、{{v.m50_D2}}、{{v.m50_D3}}、{{v.m50_D4}}、{{v.m50_D5}}、{{v.m50_D6}}。</p>
+      <figure class="plate brackets"><img class="paper-fig" src="figures/aj/roc.svg" alt="已知小行星與注入源的完整度對假訊號保留比例" loading="lazy"><figcaption><span class="fn">圖 4</span><span>已知小行星（藍）與注入源（綠）的完整度對假訊號保留比例；實線為分類後，虛線只用顯著度，點線為操作點。</span></figcaption></figure>
+      <p>源的位置取差分影像在顯著度峰值周圍 3×3 像素內正值通量的一階矩。與 JPL 星曆比對，中位數誤差 {{v.a_med}}″（{{v.a_px}} 個像素；{{v.a_n}} 次偵測），模擬的像素相位偏差最多 0.19″，各偵測器之間沒有系統差異。</p>
+      <div class="note"><p class="eyebrow">D4 的假訊號</p><p>D4（2.4–3.8 μm）的假訊號比例約是 D2 的十倍，但它是最深的偵測器，所以不是背景雜訊較高造成的；改變 ε 也幾乎不影響。可能來源是長截止 H2RG 偵測器的不穩定與隨機電報雜訊像素，以及冷星分子帶讓波長配對失效，兩者尚未區分。</p></div>
+    </section>
+
+    <section id="s6" data-reveal>
+      <h2><span class="n">05</span>外太陽系：從視差得到幾何距離</h2>
+      <h3>注入的遠方天體</h3>
+      <p>在 {{v.g_fields}} 個天區注入 500–3000 au、AB 15–17 的圓軌道天體。有三次巡天的天區找回 {{v.g3_n}} 顆中的 {{v.g3_rec}} 顆，距離誤差中位數 {{v.g_med}}%，沒有假軌跡；只有兩次巡天的天區一顆也量不出距離，符合預期。唯一的離群值注入在 1500 au、被擬合到 937 au：較近的距離配上較大的漂移，幾乎同樣能解釋三次巡天的位移。第四次巡天可以分開這兩個解。</p>
+      <figure class="plate brackets"><img class="paper-fig" src="figures/aj/distances.svg" alt="注入天體的距離誤差" loading="lazy"><figcaption><span class="fn">圖 6</span><span>找回的注入天體的距離誤差，依星等著色；點線為 2%。</span></figcaption></figure>
+      <h3>Makemake 與 Haumea</h3>
+      <p>在跟隨兩顆矮行星的天區中，對所有分類後的偵測做盲搜，各得到唯一一條遠方軌跡：Makemake {{v.mm_d}} au（JPL {{v.mm_jpl}}，誤差 {{v.mm_err}}%），Haumea {{v.hm_d}} au（JPL {{v.hm_jpl}}，誤差 {{v.hm_err}}%）。兩條軌跡都跨三個觀測窗（各窗偵測數 {{v.mm_w}} 與 {{v.hm_w}}），殘差剖面比值 {{v.mm_prof}} 與 {{v.hm_prof}}，解是單峰的。Haumea 在中間窗其實有 25 個偵測，但都落在擬合路徑外 20–25″，剛好超過精修容差，只留下一個；它的距離主要由第一與第三窗加上漂移上限決定。這兩條軌跡的 r.m.s.（{{v.mm_rms}}″、{{v.hm_rms}}″）來自 50 au 處的軌道曲率，會被巡天用的 4″ 審核門檻剔除；該門檻只適用於曲率可忽略的 229 au 以外。</p>
+      <figure class="plate brackets"><img class="paper-fig" src="figures/aj/dwarfs.svg" alt="Makemake 與 Haumea 的盲搜軌跡" loading="lazy"><figcaption><span class="fn">圖 7</span><span>Makemake（左）與 Haumea（右）的盲搜軌跡與擬合。</span></figcaption></figure>
+      <h3>線性漂移的適用範圍，以及天區的限制</h3>
+      <p>以八種方向的圓軌道在 Makemake 的觀測時間取樣：三窗一起擬合時，最大殘差在約 {{v.d_crit}} au 以內超過 8″，200 au 以外小於 1″，距離偏差始終小於 1%。更嚴格的限制來自視野：半年間的視差位移約 2/d 弧度，固定的 0.5° 天區只能在 d ≳ {{v.d_field}} au 時留住天體三次巡天。若天區跟著視差路徑走，模擬顯示連線演算法在 35–100 au、e = 0 或 0.2 時可找回 90–100%（無其他源的上限）。</p>
+      <figure class="plate brackets"><img class="paper-fig" src="figures/aj/curvature.svg" alt="圓軌道與線性漂移模型的偏離" loading="lazy"><figcaption><span class="fn">圖 8</span><span>圓軌道偏離「視差 + 線性漂移」模型的程度，以 Makemake 的觀測窗取樣。</span></figcaption></figure>
+    </section>
+
+    <section id="s7" data-reveal>
+      <h2><span class="n">06</span>極外緣：疊加深度與第九行星路徑</h2>
+      <p>在三個稀疏天區注入 500 與 1500 au、AB 18–20.5 的天體：AB 18–19 找回 {{v.st_1819n}} 顆中的 {{v.st_1819}} 顆，AB ≥ 19.5 一顆也沒有，50% 完整度約 AB {{v.st_m50}}，比單張曝光深約 2 等，沒有隨機重合。距離網格每步 13%，在 400–600 au 某些巡天的第 90 百分位數損失達 0.43 mag。</p>
+      <p>沿 Brown &amp; Batygin（2021）中位軌道的天空路徑，每 1.5° 放一個 0.5° 天區：A 區（RA 75–105°，跨北銀河面）、B 區（RA 45–74°，近預測遠日點），以及覆蓋 Phan et al.（2025）候選外推位置的 3×3 網格（D 區）。只保留有三次巡天的天區：A 區 {{v.sv_A}} 個（其餘 18 個在我們取得的資料中只有兩次巡天）、B 區 {{v.sv_B}} 個、D 區 {{v.sv_D}} 個，共 {{v.sv_area}} 平方度。</p>
+      <figure class="plate brackets"><img class="paper-fig" src="figures/aj/skymap.svg" alt="搜尋天區與第九行星預測路徑" loading="lazy"><figcaption><span class="fn">圖 9</span><span>搜尋天區。線與帶：Brown &amp; Batygin（2021）中位軌道的天空路徑與 ±12° 高機率區；叉號：IRAS/AKARI 候選外推到 2025 年的位置。</span></figcaption></figure>
+      <p>單張曝光沒有任何遠方天體。疊加影像連成 {{v.sv_raw}} 條軌跡，集中在最靠近銀河面的擁擠天區；打亂巡天時間後得到 {{v.nl_a}} 與 {{v.nl_b}} 條（平均 {{v.nl_mean}}），差異只有 {{v.nl_sig}} 倍泊松離散，不顯著，因此沒有一條被視為偵測。</p>
+      <div class="table-wrap" tabindex="0" role="region" aria-label="各區有效疊加極限"><table><thead><tr><th>區域</th><th>天區數</th><th>疊加軌跡</th><th>打亂時間</th><th>有效極限 (AB)</th></tr></thead><tbody>
+        <tr><td>A 銀河面</td><td>{{v.sv_A}}</td><td>20</td><td>16, 22</td><td>{{v.effA}}（注入驗證）</td></tr>
+        <tr><td>B 遠日點</td><td>{{v.sv_B}}</td><td>38</td><td>39, 36</td><td>{{v.effB}}</td></tr>
+        <tr><td>D IRAS/AKARI</td><td>{{v.sv_D}}</td><td>5</td><td>0, 2</td><td>{{v.effD}}</td></tr>
+      </tbody></table></div>
+      <p class="table-note">A 區以 {{v.mcA_n}} 顆注入天體驗證：門檻 7 時 50% 完整度在 AB {{v.mcA7}}，再要求顯著度高於最大隨機軌跡（{{v.smaxA}}）時為 AB {{v.mcAs}}；啟發式公式給出的 {{v.effA_heur}} 過於樂觀。B、D 區未經注入驗證。</p>
+    </section>
+
+    <section id="s8" data-reveal>
+      <h2><span class="n">07</span>討論</h2>
+      <h3>對遠方天體與第九行星的限制</h3>
+      <p>在 SPHEREx 波段，小型遠方天體以反射陽光被看見，其星等為 <span class="math">m = H + 5 log[d(d−1)]</span>，直徑 <span class="math">D = 1329 km · p<sup>−1/2</sup> · 10<sup>−H/5</sup></span>。反射率平坦的天體帶有太陽的顏色，在我們的資料中平均比 V 暗 {{v.solcol}} mag（依 Willmer 2018 的太陽 AB 星等、按偵測器深度加權），直徑極限因此放大 14%。在 {{v.d_field}} au 以外用單張曝光極限、400 au 以外用保守疊加極限 AB {{v.m_eff}}：反照率 0.4 時，排除 {{v.nep_b}} 的海王星大小與 {{v.jup_b}} 的木星大小天體；地球大小不受限制。500 au 處只能偵測大於約 {{v.d500_b}},000 km 的天體。</p>
+      <figure class="plate brackets"><img class="paper-fig" src="figures/aj/radius.svg" alt="未被偵測的最大直徑對日心距離" loading="lazy"><figcaption><span class="fn">圖 11</span><span>未被偵測的最大直徑。虛線：單張曝光（{{v.d_field}} au 以外）；實線：保守疊加極限（400 au 以外）；點線：甲烷使有效反照率降到 0.04 的參數化示意。</span></figcaption></figure>
+      <p>甲烷在 1.7、2.3 與 3.3 μm 強烈吸收。若有效近紅外反照率降到可見光的 30% 或 10%，排除直徑放大 1.8 或 3.2 倍，木星大小的排除範圍縮為 {{v.jup_m30}} 或幾乎消失。自發光的冷巨行星則可能在 3–5 μm 的大氣窗口逸出內部熱量：Fortney et al.（2016）最亮的情況（50 K、甲烷耗盡）在 3.4 μm 約 AB 18.8，接近我們的疊加深度，但通量集中在只佔約 6% 曝光的通道，全通道疊加會稀釋約 1.6 mag，所以本搜尋對它不敏感；只疊加 D4 的 3–3.5 μm 通道才是合適的做法。</p>
+      <p>Phan et al.（2025）的候選在其分析中對應 500–700 au、7–17 倍地球質量。D 區在反射光下只能排除 500 au 處大於約 {{v.phan500}},000 km、700 au 處大於約 {{v.phan700}},000 km 的天體，遠大於該質量行星的 3–6 倍地球半徑，因此我們既不能確認、也不能排除這個候選。所有限制只適用於搜尋過的視線方向，不到 ±12° 高機率帶的 1%，不排除第九行星假說。</p>
+      <h3>擁擠與隨機重合</h3>
+      <p>隨機軌跡數約與每個天區疊加峰值數的平方成正比（最大概似指數 2.2），幾乎都來自最擁擠的天區。疊加只用顯著度影像、不用分類器，所以分類器的機率校準不影響這些軌跡。可以在偵測階段壓低它們：依峰值密度逐天區設定門檻、要求在至少兩個偵測器中都有峰值且通量比符合反射陽光，以及以星表建立恆星遮罩。</p>
+      <figure class="plate brackets"><img class="paper-fig" src="figures/aj/spectral.svg" alt="光譜審核示意" loading="lazy"><figcaption><span class="fn">圖 12</span><span>光譜審核示意（非資料擬合）：遠方冰質天體的反射光譜，對比恆星殘差偶然排列所得的各通道通量。</span></figcaption></figure>
+      <h3>方法的適用範圍</h3>
+      <p>疊加只補償視差，適用於 400 au 以外；固定的 0.5° 天區只在約 {{v.d_field}} au 以外留住天體；{{v.d_crit}} au 以內需要克卜勒軌道參數化才能連上所有觀測窗；束縛軌道條件本身就排除了星際天體。這些限制都在稿件中逐一量化。</p>
+    </section>
+
+    <section id="s9" data-reveal>
+      <h2><span class="n">08</span>結論</h2>
+      <p>SPHEREx 一年之內從地球軌道兩側觀測每一顆遠方天體，使距離可以只由視差的幾何量出。逐像素波長配對的差分讓線性漸變濾鏡影像可以偵測移動天體；同時擬合視差與有上限的漂移，把注入天體的距離量到 {{v.g_med}}%，在跟隨天體的天區中盲測 Makemake 與 Haumea 到 {{v.mm_err}}% 與 {{v.hm_err}}%。沿第九行星路徑 {{v.sv_area}} 平方度的搜尋，沒有超過隨機重合率的遠方天體。更多次巡天、依反射光譜加權的寬波段疊加、疊加內的軌道運動搜尋，以及連線軌跡的光譜審核，將把可及範圍延伸到更暗的天體，並直接從全天近紅外光譜影像得到它們的距離、大小與表面成分。</p>
+      <div class="note"><p class="eyebrow">AI 使用聲明</p><p>稿件撰寫與分析程式開發使用了 AI 助理（Claude，Anthropic）；所有結果由文中描述的程式產生並經作者檢查，每筆參考文獻都已對照出版紀錄。</p></div>
+      <div class="note"><p class="eyebrow">致謝</p><p>本文使用 SPHEREx 的資料產品。SPHEREx 是美國噴射推進實驗室（JPL）與加州理工學院的聯合計畫，由 NASA 資助。資料取自 NASA/IPAC 紅外線科學檔案館（IRSA，由 NASA 資助、加州理工學院營運）：DR1（DOI 10.26131/IRSA678）與 QR3（DOI 10.26131/IRSA662）；模擬第九行星測試天區使用 QR2（DOI 10.26131/IRSA652）。另使用 ESA Gaia 任務的資料（由 Gaia DPAC 處理），以及加拿大太空總署 NEOSSat 任務的資料（加拿大開放政府授權，取自 CADC）。</p></div>
+    </section>
+
+    <section id="s10" data-reveal>
+      <h2><span class="n">09</span>主要參考文獻</h2>
+      <ul class="refs">
+        <li>Alard, C., &amp; Lupton, R. H. 1998, ApJ, 503, 325</li>
+        <li>Batygin, K., &amp; Brown, M. E. 2016, AJ, 151, 22</li>
+        <li>Bock, J. J., Aboobaker, A. M., Adamo, J., et al. 2026, ApJ, 999, 139</li>
+        <li>Brown, M. E., &amp; Batygin, K. 2021, AJ, 162, 219</li>
+        <li>Brown, M. E., Holman, M. J., &amp; Batygin, K. 2024, AJ, 167, 146</li>
+        <li>Fortney, J. J., Marley, M. S., Laughlin, G., et al. 2016, ApJL, 824, L25</li>
+        <li>Holman, M. J., Payne, M. J., Blankley, P., et al. 2018, AJ, 156, 135</li>
+        <li>Phan, T. L., Goto, T., Yamamura, I., et al. 2025, PASA, 42, e064</li>
+        <li>Trujillo, C. A., &amp; Sheppard, S. S. 2014, Natur, 507, 471</li>
+        <li>Whidden, P. J., Kalmbach, J. B., Connolly, A. J., et al. 2019, AJ, 157, 119</li>
+        <li>Willmer, C. N. A. 2018, ApJS, 236, 47</li>
+      </ul>
+      <p class="muted">完整的 {{v.refs_n}} 筆參考文獻見 PDF。</p>
+    </section>
+  </main>
+</div>
+
+<footer>
+  <span class="brand"><svg viewBox="0 0 24 24" aria-hidden="true" width="16" height="16"><circle cx="12" cy="12" r="5.2" fill="currentColor"/><ellipse cx="12" cy="12" rx="10.5" ry="4" fill="none" stroke="currentColor" stroke-width="1.1" transform="rotate(-18 12 12)"/></svg><span>SPHEREX</span></span>
+  <span>資料：NASA/IPAC IRSA · JPL Horizons</span>
+  <a href="#">回到頂端 ↑</a>
+</footer>
+<script src="paper.js" defer></script>
+</body></html>

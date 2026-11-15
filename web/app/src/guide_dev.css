@@ -1,0 +1,53 @@
+/* guide.jsx, "For developers": our steps beside IRSA's notebooks, the release timeline, how to cite. */
+.gdv-key { margin: 0 0 16px; padding: 0; list-style: none; display: flex; flex-wrap: wrap; gap: 8px 24px; font-size: var(--fs-ui); color: var(--sx-ink-2); }
+.gdv-key li { display: inline-flex; align-items: center; gap: 8px; }
+.gdv-key i { width: 12px; height: 12px; border-radius: 50%; background: var(--c); }
+.gdv-key b { font-weight: 800; color: var(--sx-ink); font-variant-numeric: tabular-nums; }
+
+.gdv-rows { margin: 0; padding: 0; list-style: none; display: grid; gap: 8px; }
+.guide .gdv-rows > li { max-width: none; }
+.gdv-row { display: grid; grid-template-columns: minmax(0, 15em) minmax(0, 1fr) minmax(0, 1fr); grid-template-areas: 'step ours nb' 'step note note';
+  gap: 8px 16px; padding: 16px; border-radius: var(--r-md); background: var(--sx-surface); box-shadow: inset 4px 0 0 var(--c), inset 0 0 0 1px var(--sx-rule); min-width: 0; }
+.gdv-step { grid-area: step; display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 8px 12px; align-content: start; align-items: baseline; }
+.gdv-num { font: 800 var(--fs-ui)/1 var(--sx-font); color: var(--sx-ink-3); font-variant-numeric: tabular-nums; }
+.guide .guide-sec .gdv-step h3 { margin: 0; font: 700 var(--fs-body)/1.3 var(--sx-font); color: var(--sx-ink); }
+.gdv-st { grid-column: 2; justify-self: start; padding: 4px 12px; border-radius: 999px; font-size: var(--fs-small); font-weight: 700; color: var(--sx-bg); background: var(--c); }
+.gdv-ours, .gdv-nb { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; min-width: 0; }
+.gdv-ours { grid-area: ours; }
+.gdv-nb { grid-area: nb; }
+.gdv-lab { font-size: var(--fs-small); font-weight: 700; color: var(--sx-ink-3); min-width: 3.2em; }
+.gdv-ours code { font-size: var(--fs-small); padding: 4px 8px; border-radius: var(--r-sm); background: var(--sx-surface-2); color: var(--sx-ink-2); overflow-wrap: anywhere; }
+.gdv-go { display: inline-flex; align-items: center; gap: 8px; min-height: 40px; padding: 8px 12px; border-radius: var(--r-sm); background: rgb(var(--c-known) / .14);
+  box-shadow: inset 0 0 0 1px rgb(var(--c-known) / .45); color: var(--sx-white); font-size: var(--fs-ui); font-weight: 600; line-height: 1.25; text-decoration: none; }
+.gdv-go:hover { background: rgb(var(--c-known) / .3); }
+.gdv-go::after { content: '↗'; color: var(--sx-known); }
+.gdv-go.own { background: var(--sx-control); box-shadow: none; }
+.gdv-go.own:hover { background: var(--sx-control-hover); }
+.gdv-go.own::after { content: '→'; }
+.guide .guide-sec .gdv-note { grid-area: note; margin: 0; font-size: var(--fs-ui); line-height: 1.55; color: var(--sx-ink-2); max-width: 62em; }
+
+.gdv-two { margin-top: 24px; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 380px), 1fr)); gap: 16px; }
+.gdv-box { display: grid; gap: 12px; align-content: start; padding: 16px; border-radius: var(--r-md); background: var(--sx-surface); box-shadow: inset 0 0 0 1px var(--sx-rule); min-width: 0; }
+.guide .guide-sec .gdv-box h3 { margin: 0; font: 700 var(--fs-lead)/1.25 var(--sx-font); color: var(--sx-ink); }
+.guide .guide-sec .gdv-box p { margin: 0; font-size: var(--fs-ui); line-height: 1.55; color: var(--sx-ink-2); }
+.gdv-rel { display: grid; gap: 8px; }
+.gdv-track { position: relative; height: 48px; border-radius: var(--r-sm); background: var(--sx-surface-2); }
+.gdv-bar { position: absolute; top: 4px; bottom: 4px; display: flex; flex-direction: column; justify-content: center; gap: 2px; padding: 0 8px; overflow: hidden;
+  border-radius: var(--r-sm); background: var(--c); color: var(--sx-bg); line-height: 1.1; white-space: nowrap; }
+.gdv-bar b { font-size: var(--fs-ui); font-weight: 800; }
+.gdv-bar small { font-size: var(--fs-small); font-weight: 600; font-variant-numeric: tabular-nums; }
+.gdv-axis { position: relative; height: 20px; font-size: var(--fs-small); color: var(--sx-ink-3); font-variant-numeric: tabular-nums; }
+.gdv-axis span { position: absolute; top: 0; transform: translateX(-50%); white-space: nowrap; }
+.gdv-axis span:first-child { transform: none; }
+.gdv-axis span:last-child { transform: translateX(-100%); }
+.gdv-cite { margin: 0; padding: 0; list-style: none; display: grid; gap: 8px; font-size: var(--fs-ui); line-height: 1.5; color: var(--sx-ink-2); }
+.guide .gdv-cite > li { max-width: none; }
+.gdv-cite b { display: inline-block; min-width: 5.5em; margin-right: 8px; color: var(--sx-ink); }
+.gdv-cite code { font-size: var(--fs-small); overflow-wrap: anywhere; }
+.gdv-box > .gdv-go { justify-self: start; }
+
+@media (max-width: 900px) {
+  .gdv-row { grid-template-columns: minmax(0, 1fr); grid-template-areas: 'step' 'ours' 'nb' 'note'; }
+  .gdv-step { grid-template-columns: auto minmax(0, 1fr) auto; }
+  .gdv-st { grid-column: 3; grid-row: 1; }
+}

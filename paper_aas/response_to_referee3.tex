@@ -1,0 +1,69 @@
+\documentclass[11pt]{article}
+\usepackage[margin=2.3cm]{geometry}
+\usepackage{xcolor}
+\usepackage{parskip}
+\usepackage{amssymb}
+\newcommand{\arcsec}{\ensuremath{^{\prime\prime}}}
+\newenvironment{referee}{\par\color{black!60}\itshape}{\par}
+\newcommand{\resp}{\par\noindent\textbf{Response.} }
+\begin{document}
+
+\begin{center}
+{\large\bfseries Response to the Referee (third report)}\\[4pt]
+\emph{Probing the Outer Solar System with SPHEREx: Parallax-Guided Moving-Object Discovery and Limits on Distant Bodies in All-Sky Spectral Imaging}
+\end{center}
+
+We thank the referee for a detailed report. Each point led to a new quantitative check. The scripts that produce these numbers are part of the analysis code. This letter is anonymised for dual-anonymous review.
+
+\section*{Major comments}
+
+\begin{referee}
+1. The abstract and conclusions state size limits that assume a flat reflectance. Please give limits that account for methane absorption, and show them in Figure 11.
+\end{referee}
+\resp We agree that the flat-reflectance limits should not stand alone. The abstract now states that they assume a flat reflectance and that methane absorption could narrow the Jupiter-sized exclusion from 229--570\,au to $\approx$229--247\,au. The Conclusions add that, for an effective near-infrared albedo of 0.04, only Jupiter-sized bodies at 229--247\,au remain excluded, and that Neptune-sized bodies are then not constrained. Section 7.4 gives the limits for effective albedos of 0.12 and 0.04, i.e.\ 30\% and 10\% of the visible value of 0.4: Jupiter-sized bodies are excluded at 229--324\,au and 229--247\,au respectively. Figure 11 now shows the $p_{\rm eff} = 0.04$ case as dotted curves.
+
+We have not computed a limit from a model atmosphere. That would require reflectance spectra of cold giant planets (e.g.\ Fortney et al.\ 2016; Linder \& Mordasini 2016) integrated over the 102 SPHEREx bandpasses, which we have not done. The added curves are therefore labelled as a parametric illustration, and the text does not attribute specific values to those models.
+
+\begin{referee}
+2. Sensitivity of shift-and-stack to intrinsic motion at 250--400\,au. Please quantify the trailing loss and clarify the transition between the single-exposure and stacked limits.
+\end{referee}
+\resp We modelled the PSF (FWHM $\approx 5\arcsec$) integrated over $6.15\arcsec$ pixels and trailed over the maximal in-pass orbital motion $\mu_{\rm circ}(d)\,T$ with $T = 2$ weeks. The resulting loss of peak brightness is 0.10\,mag at 500\,au, 0.19\,mag at 400\,au, 0.45\,mag at 300\,au and 0.62\,mag at 250\,au. The loss at 500\,au is already included in our injections, which used circular orbits. These values are an upper bound, because the projected motion is usually smaller than $\mu_{\rm circ}$. Section 3.5 now gives these numbers. It also states that between the field-retention limit (229\,au) and 400\,au only the single-exposure limit is applied and no stacked limit is quoted. Figure 11 already reflected this: the stacked curves start at 400\,au and the single-exposure curves at 229\,au. We have not injected bodies at 250--400\,au.
+
+\begin{referee}
+3. Centroiding with an undersampled PSF: which algorithm is used, and does the $0.7\arcsec$ accuracy vary between detectors?
+\end{referee}
+\resp Section 4 now describes the method. Positions are the flux-weighted first moment of the positive difference-image pixels in the $3\times3$ window centred on the significance peak, on the common grid onto which exposures are bilinearly resampled. Because the PSF is narrower than a pixel, this window contains nearly all of the flux. A simulation with the same PSF and pixel size gives a pixel-phase bias of at most $0.19\arcsec$ ($0.19\arcsec$ r.m.s.\ in two dimensions), well below the measured $0.7\arcsec$. By detector, the median residuals are 0.69, 0.88, 0.87, 0.65, 0.63 and $0.43\arcsec$ for D1--D6, with 8--20 detections each. There is no degradation in D4--D6, although the samples are small. We also now state that one residual larger than $5\arcsec$ (of 79) is excluded from the astrometric sample.
+
+\begin{referee}
+4. Self-subtraction of very distant bodies by references taken a few hours apart.
+\end{referee}
+\resp We computed the reference sets actually selected for all 11{,}124 exposures of the survey fields. Exposures have a median of 8 references, separated from the exposure by a median of 182\,d; 6.6\% of the references are within one day. We placed bodies on circular orbits with eight orientations at 250--3000\,au and asked how often the median reference contains the body, which requires at least half of the references to lie within one pixel of its position. This happens in 0.45\% of exposures at 250\,au, 1.0\% at 500\,au, 1.5\% at 1500\,au and 3.9\% at 3000\,au. The largest contribution at 3000\,au comes from references taken a year apart, at the same parallactic phase, rather than from those taken a few hours apart. We apply no further selection. Because synthetic sources are injected into every exposure, including those that serve as references, the measured completeness and distance accuracy include this loss. Section 3.1 now gives these numbers. Excluding references in which a body at the trial distance would occupy the same pixel is a possible refinement of the stacked search.
+
+\section*{Minor comments}
+
+\begin{referee}
+Equation (2): can the reference-only systematic term bias faint movers that overlap faint stars in the reference?
+\end{referee}
+\resp Yes, by a factor $[1 + (\varepsilon\alpha R_+/\sigma_I)^2]^{-1/2}$ in significance. This factor is negligible for faint stars and exceeds $\sqrt{2}$ only where $\varepsilon\alpha R_+ > \sigma_I$. In 338 exposures this occurs in a median of 1.0\% of pixels (0.3--1.2\% for the 10th--90th percentiles). A moving body crosses such pixels in only a few of its exposures. This is now stated in Section 3.1.
+
+\begin{referee}
+D4: cite the H2RG literature and say whether a stability mask is planned.
+\end{referee}
+\resp Section 7.2 now cites Rauscher et al.\ (2007) and Kohley et al.\ (2018) on random telegraph noise in H2RG arrays, which affects a small and fixed population of pixels that can be tracked with pixel operability maps. We state that a stability mask requires the detector coordinates of each candidate, which our cutout-based processing does not yet retain, and that it is the first addition planned for the pipeline.
+
+\begin{referee}
+Emphasise that the null result covers only 7.89\,deg$^2$.
+\end{referee}
+\resp Section 6.3 now states that the limits apply only to the 7.89\,deg$^2$ searched, which is well under 1\% of the $\pm12^\circ$ high-probability band even within $\alpha = 45$--$105^\circ$ ($\approx$1400\,deg$^2$), and that they do not exclude the Planet Nine hypothesis or any family of orbital solutions. The Conclusions repeat this.
+
+\begin{referee}
+Figures 4 and 10.
+\end{referee}
+\resp Figure 4 now uses open circles (known asteroids) and open squares (injected sources) in addition to colour, so the four curves can be distinguished in greyscale. The axis label and caption of Figure 10 now explain that the abscissa is the mean of the two cyclic relabellings of the pass epochs.
+
+\begin{referee}
+AI disclosure.
+\end{referee}
+\resp We thank the referee; the statement is unchanged.
+
+\end{document}

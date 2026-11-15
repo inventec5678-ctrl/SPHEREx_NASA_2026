@@ -1,0 +1,22 @@
+/* Validation: Backyard Worlds brown dwarfs (val_byw.jsx, classes byw-*). Type and colours from theme.css only. */
+.byw-meters { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 200px), 1fr)); gap: 12px 24px; }
+.byw-meters .meter-row strong { font-size: var(--fs-lead); }
+.plot .byw-zone { fill: rgb(var(--c-known) / .08); }
+.plot .byw-thr { stroke: rgb(var(--c-ink-2) / .8); stroke-width: 1.5; stroke-dasharray: 5 4; }
+.plot .byw-lim { stroke: rgb(var(--c-accent) / .8); stroke-width: 2; }
+.plot .byw-err { stroke: rgb(var(--c-ink-2) / .6); stroke-width: 1.5; }
+
+.byw-pick { display: grid; gap: 12px 24px; grid-template-columns: minmax(0, 1fr); padding: 16px; border-radius: var(--r-md); background: var(--sx-surface-2); }
+.byw-pics { display: flex; flex-wrap: wrap; gap: 12px; }
+.byw-pics figure { margin: 0; display: grid; gap: 6px; justify-items: start; }
+.byw-pics figcaption { font-size: var(--fs-small); color: var(--sx-ink-2); }
+.byw-pics .blinkbox { gap: 6px; }
+.byw-then { display: block; aspect-ratio: 1; max-width: 100%; }
+.byw-facts { margin: 0; display: grid; gap: 6px; font-size: var(--fs-ui); }
+.byw-facts > div { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 2px 16px; border-bottom: 1px solid rgb(var(--c-white) / .08); padding-bottom: 6px; }
+.byw-facts dt { color: var(--sx-ink-3); font-size: var(--fs-small); }
+.byw-facts dd { margin: 0; color: var(--sx-ink); font-weight: 600; font-variant-numeric: tabular-nums; overflow-wrap: anywhere; }
+
+@media (min-width: 1281px) {
+  .byw-pick { grid-template-columns: auto minmax(0, 1fr); align-items: start; }
+}

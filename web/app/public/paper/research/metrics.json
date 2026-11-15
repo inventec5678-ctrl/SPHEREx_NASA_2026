@@ -1,0 +1,35 @@
+{
+ "temperature": 0.7801249623298645,
+ "threshold_logit_fpr1_val": 0.39467209577560425,
+ "cnn": {
+  "auroc_all": 0.9916525709717479,
+  "recall_at_fpr1_all": 0.9500513171399247,
+  "auroc_known": 0.9860143630272973,
+  "recall_at_fpr1_known": 0.8561549100968188,
+  "n_known": 42,
+  "n_inj": 2881,
+  "n_bogus": 72911
+ },
+ "baseline_snr": {
+  "auroc_all": 0.7178858104120895,
+  "recall_at_fpr1_all": 0.08142319534724599,
+  "auroc_known": 0.514100235090232,
+  "recall_at_fpr1_known": 0.012448132780082987,
+  "n_known": 42,
+  "n_inj": 2881,
+  "n_bogus": 72911
+ },
+ "known_all_fields": {
+  "n_known": 723,
+  "n_fields": 29,
+  "auroc_cnn": 0.9860143630272973,
+  "auroc_snr": 0.514100235090232,
+  "recall_at_val_threshold": 0.8547717842323651,
+  "recall_at_fpr1_cnn": 0.8561549100968188,
+  "recall_at_fpr1_snr": 0.012448132780082987
+ },
+ "test_at_val_threshold": {
+  "recall": 0.9486828600752651,
+  "fpr": 0.009381300489638053
+ }
+}

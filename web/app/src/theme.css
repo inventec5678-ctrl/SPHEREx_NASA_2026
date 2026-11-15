@@ -1,0 +1,87 @@
+/* Design tokens (SELENE visual language). One ground, one ink, one accent (sunlit cream, for the action and moving objects).
+   Blue/violet/magenta are data colours only (known object / distant body / simulation). */
+:root {
+  --sx-bg: #05070c;                 /* ground */
+  --sx-surface: #0b0f18;            /* one tone step */
+  --sx-surface-2: #121826;          /* two tone steps */
+  --sx-control: #ffffff12; --sx-control-hover: #ffffff22;
+  --sx-ink: #f1f2f5; --sx-ink-2: #c9ccd3; --sx-ink-3: #a3a8b2;
+  --sx-accent: #f2e6c9; --sx-accent-hover: #ffffff; --sx-accent-ink: #05070c;
+  --sx-known: #6ec3ff; --sx-distant: #c08bff; --sx-sim: #ff4fd8; --sx-good: #5fd39a; --sx-bad: #ff6b6b;
+  --sx-d1: #7aa8ff; --sx-d2: #6fe0d4; --sx-d3: #9be37a; --sx-d4: #f2d46b; --sx-d5: #f5a25d; --sx-d6: #ef6f6c;
+  /* Chinese: the system's own font (no web-font download); Latin: self-hosted Manrope (fonts.css) */
+  --sx-cjk: 'PingFang TC', 'Noto Sans TC', 'Noto Sans CJK TC', 'Microsoft JhengHei', 'Heiti TC', sans-serif;
+  --sx-font: Manrope, 'PingFang TC', 'Noto Sans TC', 'Noto Sans CJK TC', 'Microsoft JhengHei', 'Heiti TC', system-ui, sans-serif;
+  /* SELENE language: wide engineered caps for display, mono for telemetry, earth blue for focus */
+  --sx-display: Michroma, Eurostile, 'PingFang TC', 'Noto Sans TC', 'Noto Sans CJK TC', 'Microsoft JhengHei', sans-serif;
+  --sx-mono: 'IBM Plex Mono', ui-monospace, Menlo, monospace;
+  --sx-earth: #6fb6ff; --sx-sunlit: #f2e6c9; --sx-rule: rgb(255 255 255 / .1);
+  /* type scale: nine sizes, nothing else (scripts/audit_css.mjs checks app.css).
+     xs is for chart ticks and units only; notes are 15, interface text (buttons, labels, values) 16, running text 17. */
+  --fs-xs: 13px;
+  --fs-small: 15px;
+  --fs-ui: 16px;
+  --fs-body: 17px;
+  --fs-lead: 20px;
+  --fs-h3: clamp(22px, 2.2vw, 30px);
+  --fs-h2: clamp(28px, 3vw, 44px);
+  --fs-display: clamp(40px, 5.4vw, 80px);
+  --fs-big: clamp(64px, 10vw, 160px);
+  /* radii: small (controls), medium (cards, images), pill (999px) and circle (50%) */
+  --r-sm: 6px;
+  --r-md: 12px;
+  --sx-gutter: clamp(16px, 4vw, 64px);
+  --sx-page: 1320px;                /* the one content width */
+  --sp: 8px;                        /* spacing unit: gaps are multiples of it */
+  --sx-gap-section: clamp(96px, 12vw, 200px);
+  --sx-ease: cubic-bezier(.2, .7, .2, 1);
+  /* colour channels for translucent colours: rgb(var(--c-ink-2) / .5). Every colour app.css uses is defined here. */
+  --c-white: 255 255 255;
+  --c-black: 0 0 0;
+  --c-bg: 5 7 12;
+  --c-surface: 11 15 24;
+  --c-surface-2: 18 24 38;
+  --c-ink: 241 242 245;
+  --c-ink-2: 201 204 211;
+  --c-ink-3: 163 168 178;
+  --c-accent: 242 230 201;
+  --c-earth: 111 182 255;
+  --c-known: 110 195 255;
+  --c-distant: 192 139 255;
+  --c-sim: 255 79 216;
+  --c-good: 95 211 154;
+  --c-bad: 255 107 107;
+  --c-d1: 122 168 255;
+  --c-d2: 111 224 212;
+  --c-d3: 155 227 122;
+  --c-d4: 242 212 107;
+  --c-d5: 245 162 93;
+  --c-d6: 239 111 108;
+  --c-amber: 255 181 71;
+  --c-bad-soft: 255 155 155;
+  --c-warn: 255 178 138;
+  --c-amber-deep: 138 75 20;
+  --c-map: 29 42 51;
+  --c-map-2: 22 48 59;
+  --c-cream-warm: 255 226 176;
+  --c-paper: 255 248 236;
+  --c-paper-ink: 26 18 5;
+  --c-paper-rule: 107 90 68;
+  --c-good-soft: 155 231 196;
+  --c-distant-soft: 216 166 255;
+  --sx-white: rgb(var(--c-white));
+  --sx-black: rgb(var(--c-black));
+  --sx-amber: rgb(var(--c-amber));
+  --sx-bad-soft: rgb(var(--c-bad-soft));
+  --sx-warn: rgb(var(--c-warn));
+  --sx-amber-deep: rgb(var(--c-amber-deep));
+  --sx-map: rgb(var(--c-map));
+  --sx-map-2: rgb(var(--c-map-2));
+  --sx-cream-warm: rgb(var(--c-cream-warm));
+  --sx-paper: rgb(var(--c-paper));
+  --sx-paper-ink: rgb(var(--c-paper-ink));
+  --sx-paper-rule: rgb(var(--c-paper-rule));
+  --sx-good-soft: rgb(var(--c-good-soft));
+  --sx-distant-soft: rgb(var(--c-distant-soft));
+  color-scheme: dark;
+}
